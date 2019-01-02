@@ -1,16 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
 import UpcomingShows from './UpcomingShows';
 import FavoriteArtists from './FavoriteArtists';
 
-const Profile = (props) => {
-    return (
+class Profile extends Component {
+    constructor(props) {
+        super(props); 
+        this.state = {
+            myArtists : [
+              'Drake',
+              'Grimes',
+              'The strokes'
+            ],
+            myShows : [
+              'Drake: StateFarm Arena',
+              'Noname: Masquerade',
+              'BloodOrange: Variety Playhouse'
+              
+            ]
+          }
+    }
+    render() {
+        return (
         <div className="userProfile">
             <h1>My  Profile</h1>
-            <UpcomingShows />
+            <UpcomingShows
+            myShows={this.state.myShows} />
             <FavoriteArtists />
         </div>
-
-    )
+        )
+    }
+    
 }
+
+
+
 
 export default Profile;
