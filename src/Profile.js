@@ -9,7 +9,8 @@ class Profile extends Component {
             myArtists : [
               'Drake',
               'Grimes',
-              'The strokes'
+              'The strokes',
+              'Sza'
             ],
             myShows : [
               'Drake: StateFarm Arena',
