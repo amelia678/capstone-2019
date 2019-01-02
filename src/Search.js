@@ -5,7 +5,7 @@ const Search = (props) => {
         <div className="searchBar">
             <h2>Search events by artist, genre, or city:</h2>
             <input></input>
-            <button>Search</button>
+            <button>Find</button>
         </div>
 
     )
