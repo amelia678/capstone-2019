@@ -12,3 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.searchBar {
+  outline: 2px solid plum;
+  width: 50%;
+  margin: 10px;
+  padding: 10px;
+}
