@@ -10,9 +10,7 @@ const UpcomingShows = (props) => {
         <div>
             <p>My Shows:</p>
             <ul>
-                {/* <li>Drake: StateFarm Arena</li>
-                <li>Noname: Masquerade</li>
-                <li>BloodOrange: Variety Playhouse</li> */}
+              
                 {showList}
             </ul>
         </div>

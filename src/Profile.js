@@ -25,7 +25,8 @@ class Profile extends Component {
             <h1>My  Profile</h1>
             <UpcomingShows
             myShows={this.state.myShows} />
-            <FavoriteArtists />
+            <FavoriteArtists
+            myArtists= {this.state.myArtists} />
         </div>
         )
     }
