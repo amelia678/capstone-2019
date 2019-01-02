@@ -4,8 +4,8 @@
 
 <h4>MVP</h4>
 <ul>
-<li>Users log into their account.</li>
-<li>Users can search for concerts/ events by Artist, Location, or Genre.</li>
+<li>Users log into their account. (User information kept in PostgreSQL database.)</li>
+<li>Users can search for concerts/ events by Artist, Location, or Genre. (Concert information retrieved through API call(s).)</li>
 <li>Users can select an event to add to their presonal event list.</li>
 <li>Users can see other users who are going to that event, and select a user to see their profile information.</li>
 <li>Users can connect with other users going to the same event.</li>
@@ -15,10 +15,10 @@
 
 <h4>Technologies Used</h4>
 <ul>
-<li>JavaScript</li>
-<li>Node.js</li>
-<li>React</li>
-<li>PostgreSQL</li>
+<li>JavaScript reasoning:</li>
+<li>Node.js reasoning:</li>
+<li>React reasoning:</li>
+<li>PostgreSQL reasoning:</li>
 <li></li>
 </ul>
 
