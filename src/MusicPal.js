@@ -1,18 +1,28 @@
 import React, {Component} from 'react';
 import Search from './Search';
 import Profile from './Profile';
+import EventList from './EventList'
 
 class MusicPal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            events : [
-                'Drake',
-                'Sylvan Esso',
-                'Amelia',
-                'Migos'
-            ],
             searchTerm: '',
+            events : [
+                {
+                    artist: 'Drake',
+                    location: 'Atlanta, GA'
+                },
+                {
+                    artist: 'Sylvan Esso',
+                    location: 'Portland, OR'},
+                {
+                    artist: 'Amelia',
+                    location: 'Los Angeles, CA'},
+                {
+                    artist: 'Migos',
+                    location: 'Atlanta, GA'}
+            ],
 
         }
     }
@@ -24,6 +34,8 @@ class MusicPal extends Component {
             searchTerm={this.state.searchTerm}
             handleInput = {this._setSearchTerm}/>
             <Profile />
+            <EventList
+            events = {this._searchEvents(this.state.searchTerm)} />
             </div>
         )
     }
@@ -32,6 +44,16 @@ class MusicPal extends Component {
         this.setState({
             searchTerm: term
         })
+    }
+
+    _searchEvents = (term) => {
+        const filteredEvents = this.state.events.filter(event => {
+            const termMatchesArtist = event.artist.includes(term)
+            const termMatchesLocation = event.location.includes(term)
+
+            return termMatchesArtist || termMatchesLocation
+        });
+        return filteredEvents
     }
 }
 
