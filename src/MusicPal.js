@@ -32,10 +32,11 @@ class MusicPal extends Component {
             <div className="userView">
             <Search
             searchTerm={this.state.searchTerm}
-            handleInput = {this._setSearchTerm}/>
-            <Profile />
+            handleInput = {this._setSearchTerm}
+            />
             <EventList
             events = {this._searchEvents(this.state.searchTerm)} />
+            <Profile />
             </div>
         )
     }
@@ -50,10 +51,14 @@ class MusicPal extends Component {
         const filteredEvents = this.state.events.filter(event => {
             const termMatchesArtist = event.artist.includes(term)
             const termMatchesLocation = event.location.includes(term)
-
+            
             return termMatchesArtist || termMatchesLocation
         });
-        return filteredEvents
+        if (this.state.searchTerm.length === 0) {
+            return [];
+        } else {
+            return filteredEvents
+        }
     }
 }
 
