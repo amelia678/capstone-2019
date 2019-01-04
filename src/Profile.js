@@ -29,7 +29,7 @@ class Profile extends Component {
     render() {
 
         return (
-            <div className="userProfile">
+            <div>
                 <h1>My Profile</h1>
                 <p>About Me:</p>
                 <ul>
