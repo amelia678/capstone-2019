@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Search from './Search';
 import Profile from './Profile';
 import EventList from './EventList'
+import EventfulCall from './EventfulCall';
 
 class MusicPal extends Component {
     constructor(props) {
@@ -35,6 +36,7 @@ class MusicPal extends Component {
                     <EventList
                         events={this._searchEvents(this.state.searchTerm)}
                     />
+                    <EventfulCall />
                 </div>
                 <Profile />
             </div>
