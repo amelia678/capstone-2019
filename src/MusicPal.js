@@ -38,7 +38,9 @@ class MusicPal extends Component {
         return (
             <Router>
             <div>
+                <div className="navBar-container"> 
             <NavBar />
+                </div>
             <h1>MusicPal</h1>
             <h2>Find your music... find your pals</h2>
                 <div className="eventInfo">
