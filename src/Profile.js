@@ -6,6 +6,7 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
+
             myArtists: [
                 'Drake',
                 'Grimes',
@@ -16,6 +17,8 @@ class Profile extends Component {
                 'Drake: StateFarm Arena',
                 'Noname: Masquerade',
                 'BloodOrange: Variety Playhouse'
+            ],
+            myFriends: [
 
             ]
         }
@@ -28,6 +31,8 @@ class Profile extends Component {
                     myShows={this.state.myShows} />
                 <FavoriteArtists
                     myArtists={this.state.myArtists} />
+                <MyFriends
+                    myFriends={this.state.myFriends} />
             </div>
         )
     }
