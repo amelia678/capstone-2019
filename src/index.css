@@ -30,3 +30,18 @@ code {
   margin: auto;
 }
 
+.oneEvent {
+  outline: solid 5px powderblue;
+  width: 40%;
+  height: 200px;
+  margin: auto;
+  
+}
+
+.eventInfo {
+  outline: solid 2px purple;
+  display: flex;
+
+}
+
+

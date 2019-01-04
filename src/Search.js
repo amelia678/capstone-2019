@@ -1,7 +1,9 @@
 import React from 'react';
+import OneEvent from './OneEvent'
 
 const Search = (props) => {
     return (
+        <div>
         <div >
             <h2>Search events by artist, genre, or city:</h2>
             <input
@@ -12,8 +14,10 @@ const Search = (props) => {
             ></input>
             <button
             >Find</button>
+            
         </div>
-        
+        {/* < OneEvent /> */}
+        </div>
     )
 }
 
