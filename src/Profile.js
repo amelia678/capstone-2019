@@ -33,7 +33,7 @@ class Profile extends Component {
         // })
 
         return (
-            <div className="userProfile">
+            <div>
                 <h1>My Profile</h1>
                 <p>About Me:</p>
                 <ul>
