@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
-import UpcomingShows from './UpcomingShows';
-import FavoriteArtists from './FavoriteArtists';
-import MyFriends from './MyFriends';
+import React from 'react';
 
-class Profile extends Component {
+class AboutMe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            myInfo: []
+            myInfo: [],
         }
     }
 
@@ -30,25 +27,14 @@ class Profile extends Component {
         })
 
         return (
-            <div className="userProfile">
-                <h1>My Profile</h1>
+            <div>
                 <p>About Me:</p>
                 <ul>
                     {infoArray}
                 </ul>
-                <UpcomingShows
-                    myShows={this.state.myShows} />
-                <FavoriteArtists
-                    myArtists={this.state.myArtists} />
-                <MyFriends
-                    myFriends={this.state.myFriends} />
             </div>
         )
     }
-
 }
 
-
-
-
-export default Profile;
+export default AboutMe;
