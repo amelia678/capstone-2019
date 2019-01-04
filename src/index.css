@@ -14,12 +14,12 @@ code {
 }
 
 .navBar-container {
-  height: 100px;
-  outline: solid 5px yellow;
+  height: 50px;
+  /* outline: solid 5px yellow; */
   margin: 10px;
 }
 .navBar {
-  outline: solid 2px seagreen;
+  /* outline: solid 2px seagreen; */
   height: 50px;
   text-align: right;
 }
