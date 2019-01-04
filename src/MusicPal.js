@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Search from './Search';
 import Profile from './Profile';
-import EventList from './EventList'
+import EventList from './EventList';
+import NavBar from './NavBar';
 
 class MusicPal extends Component {
     constructor(props) {
@@ -30,10 +31,11 @@ class MusicPal extends Component {
     render() {
         return (
             <div className="userView">
-            <Search
+            
+            {/* <Search
             searchTerm={this.state.searchTerm}
             handleInput = {this._setSearchTerm}
-            />
+            /> */}
             <EventList
             events = {this._searchEvents(this.state.searchTerm)} />
             <Profile />
@@ -41,11 +43,11 @@ class MusicPal extends Component {
         )
     }
 
-    _setSearchTerm = (term) => {
-        this.setState({
-            searchTerm: term
-        })
-    }
+    // _setSearchTerm = (term) => {
+    //     this.setState({
+    //         searchTerm: term
+    //     })
+    // }
 
     _searchEvents = (term) => {
         const filteredEvents = this.state.events.filter(event => {

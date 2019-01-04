@@ -12,7 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.navBar {
+  outline: solid 2px seagreen;
+}
 .searchBar {
   outline: 2px solid plum;
   width: 40%;
