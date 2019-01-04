@@ -1,40 +1,40 @@
 import React from 'react';
 
-class FavoriteArtists extends React.Component {
+class AboutMe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            myArtists: [],
+            myInfo: [],
         }
     }
 
     componentDidMount() {
-        fetch('/myArtists')
+        fetch('/myInfo')
             .then(r => r.json())
-            .then(artistArray => {
+            .then(infoArray => {
                 this.setState({
-                    myArtists: artistArray
+                    myInfo: infoArray
                 })
             })
     };
 
     render() {
 
-        const artistList = this.state.myArtists.map(artist => {
+        const infoList = this.state.myInfo.map(user => {
             return (
-                <li key={artist.id}>{artist.name}</li>
+                <li key={user.id}>{user.username}</li>
             )
         })
 
         return (
             <div>
-                <p>My Artists:</p>
+                <p>About Me:</p>
                 <ul>
-                    {artistList}
+                    {infoArray}
                 </ul>
             </div>
         )
     }
 }
 
-export default FavoriteArtists;
+export default AboutMe;
