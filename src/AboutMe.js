@@ -22,7 +22,7 @@ class AboutMe extends React.Component {
 
         const infoList = this.state.myInfo.map(user => {
             return (
-                <li key={user.id}>{user.username, user.city, user.state}</li>
+                <li key={user.id}>{user.username}</li>
             )
         })
 

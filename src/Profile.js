@@ -7,34 +7,38 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            myInfo: []
+            id: "",
+            username: ""
         }
     }
 
     componentDidMount() {
         fetch('/myInfo')
             .then(r => r.json())
-            .then(infoArray => {
+            .then(user => {
+                // console.log(infoObj)
                 this.setState({
-                    myInfo: infoArray
+                    id: user.id,
+                    username: user.username
                 })
             })
     };
 
     render() {
 
-        const infoList = this.state.myInfo.map(user => {
-            return (
-                <li key={user.id}>{user.username, user.city, user.state}</li>
-            )
-        })
+        // const infoList = this.state {
+        //     return (
+        //         <li key={user.id}>{user.username}</li>
+        //     )
+        // })
 
         return (
             <div className="userProfile">
                 <h1>My Profile</h1>
                 <p>About Me:</p>
                 <ul>
-                    {infoArray}
+                    <li>{this.state.id}</li>
+                    <li>{this.state.username}</li>
                 </ul>
                 <UpcomingShows
                     myShows={this.state.myShows} />
