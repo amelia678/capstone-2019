@@ -26,8 +26,8 @@
 <ul>
 <li>Users can block or report another user (have a user agreement to agree to?)</li>
 <li>Chatrooms for bands/ genres?</li>
-<li></li>
-<li></li>
+<li>Users can keep track of concerts attended in the past and with whom.</li>
+<li>Users can upload concert pics.</li>
 <li></li>
 </ul>
 

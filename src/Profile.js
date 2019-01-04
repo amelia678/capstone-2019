@@ -18,27 +18,22 @@ class Profile extends Component {
             .then(user => {
                 // console.log(infoObj)
                 this.setState({
-                    id: user.id,
-                    username: user.username
+
+                    username: user.username,
+                    location: (user.city)
                 })
             })
     };
 
     render() {
 
-        // const infoList = this.state {
-        //     return (
-        //         <li key={user.id}>{user.username}</li>
-        //     )
-        // })
-
         return (
             <div className="userProfile">
                 <h1>My Profile</h1>
                 <p>About Me:</p>
                 <ul>
-                    <li>{this.state.id}</li>
                     <li>{this.state.username}</li>
+                    <li>{this.state.location}</li>
                 </ul>
                 <UpcomingShows
                     myShows={this.state.myShows} />
