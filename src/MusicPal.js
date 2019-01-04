@@ -31,23 +31,24 @@ class MusicPal extends Component {
     render() {
         return (
             <div className="userView">
-            
-            {/* <Search
+            <div className="searchBar">
+            <Search
             searchTerm={this.state.searchTerm}
             handleInput = {this._setSearchTerm}
-            /> */}
+            />
             <EventList
             events = {this._searchEvents(this.state.searchTerm)} />
-            <Profile />
+            {/* <Profile /> */}
+            </div>
             </div>
         )
     }
 
-    // _setSearchTerm = (term) => {
-    //     this.setState({
-    //         searchTerm: term
-    //     })
-    // }
+    _setSearchTerm = (term) => {
+        this.setState({
+            searchTerm: term
+        })
+    }
 
     _searchEvents = (term) => {
         const filteredEvents = this.state.events.filter(event => {

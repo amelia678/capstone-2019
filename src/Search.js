@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = (props) => {
     return (
-        <div className="searchBar">
+        <div >
             <h2>Search events by artist, genre, or city:</h2>
             <input
             value = {props.searchTerm}
