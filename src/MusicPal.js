@@ -33,7 +33,6 @@ class MusicPal extends Component {
                         handleInput={this._setSearchTerm}
                     />
                     <EventList
-                        // events={this.state.events}
                         events={this._searchEvents(this.state.searchTerm)}
                     />
                 </div>
@@ -51,10 +50,9 @@ class MusicPal extends Component {
     _searchEvents = (term) => {
         const filteredEvents = this.state.events.filter(event => {
 
-            // const termMatches = event.includes(term)
             const termMatchesArtist = event.name.includes(term)
             const termMatchesLocation = event.location.includes(term)
-            // return termMatches
+
             return termMatchesArtist || termMatchesLocation
         });
         if (this.state.searchTerm.length === 0) {

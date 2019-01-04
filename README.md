@@ -27,8 +27,8 @@
 <li>Users can block or report another user (have a user agreement to agree to?)</li>
 <li>Chatrooms for bands/ genres?</li>
 <li>Users can keep track of concerts attended in the past and with whom.</li>
-<li>Users can upload concert pics.</li>
+<li>Users can upload concert pics which crossreference and also show on event page.</li>
 <li></li>
 </ul>
 
-<p>Brought to you by Ameliz Schulz and Clare Barton.</h4>
+<p>Brought to you by Amelia Schulz and Clare Barton.</h4>
