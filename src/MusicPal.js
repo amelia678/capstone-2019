@@ -27,14 +27,16 @@ class MusicPal extends Component {
 
         return (
             <div className="userView">
-                <Search
-                    searchTerm={this.state.searchTerm}
-                    handleInput={this._setSearchTerm}
-                />
-                <EventList
-                    // events={this.state.events}
-                    events={this._searchEvents(this.state.searchTerm)}
-                />
+                <div className="searchBar">
+                    <Search
+                        searchTerm={this.state.searchTerm}
+                        handleInput={this._setSearchTerm}
+                    />
+                    <EventList
+                        // events={this.state.events}
+                        events={this._searchEvents(this.state.searchTerm)}
+                    />
+                </div>
                 <Profile />
             </div>
         )
