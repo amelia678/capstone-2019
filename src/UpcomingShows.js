@@ -24,7 +24,7 @@ class UpcomingShows extends React.Component {
         const showList = this.state.myShows.map(show => {
             console.log(show);
             return (
-                <li key={show.id}>{show.artist}</li>
+                <li key={show.id}>{show.artist_id}</li>
             )
         })
         // console.log(this.state.myShows);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UpcomingShows from './UpcomingShows';
 import FavoriteArtists from './FavoriteArtists';
+import MyFriends from './MyFriends';
 
 class Profile extends Component {
     constructor(props) {

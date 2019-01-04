@@ -9,7 +9,7 @@ class FavoriteArtists extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/favoriteArtists')
+        fetch('/myArtists')
             .then(r => r.json())
             .then(artistArray => {
                 this.setState({
@@ -32,7 +32,7 @@ class FavoriteArtists extends React.Component {
                 <ul>
                     {artistList}
                 </ul>
-            </div >
+            </div>
         )
     }
 }
