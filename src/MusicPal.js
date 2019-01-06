@@ -5,10 +5,14 @@ import EventList from './EventList';
 import NavBar from './NavBar';
 import OneEvent from './OneEvent';
 
+
 import {
     BrowserRouter as Router,
     Route
   } from 'react-router-dom'
+  
+  
+
 
 class MusicPal extends Component {
     constructor(props) {
@@ -36,6 +40,7 @@ class MusicPal extends Component {
 
             <Router>
             <div>
+                <div className="musicpal-home">
                 <div className="navBar-container"> 
             <NavBar />
                 </div>
@@ -60,6 +65,7 @@ class MusicPal extends Component {
                 <Route path="/profile" render={(props) => {
                     return <Profile {...props} />
                 }} />
+                </div>
                 </div>
            </div>
             </Router>

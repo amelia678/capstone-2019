@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+  
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -53,3 +54,8 @@ code {
 }
 
 
+.musicpal-home {
+  background-image: url('./images/background-black-close-up-1300578-min.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
