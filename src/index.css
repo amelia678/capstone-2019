@@ -7,6 +7,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: steelblue;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 1px;
 }
   
 
@@ -14,7 +16,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+ 
+h1 {
+  font-family: 'Pacifico', cursive;
+  text-shadow: 1px 1px 2px;
+  font-size: 36px;
+}
 .navBar-container {
   height: 50px;
   /* outline: solid 5px yellow; */
@@ -59,5 +66,5 @@ code {
   background-image: url('./images/background-black-close-up-1300578-min.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  
+  background-position: center;
 }
