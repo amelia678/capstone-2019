@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: cornflowerblue;
 }
   
 
@@ -58,4 +59,5 @@ code {
   background-image: url('./images/background-black-close-up-1300578-min.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
