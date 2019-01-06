@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: steelblue;
   font-family: 'Raleway', sans-serif;
-  text-shadow: 1px;
+  text-shadow: 2px;
 }
   
 
@@ -20,7 +20,11 @@ code {
 h1 {
   font-family: 'Pacifico', cursive;
   text-shadow: 1px 1px 2px;
-  font-size: 36px;
+  font-size: 42px;
+}
+
+h2 {
+  font-weight: bold;
 }
 .navBar-container {
   height: 50px;
@@ -67,4 +71,9 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.eventImage {
+  height: 200px;
+  width: 80%;
 }
