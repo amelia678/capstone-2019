@@ -38,7 +38,7 @@ h2 {
 }
 .searchBar {
   outline: 2px solid plum;
-  width: 50%;
+  width: 90%;
   /* margin:auto; */
   padding: 10px;
   
@@ -53,7 +53,7 @@ h2 {
 
 .oneEvent {
   outline: solid 5px powderblue;
-  width: 40%;
+  width: 90%;
   height: 200px;
   margin: auto;
   
@@ -62,6 +62,7 @@ h2 {
 .eventInfo {
   outline: solid 2px purple;
   display: flex;
+ 
 
 }
 
@@ -76,4 +77,23 @@ h2 {
 .eventImage {
   height: 200px;
   width: 80%;
+  opacity: 0.9;
+}
+
+/* Common "breakpoints"
+S, M, L, XL, Party size
+
+500px
+768px
+1024px
+1200px
+1400px */
+
+
+@media screen and (max-width: 768px) {
+
+  .eventInfo {
+    flex-direction: column;
+  }
+
 }
