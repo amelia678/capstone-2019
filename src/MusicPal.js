@@ -3,7 +3,6 @@ import Search from './Search';
 import Profile from './Profile';
 import EventList from './EventList'
 import EventfulCall from './EventfulCall';
-import logo from './logo.svg';
 
 class MusicPal extends Component {
     constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 // import EventList from './EventList';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // const API_KEY = process.env.REACT_APP_EVENTFUL_API_KEY;
 
 class EventfulCall extends React.Component {
@@ -8,10 +8,7 @@ class EventfulCall extends React.Component {
         super(props);
         this.state = {
             eventArray: [],
-            // artistName: '',
-            // venue: '',
-            // location: '',
-            // date: ''
+            addToList: false
         }
     }
 
@@ -51,7 +48,9 @@ class EventfulCall extends React.Component {
             console.log(event);
             return (
                 <li>{event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
-                    <button >I'm going!</button>
+                    <button onClick={() => {
+                        this._addEvent()
+                    }}>I'm going!</button>
                 </li>
             )
         })
@@ -61,7 +60,7 @@ class EventfulCall extends React.Component {
             content = (
                 <div>
                     <h1>Loading...</h1>
-                    <img src={logo} />
+                    <iframe src="https://giphy.com/embed/fcLWUVsaAkxUc" width="480" height="357" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fatty-fcLWUVsaAkxUc">via GIPHY</a></p> />
                 </div>
             )
         } else {
@@ -82,12 +81,13 @@ class EventfulCall extends React.Component {
             </div>
         );
     }
-    // showList() {
-    //     function handleClick(e) {
-    //         e.preventDefault();
-    //     }
 
-    // }
+    _addEvent = (e) => {
+        this.setState({
+            addToList: true
+        })
+        console.log('clicked yo');
+    }
 
 }
 
