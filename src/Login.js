@@ -1,24 +1,52 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Login = (props) => {
+
+class Login extends Component  {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        }
+    }
+    render() {
     return (
         <div>
-            {/* <h2>this is the login</h2> */}
-        <form>
+        <form action="" method="POST">
             <label>
         <span >Username:</span>
-            <input type="text" name="username"></input>
+            <input
+            value = {this.state.username}
+            onChange = {this._updateUsername}
+            type="text" name="username"></input>
         </label>
-        {/* <br> </br> */}
+        
         <label>
         <span>Password:</span>
-            <input type="password" name="password"></input>
+            <input 
+            value = {this.state.password}
+            onChange = {this._updatePassword}
+            type="password" name="password"></input>
         </label>
-        {/* <br> </br> */}
-        <input class="aqua" type="submit" value="Login"></input>
-        </form>    
+        
+        <input type="submit" value="Login"></input>
+        </form> 
+       
+        
         </div>
     )
 }
 
+_updateUsername = event => {
+    this.setState({
+        username: event.target.value
+    })
+}
+
+_updatePassword = event => {
+    this.setState({
+        password: event.target.value
+    })
+}
+}
 export default Login;

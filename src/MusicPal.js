@@ -6,6 +6,7 @@ import EventfulCall from './EventfulCall';
 import NavBar from './NavBar';
 import OneEvent from './OneEvent';
 import Login from './Login';
+import Register from './Register';
 
 
 import {
@@ -24,6 +25,7 @@ class MusicPal extends Component {
             showAPIList: false,
             searchTerm: '',
             events: [],
+            users: []
         }
     }
 
@@ -53,11 +55,14 @@ class MusicPal extends Component {
                 <div className="eventInfo">
                 <div className="searchBar">
 
-                    
-                    
-                    
+
                 <Route path="/login" render = {(props) => {
                     return <Login {...props} />
+                }}
+                />
+                <Route path="/register" render = {(props) => {
+                    return <Register  {...props} />
+                    
                 }}
                 />
                 <Route path= "/home" render = {(props) => {
@@ -87,6 +92,8 @@ class MusicPal extends Component {
             </Router>
         )
     }
+
+
 
     _setSearchTerm = (term) => {
         this.setState({
