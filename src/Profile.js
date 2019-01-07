@@ -30,7 +30,7 @@ class Profile extends Component {
 
         return (
             <div>
-                <h1>My Profile</h1>
+                <h2>My Profile</h2>
                 <p>About Me:</p>
                 <ul>
                     <li>{this.state.username}</li>
