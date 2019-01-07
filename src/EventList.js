@@ -10,7 +10,9 @@ const EventList = (props) => {
                         <li href='#'>{event.name}, {event.venue}, {event.location}, {event.date}</li>
                     )
                 })}
+
             </ul>
+
         </div>
     )
 }

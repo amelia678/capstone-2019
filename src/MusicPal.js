@@ -56,6 +56,7 @@ class MusicPal extends Component {
             const termMatchesLocation = event.location.includes(term)
 
             return termMatchesArtist || termMatchesLocation
+
         });
         if (this.state.searchTerm.length === 0) {
             return [];
