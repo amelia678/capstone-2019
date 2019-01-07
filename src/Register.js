@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 
 
 const defaultUser = {
-    name: 'amelia',
-    username: 'amelia',
-    password: 'stacey',
-    emailAddress: 'amelia@me.com',
-    city: 'decatur',
-    state: 'GA'
     
 
 }
@@ -15,7 +9,14 @@ class Register extends Component{
     constructor(props){
         super(props);
         this.state = {
-           ...defaultUser
+            name: '',
+            username: '',
+            password: '',
+            emailAddress: '',
+            city: '',
+            state: ''
+    
+           
         }
     }
     render() {
@@ -26,32 +27,38 @@ class Register extends Component{
                 <label><span class="shadow"> Your name:</span>
                     <input 
                     value= {this.state.name}
+                    onChange = {this._updateName}
                     type="text" name="name"></input>
                 </label>
                 <label> <span class="shadow">Username:</span>
                 <input
                 value= {this.state.username}
-                 type="text" name="username"></input>
+                onChange = {this._updateUsername}
+                type="text" name="username"></input>
                 </label>
                 <label><span class="shadow"> Password:</span>
                     <input 
                     value ={this.state.password}
+                    onChange = {this._updatePassword}
                     type="password" name="password"></input>
                 </label>
                 <label> <span class="shadow">Email:</span>
                     <input 
                     value= {this.state.emailAddress}
+                    onChange = {this._updateEmail}
                     type="email" name="email"></input>
                 </label>
                 
                 <label> <span class="shadow">City:</span>
                     <input 
+                    onChange = {this._updateCity}
                     value= {this.state.city}
                     type="text" name="city"></input>
                 </label>
                  
                 <label> <span class="shadow">State:</span>
                     <input 
+                    onChange = {this._updateState}
                     value= {this.state.state}
                     type="text" name="state"></input>
                 </label>	
@@ -69,12 +76,54 @@ class Register extends Component{
         console.log('new user submitted')
         event.preventDefault();
         this.props.handleSubmit(this.state);
-        this._resetForm();
+        // this._resetForm();
     }
     
     _resetForm = () => {
         this.setState({
             ...defaultUser
+        })
+    }
+
+    _updateName = event => {
+        this.setState({
+            name: event.target.value
+        })
+    }
+
+    _updateUsername = event => {
+        this.setState({
+            username: event.target.value
+        })
+    }
+
+    _updatePassword = event =>{
+        this.setState({
+            password: event.target.value
+        })
+    }
+
+    _updateEmail = event =>{
+        this.setState({
+            emailAddress: event.target.value
+        })
+    }
+
+    _updatePassword = event =>{
+        this.setState({
+            password: event.target.value
+        })
+    }
+
+    _updateCity = event =>{
+        this.setState({
+            city: event.target.value
+        })
+    }
+
+    _updateState = event =>{
+        this.setState({
+            state: event.target.value
         })
     }
 }
