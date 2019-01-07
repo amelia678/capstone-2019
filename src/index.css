@@ -76,9 +76,10 @@ h2 {
 }
 
 .eventImage {
-  height: 200px;
-  width: 80%;
+  max-height: 200px;
+  width: 60%;
   opacity: 0.9;
+
 }
 
 /* Common "breakpoints"
