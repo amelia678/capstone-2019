@@ -4,6 +4,7 @@ import Profile from './Profile';
 import EventList from './EventList';
 import NavBar from './NavBar';
 import OneEvent from './OneEvent';
+import Login from './Login';
 
 
 import {
@@ -48,6 +49,10 @@ class MusicPal extends Component {
             <h2>Find your music... find your pals</h2>
                 <div className="eventInfo">
                 <div className="searchBar">
+                <Route path="/login" render = {(props) => {
+                    return <Login {...props} />
+                }}
+                />
                 <Route path= "/home" render = {(props) => {
                 return <Search
                 searchTerm={(this.state.searchTerm)} {...props}
@@ -66,6 +71,7 @@ class MusicPal extends Component {
                     return <Profile {...props} />
                 }} />
                 </div>
+                
                 </div>
            </div>
             </Router>
