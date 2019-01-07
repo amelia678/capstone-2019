@@ -11,11 +11,12 @@ import MusicPal from './MusicPal';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-   
 
-  }
+  // constructor(props) {
+  //   super(props);
+
+
+  // }
   render() {
     return (
       
