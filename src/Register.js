@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
 
-const defaultUser = {
-    
-
-}
 class Register extends Component{
     constructor(props){
         super(props);
@@ -72,18 +68,13 @@ class Register extends Component{
     )
 
 }
-    _doSubmit = event => {
-        console.log('new user submitted')
-        event.preventDefault();
-        this.props.handleSubmit(this.state);
-        // this._resetForm();
-    }
+ 
     
-    _resetForm = () => {
-        this.setState({
-            ...defaultUser
-        })
-    }
+    // _resetForm = () => {
+    //     this.setState({
+    //         ...defaultUser
+    //     })
+    // }
 
     _updateName = event => {
         this.setState({

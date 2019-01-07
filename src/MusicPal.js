@@ -57,7 +57,7 @@ class MusicPal extends Component {
                 }}
                 />
                 <Route path="/register" render = {(props) => {
-                    return <Register handleSubmit={(this._addUser)} {...props} />
+                    return <Register  {...props} />
                     
                 }}
                 />
@@ -86,12 +86,7 @@ class MusicPal extends Component {
         )
     }
 
-    _addUser = (user) => {
-        this.setState({
-            users: [...this.state.users, 
-                    user ]
-        })
-    }
+
 
     _setSearchTerm = (term) => {
         this.setState({
