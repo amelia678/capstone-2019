@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Search from './Search';
 import Profile from './Profile';
-import EventList from './EventList';
+import EventList from './EventList'
+import EventfulCall from './EventfulCall';
 import NavBar from './NavBar';
 import OneEvent from './OneEvent';
 import Login from './Login';
@@ -15,10 +16,12 @@ import {
   
 
 
+
 class MusicPal extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            showAPIList: false,
             searchTerm: '',
             events: [],
         }
@@ -49,6 +52,10 @@ class MusicPal extends Component {
             <h2>Find your music... find your pals</h2>
                 <div className="eventInfo">
                 <div className="searchBar">
+
+                    
+                    
+                    
                 <Route path="/login" render = {(props) => {
                     return <Login {...props} />
                 }}
@@ -62,7 +69,9 @@ class MusicPal extends Component {
                 />
                 <EventList
                 events = {this._searchEvents(this.state.searchTerm)} />
-                
+                <button onClick={() => { this._showList() }}>search for more events from eventful.com</button>
+                    {this.state.showAPIList ? <EventfulCall /> : null}
+
                 </div>
                 <OneEvent />
                 </div>
@@ -72,6 +81,7 @@ class MusicPal extends Component {
                 }} />
                 </div>
                 
+
                 </div>
            </div>
             </Router>
@@ -91,6 +101,7 @@ class MusicPal extends Component {
             const termMatchesLocation = event.location.includes(term)
 
             return termMatchesArtist || termMatchesLocation
+
         });
         if (this.state.searchTerm.length === 0) {
             return [];
@@ -98,6 +109,18 @@ class MusicPal extends Component {
             return filteredEvents
         }
     }
+
+    _showList = (e) => {
+        // e.preventDefault();
+
+        this.setState({
+            showAPIList: true
+        });
+        console.log('clicked');
+        // if (isShowingList === false)
+        //     return <EventfulCall />;
+    }
+
 }
 
 export default MusicPal;
