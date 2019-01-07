@@ -63,6 +63,19 @@ class Register extends Component{
         </div>
 
     )
+
+}
+    _doSubmit = event => {
+        console.log('new user submitted')
+        event.preventDefault();
+        this.props.handleSubmit(this.state);
+        this._resetForm();
+    }
+    
+    _resetForm = () => {
+        this.setState({
+            ...defaultUser
+        })
     }
 }
 

@@ -22,6 +22,7 @@ class MusicPal extends Component {
         this.state = {
             searchTerm: '',
             events: [],
+            users: []
         }
     }
 
@@ -56,7 +57,7 @@ class MusicPal extends Component {
                 }}
                 />
                 <Route path="/register" render = {(props) => {
-                    return <Register {...props} />
+                    return <Register handleSubmit={(this._addUser)} {...props} />
                     
                 }}
                 />
@@ -83,6 +84,13 @@ class MusicPal extends Component {
            </div>
             </Router>
         )
+    }
+
+    _addUser = (user) => {
+        this.setState({
+            users: [...this.state.users, 
+                    user ]
+        })
     }
 
     _setSearchTerm = (term) => {
