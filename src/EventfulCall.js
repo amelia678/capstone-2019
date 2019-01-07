@@ -1,5 +1,6 @@
 import React from 'react';
-
+// import EventList from './EventList';
+import logo from './logo.svg';
 // const API_KEY = process.env.REACT_APP_EVENTFUL_API_KEY;
 
 class EventfulCall extends React.Component {
@@ -17,7 +18,6 @@ class EventfulCall extends React.Component {
     componentDidMount() {
         fetch('/APIEventList')
             //     // const keyword = this.props.match.searchTerm;
-            //     fetch(`http://my-little-cors-proxy.herokuapp.com/http://api.eventful.com/json/events/search?app_key=${API_KEY}&keywords=concert+music&location=Atlanta+GA&date=This+Weekend`)
             .then(r => r.json())
             // .then(data => {
             //     // this.setState({
@@ -41,22 +41,55 @@ class EventfulCall extends React.Component {
             })
     }
 
+
+
     render() {
+
+        let content;
 
         const eventList = this.state.eventArray.map(event => {
             console.log(event);
             return (
-                <li>{event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}<button>I'm going!</button></li>
+                <li>{event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
+                    <button >I'm going!</button>
+                </li>
             )
         })
 
+
+        if (this.state.eventArray.length === 0) {
+            content = (
+                <div>
+                    <h1>Loading...</h1>
+                    <img src={logo} />
+                </div>
+            )
+        } else {
+            content = (
+
+                <div>
+
+                    <ul>
+                        {eventList}
+                    </ul>
+                </div >
+            )
+        }
+
         return (
-            <ul>
-                {eventList}
-            </ul >
-        )
+            <div>
+                {content}
+            </div>
+        );
     }
+    // showList() {
+    //     function handleClick(e) {
+    //         e.preventDefault();
+    //     }
+
+    // }
 
 }
+
 
 export default EventfulCall;

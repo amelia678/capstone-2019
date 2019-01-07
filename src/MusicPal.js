@@ -3,11 +3,13 @@ import Search from './Search';
 import Profile from './Profile';
 import EventList from './EventList'
 import EventfulCall from './EventfulCall';
+import logo from './logo.svg';
 
 class MusicPal extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            showAPIList: false,
             searchTerm: '',
             events: [],
         }
@@ -36,7 +38,8 @@ class MusicPal extends Component {
                     <EventList
                         events={this._searchEvents(this.state.searchTerm)}
                     />
-                    <EventfulCall />
+                    <button onClick={() => { this._showList() }}>search for more events from eventful.com</button>
+                    {this.state.showAPIList ? <EventfulCall /> : null}
                 </div>
                 <Profile />
             </div>
@@ -64,6 +67,18 @@ class MusicPal extends Component {
             return filteredEvents
         }
     }
+
+    _showList = (e) => {
+        // e.preventDefault();
+
+        this.setState({
+            showAPIList: true
+        });
+        console.log('clicked');
+        // if (isShowingList === false)
+        //     return <EventfulCall />;
+    }
+
 }
 
 export default MusicPal;
