@@ -6,17 +6,40 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: steelblue;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px;
 }
+  
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+ 
+h1 {
+  font-family: 'Pacifico', cursive;
+  text-shadow: 1px 1px 2px;
+  font-size: 42px;
+}
 
+h2 {
+  font-weight: bold;
+}
+.navBar-container {
+  height: 50px;
+  /* outline: solid 5px yellow; */
+  margin: 10px;
+}
+.navBar {
+  /* outline: solid 2px seagreen; */
+  height: 50px;
+  text-align: right;
+}
 .searchBar {
   outline: 2px solid plum;
-  width: 40%;
-  margin:10px;
+  width: 90%;
+  margin:auto;
   padding: 10px;
   
 }
@@ -24,12 +47,54 @@ code {
 .userProfile {
   outline: 2px solid royalblue;
   padding: 10px;
-  width: 50%;
-  margin: 5px;
+  width: 90%;
+  margin: auto;
 }
 
-.userView {
-  display: flex;
-  flex-direction: row;
+.oneEvent {
+  outline: solid 5px powderblue;
+  width: 90%;
+  height: 200px;
+  margin: auto;
+ 
   
+}
+
+.eventInfo {
+  outline: solid 2px purple;
+  display: flex;
+ 
+
+}
+
+
+.musicpal-home {
+  background-image: url('./images/background-black-close-up-1300578-min.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.eventImage {
+  height: 200px;
+  width: 80%;
+  opacity: 0.9;
+}
+
+/* Common "breakpoints"
+S, M, L, XL, Party size
+
+500px
+768px
+1024px
+1200px
+1400px */
+
+
+@media screen and (max-width: 768px) {
+
+  .eventInfo {
+    flex-direction: column;
+  }
+
 }
