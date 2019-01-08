@@ -13,23 +13,33 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        fetch('/myInfo')
-            .then(r => r.json())
-            .then(user => {
-                // console.log(infoObj)
-                this.setState({
+        // fetch('/myInfo')
+        //     .then(r => r.json())
+        //     .then(user => {
+        //         // console.log(infoObj)
+        //         this.setState({
 
-                    username: user.username,
-                    city: user.city,
-                    state: user.state
+        //             username: user.username,
+        //             city: user.city,
+        //             state: user.state
+        //         })
+        //     })
+        fetch('/profile')
+        
+        .then(r => r.text())
+            .then(username => {
+                console.log(username)
+                this.setState({
+                    username: username
                 })
             })
-    };
-
-    render() {
-
-        return (
-            <div>
+        }
+        
+        
+        render() {
+            
+            return (
+                <div>
                 <h2>My Profile</h2>
                 <p>About Me:</p>
                 <ul>
@@ -45,8 +55,9 @@ class Profile extends Component {
             </div>
         )
     }
+};
 
-}
+
 
 
 
