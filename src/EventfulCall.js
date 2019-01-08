@@ -13,35 +13,43 @@ class EventfulCall extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/APIEventList')
-            //     // const keyword = this.props.match.searchTerm;
-            .then(r => r.json())
-            // .then(data => {
-            //     // this.setState({
-            //     console.log(data)
-            //     const apiList =
-            //     {
-            //         artist: data.artist,
-            //         venue: data.venue,
-            //         location: (data.city, data.state),
-            //         date: data.date
-            //     }
-            //         ;
-            //     return apiList
-            //     // })
-            // })
-            .then(apiList => {
+        // const keyword = this.props.match.searchTerm;
+        // console.log(keyword)
+        fetch('/APIEventList', {
+            method: 'post', //so it knows it's a post on this side
+            headers: { 'Content-type': 'application/json' }, //automaticlaly set these
+            body: JSON.stringify({ searchTerm: this.props.searchTerm }), //whatever i want to send back
+
+        })
+            .then(r => {
+                //     console.log(r.json())
+                // })
+                return r.json()
+            })
+            .then(data => {
+                // this.setState({
+                console.log(data)
+                    // const apiList =
+                    // {
+                    //     artist: data.artist,
+                    //     venue: data.venue,
+                    //     location: (data.city, data.state),
+                    //     date: data.date
+                    // }
+                    ;
+                //     return apiList
+                //     // })
+                // })
+                // .then(apiList => {
                 this.setState({
-                    eventArray: apiList
+                    eventArray: data
                 })
-                //         })
             })
     }
 
 
-
     render() {
-
+        console.log(this.state.eventArray);
         let content;
 
         const eventList = this.state.eventArray.map(event => {
@@ -54,20 +62,29 @@ class EventfulCall extends React.Component {
                 </li>
             )
         })
-
-
+        console.log(this.state.eventArray.artist);
+        console.log("^^ title bitches");
         if (this.state.eventArray.length === 0) {
             content = (
                 <div>
                     <h1>Loading...</h1>
-                    <iframe src="https://giphy.com/embed/fcLWUVsaAkxUc" width="480" height="357" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fatty-fcLWUVsaAkxUc">via GIPHY</a></p> />
+                    <iframe src="https://giphy.com/embed/fcLWUVsaAkxUc" width="480" height="357" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fatty-fcLWUVsaAkxUc">via GIPHY</a></p>
                 </div>
             )
-        } else {
+
+        }
+        // else if (
+        //     this.state.eventArray.event.artist === undefined) {
+        //     content = (
+        //         <div>
+        //             <h1>no concerts for you</h1>
+        //         </div>
+        //     )
+        // }
+
+        else {
             content = (
-
                 <div>
-
                     <ul>
                         {eventList}
                     </ul>
@@ -88,8 +105,6 @@ class EventfulCall extends React.Component {
         })
         console.log('clicked yo');
     }
-
 }
-
 
 export default EventfulCall;

@@ -8,15 +8,10 @@ import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
 
-
 import {
     BrowserRouter as Router,
     Route
-  } from 'react-router-dom'
-  
-  
-
-
+} from 'react-router-dom'
 
 class MusicPal extends Component {
     constructor(props) {
@@ -41,59 +36,55 @@ class MusicPal extends Component {
 
     render() {
 
-
         return (
 
             <Router>
-            <div>
-                <div className="musicpal-home">
-                <div className="navBar-container"> 
-            <NavBar />
-                </div>
-            <h1>MusicPal</h1>
-            <h2>Find your music... find your pals</h2>
-                <div className="eventInfo">
-                <div className="searchBar">
+                <div>
+                    <div className="musicpal-home">
+                        <div className="navBar-container">
+                            <NavBar />
+                        </div>
+                        <h1>MusicPal</h1>
+                        <h2>Find your music... find your pals</h2>
+                        <div className="eventInfo">
+                            <div className="searchBar">
 
+                                <Route path="/login" render={(props) => {
+                                    return <Login {...props} />
+                                }}
+                                />
 
-                <Route path="/login" render = {(props) => {
-                    return <Login {...props} />
-                }}
-                />
-                <Route path="/register" render = {(props) => {
-                    return <Register  {...props} />
-                    
-                }}
-                />
-                <Route path= "/home" render = {(props) => {
-                return <Search
-                searchTerm={(this.state.searchTerm)} {...props}
-                handleInput = {(this._setSearchTerm)} {...props} />
-                }}
-                
-                />
-                <EventList
-                events = {this._searchEvents(this.state.searchTerm)} />
-                <button onClick={() => { this._showList() }}>search for more events from eventful.com</button>
-                    {this.state.showAPIList ? <EventfulCall /> : null}
+                                <Route path="/register" render={(props) => {
+                                    return <Register  {...props} />
+                                }}
+                                />
 
-                </div>
-                <OneEvent />
-                </div>
-                <div className="userProfile">
-                <Route path="/profile" render={(props) => {
-                    return <Profile {...props} />
-                }} />
-                </div>
-                
+                                <Route path="/home" render={(props) => {
+                                    return <Search
+                                        searchTerm={(this.state.searchTerm)} {...props}
+                                        handleInput={(this._setSearchTerm)} {...props} />
+                                }}
+                                />
 
+                                <EventList
+                                    events={this._searchEvents(this.state.searchTerm)} />
+                                <button onClick={() => { this._showList() }}>search for more events from eventful.com</button>
+                                {this.state.showAPIList ? <EventfulCall searchTerm={(this.state.searchTerm)}
+                                /> : null}
+
+                            </div>
+                            <OneEvent />
+                        </div>
+                        <div className="userProfile">
+                            <Route path="/profile" render={(props) => {
+                                return <Profile {...props} />
+                            }} />
+                        </div>
+                    </div>
                 </div>
-           </div>
             </Router>
         )
     }
-
-
 
     _setSearchTerm = (term) => {
         this.setState({
@@ -124,10 +115,7 @@ class MusicPal extends Component {
             showAPIList: true
         });
         console.log('clicked');
-        // if (isShowingList === false)
-        //     return <EventfulCall />;
     }
-
 }
 
 export default MusicPal;
