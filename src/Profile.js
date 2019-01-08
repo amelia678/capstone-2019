@@ -26,11 +26,12 @@ class Profile extends Component {
         //     })
         fetch('/profile')
         
-        .then(r => r.text())
-            .then(username => {
-                console.log(username)
+        .then(r => r.json())
+            .then(user => {
+                // console.log(infoObj)
                 this.setState({
-                    username: username
+                    username: user.username,
+                    city: user.userCity
                 })
             })
         }
