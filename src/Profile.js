@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import UpcomingShows from './UpcomingShows';
 import FavoriteArtists from './FavoriteArtists';
 import MyFriends from './MyFriends';
+import Logout from './Logout'
+
+import {
+    Link
+} from 'react-router-dom';
 
 class Profile extends Component {
     constructor(props) {
@@ -43,6 +48,7 @@ class Profile extends Component {
                     myArtists={this.state.myArtists} />
                 <MyFriends
                     myFriends={this.state.myFriends} />
+                <Link  className ="logout" to="/logout">Logout</Link>  
             </div>
         )
     }
