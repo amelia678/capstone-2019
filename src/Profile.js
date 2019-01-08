@@ -13,22 +13,12 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        // fetch('/myInfo')
-        //     .then(r => r.json())
-        //     .then(user => {
-        //         // console.log(infoObj)
-        //         this.setState({
-
-        //             username: user.username,
-        //             city: user.city,
-        //             state: user.state
-        //         })
-        //     })
+  
         fetch('/profile')
         
         .then(r => r.json())
             .then(user => {
-                // console.log(infoObj)
+               
                 this.setState({
                     username: user.username,
                     city: user.userCity
