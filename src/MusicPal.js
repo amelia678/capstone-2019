@@ -91,7 +91,7 @@ class MusicPal extends Component {
                     return <Logout {...props}/>
                 }}
                 />
-                <Link to="logout">Logout</Link>
+                <Link  className ="logout" to="logout">Logout</Link>
                 </div>
            </div>
             </Router>

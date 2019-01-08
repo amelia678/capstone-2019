@@ -82,6 +82,14 @@ h2 {
 
 }
 
+.logout {
+  border: solid 2px lightsteelblue;
+  padding: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  margin: 15px;
+}
+
 /* Common "breakpoints"
 S, M, L, XL, Party size
 
