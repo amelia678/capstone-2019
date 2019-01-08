@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Search from './Search';
 import Profile from './Profile';
 import EventList from './EventList'
-import EventfulCall from './EventfulCall';
+// import EventfulCall from './EventfulCall';
 import NavBar from './NavBar';
 import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
+import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 
 import {
     BrowserRouter as Router,
@@ -17,10 +18,10 @@ class MusicPal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showAPIList: false,
+            // showAPIList: false,
             searchTerm: '',
             events: [],
-            users: []
+            users: [],
         }
     }
 
@@ -68,9 +69,9 @@ class MusicPal extends Component {
 
                                 <EventList
                                     events={this._searchEvents(this.state.searchTerm)} />
-                                <button onClick={() => { this._showList() }}>search for more events from eventful.com</button>
-                                {this.state.showAPIList ? <EventfulCall searchTerm={(this.state.searchTerm)}
-                                /> : null}
+
+                                <TheWholeAPIEnchilada
+                                />
 
                             </div>
                             <OneEvent />
@@ -106,15 +107,6 @@ class MusicPal extends Component {
         } else {
             return filteredEvents
         }
-    }
-
-    _showList = (e) => {
-        // e.preventDefault();
-
-        this.setState({
-            showAPIList: true
-        });
-        console.log('clicked');
     }
 }
 
