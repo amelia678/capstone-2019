@@ -26,6 +26,10 @@ h1 {
 h2 {
   font-weight: bold;
 }
+
+ul {
+  list-style-type: none;
+}
 .navBar-container {
   height: 50px;
   /* outline: solid 5px yellow; */
@@ -35,6 +39,7 @@ h2 {
   /* outline: solid 2px seagreen; */
   height: 50px;
   text-align: right;
+  list-style-type: none;
 }
 .searchBar {
   outline: 2px solid plum;
@@ -79,6 +84,14 @@ h2 {
   max-height: 200px;
   width: 60%;
   opacity: 0.9;
+
+}
+
+.logout {
+  border: solid 2px lightsteelblue;
+  padding: 10px;
+  border-radius: 3px;
+  text-decoration: none;
 
 }
 

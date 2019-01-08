@@ -7,11 +7,13 @@ import NavBar from './NavBar';
 import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
+import Logout from './Logout';
 
 
 import {
     BrowserRouter as Router,
-    Route
+    Route,
+    Link
   } from 'react-router-dom'
   
   
@@ -85,8 +87,11 @@ class MusicPal extends Component {
                     return <Profile {...props} />
                 }} />
                 </div>
-                
-
+                <Route path="/logout" render={(props) => {
+                    return <Logout {...props}/>
+                }}
+                />
+                {/* <Link  className ="logout" to="/logout">Logout</Link> */}
                 </div>
            </div>
             </Router>
