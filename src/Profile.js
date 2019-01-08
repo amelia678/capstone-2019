@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import UpcomingShows from './UpcomingShows';
 import FavoriteArtists from './FavoriteArtists';
 import MyFriends from './MyFriends';
+import Logout from './Logout'
+
+import {
+    Link
+} from 'react-router-dom';
 
 class Profile extends Component {
     constructor(props) {
@@ -13,23 +18,24 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        fetch('/myInfo')
-            .then(r => r.json())
+  
+        fetch('/profile')
+        
+        .then(r => r.json())
             .then(user => {
-                // console.log(infoObj)
+               
                 this.setState({
-
                     username: user.username,
-                    city: user.city,
-                    state: user.state
+                    city: user.userCity
                 })
             })
-    };
-
-    render() {
-
-        return (
-            <div>
+        }
+        
+        
+        render() {
+            
+            return (
+                <div>
                 <h2>My Profile</h2>
                 <p>About Me:</p>
                 <ul>
@@ -42,11 +48,13 @@ class Profile extends Component {
                     myArtists={this.state.myArtists} />
                 <MyFriends
                     myFriends={this.state.myFriends} />
+                <Link  className ="logout" to="/logout">Logout</Link>  
             </div>
         )
     }
+};
 
-}
+
 
 
 

@@ -8,11 +8,18 @@ import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
+import Logout from './Logout';
+
 
 import {
     BrowserRouter as Router,
-    Route
-} from 'react-router-dom'
+    Route,
+    Link
+  } from 'react-router-dom'
+  
+  
+
+
 
 class MusicPal extends Component {
     constructor(props) {
@@ -40,48 +47,50 @@ class MusicPal extends Component {
         return (
 
             <Router>
-                <div>
-                    <div className="musicpal-home">
-                        <div className="navBar-container">
-                            <NavBar />
-                        </div>
-                        <h1>MusicPal</h1>
-                        <h2>Find your music... find your pals</h2>
-                        <div className="eventInfo">
-                            <div className="searchBar">
+            <div>
+                <div className="musicpal-home">
+                <div className="navBar-container"> 
+            <NavBar />
+                </div>
+            <h1>MusicPal</h1>
+            <h2>Find your music... find your pals</h2>
+                <div className="eventInfo">
+                <div className="searchBar">
 
-                                <Route path="/login" render={(props) => {
-                                    return <Login {...props} />
-                                }}
-                                />
 
-                                <Route path="/register" render={(props) => {
-                                    return <Register  {...props} />
-                                }}
-                                />
+                <Route path="/login" render = {(props) => {
+                    return <Login {...props} />
+                }}
+                />
+                <Route path="/register" render = {(props) => {
+                    return <Register  {...props} />
+                    
+                }}
+                />
+                <Route path= "/home" render = {(props) => {
+                return <Search
+                searchTerm={(this.state.searchTerm)} {...props}
+                handleInput = {(this._setSearchTerm)} {...props} />
+                }}
+                
+                />
+                <EventList
+                events = {this._searchEvents(this.state.searchTerm)} />
+                <button onClick={() => { this._showList() }}>search for more events from eventful.com</button>
+                    {this.state.showAPIList ? <EventfulCall /> : null}
 
-                                <Route path="/home" render={(props) => {
-                                    return <Search
-                                        searchTerm={(this.state.searchTerm)} {...props}
-                                        handleInput={(this._setSearchTerm)} {...props} />
-                                }}
-                                />
+                </div>
+                <OneEvent />
+                </div>
+                <div className="userProfile">
+                <Route path="/profile" render={(props) => {
+                    return <Profile {...props} />
+                }} />
+                </div>
+                <Route path="/logout" render={(props) => {
+                    return <Logout {...props}/>
+            
 
-                                <EventList
-                                    events={this._searchEvents(this.state.searchTerm)} />
-
-                                <TheWholeAPIEnchilada
-                                />
-
-                            </div>
-                            <OneEvent />
-                        </div>
-                        <div className="userProfile">
-                            <Route path="/profile" render={(props) => {
-                                return <Profile {...props} />
-                            }} />
-                        </div>
-                    </div>
                 </div>
             </Router>
         )
