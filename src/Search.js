@@ -12,9 +12,8 @@ const Search = (props) => {
                     props.handleInput(event.target.value)
                 }}
             ></input>
-            <button
-            >Find</button>
-            
+
+
         </div>
 
 

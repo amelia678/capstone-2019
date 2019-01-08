@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Search from './Search';
 import Profile from './Profile';
 import EventList from './EventList'
-import EventfulCall from './EventfulCall';
+// import EventfulCall from './EventfulCall';
 import NavBar from './NavBar';
 import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
+import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 import Logout from './Logout';
 
 
@@ -24,10 +25,10 @@ class MusicPal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showAPIList: false,
+            // showAPIList: false,
             searchTerm: '',
             events: [],
-            users: []
+            users: [],
         }
     }
 
@@ -42,7 +43,6 @@ class MusicPal extends Component {
     }
 
     render() {
-
 
         return (
 
@@ -89,16 +89,12 @@ class MusicPal extends Component {
                 </div>
                 <Route path="/logout" render={(props) => {
                     return <Logout {...props}/>
-                }}
-                />
-                {/* <Link  className ="logout" to="/logout">Logout</Link> */}
+            
+
                 </div>
-           </div>
             </Router>
         )
     }
-
-
 
     _setSearchTerm = (term) => {
         this.setState({
@@ -121,18 +117,6 @@ class MusicPal extends Component {
             return filteredEvents
         }
     }
-
-    _showList = (e) => {
-        // e.preventDefault();
-
-        this.setState({
-            showAPIList: true
-        });
-        console.log('clicked');
-        // if (isShowingList === false)
-        //     return <EventfulCall />;
-    }
-
 }
 
 export default MusicPal;
