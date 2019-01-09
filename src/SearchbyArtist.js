@@ -4,6 +4,7 @@ class SearchbyArtist extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            artistArray: [],
             showAPIList: false
         }
     }
@@ -12,10 +13,24 @@ class SearchbyArtist extends Component {
         fetch('/APIartistList', {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify({
-                
-            })
+            // body: JSON.stringify({
+
+            // })
         })
+        .then(r => r.json())    
+        .then(artists => {
+            console.log(artists)
+            const artistList = artists.map(grimes => {
+                return(
+                    <li>{grimes.id}</li>
+                )
+            })
+            this.setState({
+                artistArray: artistList
+            })
+        } )
+        
+
     }
     render()  {
     return (
@@ -28,6 +43,7 @@ class SearchbyArtist extends Component {
             }}
             ></input>
             <button>search</button>
+            <div>{this.state.artistArray}</div>
         </div>
     )
 }
