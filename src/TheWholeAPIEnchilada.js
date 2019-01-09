@@ -79,7 +79,7 @@ class TheWholeAPIEnchilada extends React.Component {
         this.setState({
             showAPIList: true
         });
-        console.log('clicked');
+        console.log('enchilada launch sequence commenced');
     }
 
 }

@@ -17,9 +17,6 @@ import {
 } from 'react-router-dom'
 
 
-
-
-
 class MusicPal extends Component {
     constructor(props) {
         super(props);
@@ -78,8 +75,11 @@ class MusicPal extends Component {
 
                                 <TheWholeAPIEnchilada />
 
+
                             </div>
-                            <OneEvent />
+                            {/* <Route path="/oneEvent" render={(props) => {
+                                return <OneEvent {...props} />
+                            }} /> */}
                         </div>
                         <div className="userProfile">
                             <Route path="/profile" render={(props) => {
@@ -105,7 +105,7 @@ class MusicPal extends Component {
         const filteredEvents = this.state.events.filter(event => {
 
             const termMatchesArtist = event.name.includes(term)
-            const termMatchesLocation = event.location.includes(term)
+            const termMatchesLocation = event.city.includes(term)
 
             return termMatchesArtist || termMatchesLocation
 

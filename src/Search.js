@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Search = (props) => {
     return (
         <div>
@@ -12,6 +11,9 @@ const Search = (props) => {
                     props.handleInput(event.target.value)
                 }}
             ></input>
+            <div className="OneEventPlacehoder">
+                <img className="eventImage" src="https://assets.rbl.ms/19048490/980x.jpg" alt="gaga rockin the keytar"></img>
+            </div>
 
 
         </div>
