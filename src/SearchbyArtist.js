@@ -3,9 +3,20 @@ import React, {Component} from 'react';
 class SearchbyArtist extends Component {
     constructor(props) {
         super(props);
-   
+        this.state = {
+            showAPIList: false
+        }
     }
 
+    componentDidMount() {
+        fetch('/APIartistList', {
+            method: 'post',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                
+            })
+        })
+    }
     render()  {
     return (
         <div>
