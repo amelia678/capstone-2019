@@ -9,6 +9,7 @@ import Login from './Login';
 import Register from './Register';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 import Logout from './Logout';
+import SearchbyArtist from './SearchbyArtist';
 
 
 import {
@@ -73,10 +74,14 @@ class MusicPal extends Component {
                                 }}
 
                                 />
+                                <Route path="/search-artists" render={(props) => {
+                                    return <SearchbyArtist {...props} />
+                                }}
+                                />
                                 <EventList
                                     events={this._searchEvents(this.state.searchTerm)} />
 
-                                <TheWholeAPIEnchilada />
+                                {/* <TheWholeAPIEnchilada /> */}
 
                             </div>
                             <OneEvent />

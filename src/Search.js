@@ -1,4 +1,5 @@
 import React from 'react';
+import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
 
 
 const Search = (props) => {
@@ -12,7 +13,7 @@ const Search = (props) => {
                     props.handleInput(event.target.value)
                 }}
             ></input>
-
+        <TheWholeAPIEnchilada />
 
         </div>
 
