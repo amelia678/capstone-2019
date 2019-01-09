@@ -18,9 +18,6 @@ import {
 } from 'react-router-dom'
 
 
-
-
-
 class MusicPal extends Component {
     constructor(props) {
         super(props);
@@ -79,8 +76,11 @@ class MusicPal extends Component {
 
                                 <TheWholeAPIEnchilada />
 
+
                             </div>
-                            <OneEvent />
+                            {/* <Route path="/oneEvent" render={(props) => {
+                                return <OneEvent {...props} />
+                            }} /> */}
                         </div>
                         <div className="userProfile">
                             <Route path="/profile" render={(props) => {

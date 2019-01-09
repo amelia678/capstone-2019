@@ -18,24 +18,24 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-  
+
         fetch('/profile')
-        
-        .then(r => r.json())
+
+            .then(r => r.json())
             .then(user => {
-               
+
                 this.setState({
                     username: user.username,
                     city: user.userCity
                 })
             })
-        }
-        
-        
-        render() {
-            
-            return (
-                <div>
+    }
+
+
+    render() {
+
+        return (
+            <div>
                 <h2>My Profile</h2>
                 <p>About Me:</p>
                 <ul>
@@ -48,7 +48,7 @@ class Profile extends Component {
                     myArtists={this.state.myArtists} />
                 <MyFriends
                     myFriends={this.state.myFriends} />
-                <Link  className ="logout" to="/logout">Logout</Link>  
+                <Link className="logout" to="/logout">Logout</Link>
             </div>
         )
     }

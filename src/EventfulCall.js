@@ -1,14 +1,23 @@
 import React from 'react';
-// import EventList from './EventList';
-// import logo from './logo.svg';
-// const API_KEY = process.env.REACT_APP_EVENTFUL_API_KEY;
+
+// import AddAPItoDB from './AddAPItoDB';
+import OneEvent from './OneEvent';
+
+import { Link } from 'react-router-dom'
+
+// let onLoadingGIF = [
+//     {< iframe src = "https://giphy.com/embed/2r04CWsFWwixW" width = "480" height = "360" frameBorder = "0" class= "giphy-embed" allowFullScreen ></iframe > <p><a href="https://giphy.com/gifs/kermit-the-frog-jim-henson-muppet-movie-2r04CWsFWwixW">via GIPHY</a></p>},
+// { <iframe src="https://giphy.com/embed/fcLWUVsaAkxUc" width="480" height="357" frameBorder="0" className="giphy-embed" allowFullScreen></iframe> <p><a href="https://giphy.com/gifs/fatty-fcLWUVsaAkxUc">via GIPHY</a></p>},
+// { <iframe src="https://giphy.com/embed/w5eFyOHmkS8uc" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <p><a href="https://giphy.com/gifs/dancing-party-w5eFyOHmkS8uc">via GIPHY</a></p>}
+// ]
 
 class EventfulCall extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             eventArray: [],
-            addToList: false
+            event: null
+            // addToList: false
         }
     }
 
@@ -41,7 +50,8 @@ class EventfulCall extends React.Component {
                 // })
                 // .then(apiList => {
                 this.setState({
-                    eventArray: data
+                    eventArray: data,
+                    // showOneEvent: false
                 })
             })
     }
@@ -57,7 +67,7 @@ class EventfulCall extends React.Component {
             content = (
                 <div>
                     <h1>Loading...</h1>
-                    <iframe src="https://giphy.com/embed/fcLWUVsaAkxUc" width="480" height="357" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fatty-fcLWUVsaAkxUc">via GIPHY</a></p>
+                    <iframe src="https://giphy.com/embed/2r04CWsFWwixW" width="480" height="360" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kermit-the-frog-jim-henson-muppet-movie-2r04CWsFWwixW">via GIPHY</a></p>
                 </div>
             )
 
@@ -74,36 +84,75 @@ class EventfulCall extends React.Component {
         else {
             const eventList = this.state.eventArray.map(event => {
                 // console.log(event);
+
+
                 return (
-                    <li>{event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
-                        <button onClick={() => {
+                    // <Link to={'/oneEvent'}>
+                    <li onClick={() => {
+                        this._showEvent(event.id)
+                    }}
+                        key={event.id}>
+                        {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
+
+                        {/* <button onClick={() => {
                             this._addEvent()
                         }}>I'm going!</button>
+                        {this.state.addToList ? <AddAPItoDB
+                            artist={(this.state.artist)}
+                            venue={(this.props.venue)}
+                            city={(this.props.city)}
+                            state={(this.props.state)}
+                            date={(this.props.date)}
+                        /> : null} */}
+
                     </li>
+                    // </Link>
                 )
             })
             content = (
-                <div>
+
+                < div >
                     <ul>
                         {eventList}
                     </ul>
                 </div >
+
             )
         }
 
         return (
             <div>
                 {content}
+                {this.state.event ? <OneEvent
+                    event={(this.state.event)}
+                /> : null}
             </div>
         );
     }
 
-    _addEvent = (e) => {
-        this.setState({
-            addToList: true
+    _showEvent = (id) => {
+        console.log(`this id ${id} was clicked`)
+        let clickedEvent = this.state.eventArray.find(oneEvent => {
+
+            return id === oneEvent.id
         })
-        console.log('clicked yo');
+        this.setState({
+            event: clickedEvent
+        })
+
+
+        // console.log('ONE EVENT HAS BEEN CLICKED ON')
+        // }
+        // _addEvent = (e) => {
+        //     this.setState({
+        //         addToList: true
+        //     })
+        //     console.log('clicked yo');
+        //     console.log(this.artist);
+        // }
+
     }
 }
+
 
 export default EventfulCall;
