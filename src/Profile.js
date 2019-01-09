@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UpcomingShows from './UpcomingShows';
 import FavoriteArtists from './FavoriteArtists';
 import MyFriends from './MyFriends';
-import Logout from './Logout'
+
 
 import {
     Link

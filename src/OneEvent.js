@@ -6,7 +6,7 @@ const OneEvent = (props) => {
         <div className="oneEvent">
             <div>
             {/* <p>an event goes here</p> */}
-            <img className="eventImage" src="https://assets.rbl.ms/19048490/980x.jpg"></img>
+            <img className="eventImage" src="https://assets.rbl.ms/19048490/980x.jpg" alt="lady gaga key-tar"></img>
             </div>
         </div>
     )
