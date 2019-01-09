@@ -1,7 +1,6 @@
 import React from 'react';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
 
-
 const Search = (props) => {
     return (
         <div>
@@ -13,7 +12,14 @@ const Search = (props) => {
                     props.handleInput(event.target.value)
                 }}
             ></input>
+
         <TheWholeAPIEnchilada />
+
+            <div className="OneEventPlacehoder">
+                <img className="eventImage" src="https://assets.rbl.ms/19048490/980x.jpg" alt="gaga rockin the keytar"></img>
+            </div>
+
+
 
         </div>
 
