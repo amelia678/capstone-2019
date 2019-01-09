@@ -37,21 +37,8 @@ class EventfulCall extends React.Component {
             })
             .then(data => {
                 console.log(data);
-                // const apiList =
-                // {
-                //     artist: data.artist,
-                //     venue: data.venue,
-                //     location: (data.city, data.state),
-                //     date: data.date
-                // }
-
-                //     return apiList
-                //     // })
-                // })
-                // .then(apiList => {
                 this.setState({
                     eventArray: data,
-                    // showOneEvent: false
                 })
             })
     }

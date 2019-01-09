@@ -106,7 +106,7 @@ class MusicPal extends Component {
         const filteredEvents = this.state.events.filter(event => {
 
             const termMatchesArtist = event.name.includes(term)
-            const termMatchesLocation = event.location.includes(term)
+            const termMatchesLocation = event.city.includes(term)
 
             return termMatchesArtist || termMatchesLocation
 
