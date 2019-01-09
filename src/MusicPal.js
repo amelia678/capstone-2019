@@ -9,6 +9,7 @@ import Login from './Login';
 import Register from './Register';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 import Logout from './Logout';
+import SearchbyArtist from './SearchbyArtist';
 
 
 import {
@@ -23,6 +24,7 @@ class MusicPal extends Component {
         this.state = {
             // showAPIList: false,
             searchTerm: '',
+            artistSearch: '',
             events: [],
             users: [],
         }
@@ -70,10 +72,14 @@ class MusicPal extends Component {
                                 }}
 
                                 />
+                                <Route path="/search-artists" render={(props) => {
+                                    return <SearchbyArtist 
+                                        searchTerm ={(this.state.artistSearch)}{...props}
+                                        handleInput={(this._setArtistSearch)}{...props} />
+                                }}
+                                />
                                 <EventList
                                     events={this._searchEvents(this.state.searchTerm)} />
-
-                                <TheWholeAPIEnchilada />
 
 
                             </div>
@@ -115,6 +121,12 @@ class MusicPal extends Component {
         } else {
             return filteredEvents
         }
+    }
+
+    _setArtistSearch = (term) => {
+        this.setState({
+            artistSearch : term
+        })
     }
 }
 

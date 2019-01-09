@@ -46,6 +46,7 @@ class Profile extends Component {
                     myShows={this.state.myShows} />
                 <FavoriteArtists
                     myArtists={this.state.myArtists} />
+                <Link to="/search-artists">Search More Artists</Link>
                 <MyFriends
                     myFriends={this.state.myFriends} />
                 <Link className="logout" to="/logout">Logout</Link>
