@@ -84,6 +84,7 @@ class OneEvent extends React.Component {
         console.log(this.props.event.artist);
     }
 
+
 }
 
 export default OneEvent;

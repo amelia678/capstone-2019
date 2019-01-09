@@ -1,5 +1,4 @@
 import React from 'react';
-// import OneEvent from './OneEvent'
 
 const Search = (props) => {
     return (
