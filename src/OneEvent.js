@@ -6,11 +6,6 @@ class OneEvent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // artist: '',
-            // venue: '',
-            // city: '',
-            // state: '',
-            // date: '',
             addToList: false,
             friends: [],
         }
@@ -65,6 +60,7 @@ class OneEvent extends React.Component {
                     this._addEvent()
                 }}>I'm going!</button>
                 {this.state.addToList ? <AddEventtoDB
+                    eventID={(this.props.event.id)}
                     artist={(this.props.event.artist)}
                     venue={(this.props.event.venue)}
                     city={(this.props.event.city)}
@@ -79,9 +75,12 @@ class OneEvent extends React.Component {
     _addEvent = (e) => {
         this.setState({
             addToList: true
+        }, () => {
+            console.log('clicked yo');
+            console.log(this.state.addToList);
+            console.log(this.props.event.artist);
         })
-        console.log('clicked yo');
-        console.log(this.props.event.artist);
+
     }
 
 
