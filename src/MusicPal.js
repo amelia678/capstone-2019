@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Search from './Search';
 import Profile from './Profile';
-import EventList from './EventList'
+// import EventList from './EventList'
 // import EventfulCall from './EventfulCall';
 import NavBar from './NavBar';
 // import OneEvent from './OneEvent';
@@ -80,36 +80,35 @@ class MusicPal extends Component {
                                 }}
                                 />
 
-                               
 
-                        <div className="userProfile">
+                                <div className="userProfile">
 
 
-                            <Route path="/profile" render={(props) => {
-                                return <Profile {...props} />
-                            }}
-                            />
+                                    <Route path="/profile" render={(props) => {
+                                        return <Profile {...props} />
+                                    }}
+                                    />
 
-                        </div>
+                                </div>
 
                             </div>
                             <Placeholder />
-            
+
                         </div>
-                        
+
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
                         }} />
-                    
+
 
                     </div>
-                    
+
                 </div>
             </Router>
         )
     }
 
-   
+
 
     _setArtistSearch = (term) => {
         this.setState({

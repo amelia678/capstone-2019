@@ -1,26 +1,26 @@
 import React from 'react';
-// import EventfulCall from './EventfulCall';
+// // import EventfulCall from './EventfulCall';
 
 const EventList = (props) => {
-    // console.log(props.events)
+    console.log(props.events)
     return (
         <div>
             <ul>
-                {/* {props.events.map(event => { */}
-                const eventList = this.props.events.map(event => {
+                {props.events.map(event => {
+                    //                  const eventList = this.props.events.map(event => {
                     return (
 
-                        // <li href='#'>{event.name} at {event.venue} in {event.location} on {event.date} <button>I'm going!</button></li>
+                        <li key={event.id}>{event.artist} at {event.venue} in {event.city}, {event.state} on {event.date} <button>I'm going!</button></li>
 
-                <li
-                    onClick={() => {
-                        this._showEvent(event.id)
-                    }}
-                    key={event.id}>
-                    {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
-                </li>
-                )
-            })}
+                        //                     <li
+                        //                         onClick={() => {
+                        //                             this._showEvent(event.id)
+                        //                         }}
+                        //                         key={event.id}>
+                        //                         {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
+                        //                     </li>
+                    )
+                })}
 
             </ul>
 
@@ -28,17 +28,17 @@ const EventList = (props) => {
         </div>
     )
 
-    _showEvent = (id) => {
-        console.log(`this id ${id} was clicked`)
-        let clickedEvent = this.state.eventArray.find(oneEvent => {
+    //     _showEvent = (id) => {
+    //         console.log(`this id ${id} was clicked`)
+    //         let clickedEvent = this.state.eventArray.find(oneEvent => {
 
-            return id === oneEvent.id
-        })
-        this.setState({
-            event: clickedEvent
-        })
+    //             return id === oneEvent.id
+    //         })
+    //         this.setState({
+    //             event: clickedEvent
+    //         })
 
-    }
+    //     }
 
 }
 
