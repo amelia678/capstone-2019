@@ -9,31 +9,10 @@ class SearchbyArtist extends Component {
         }
     }
 
-    componentDidMount() {
-        fetch('/APIartistList', {
-            method: 'post',
-            headers: { 'Content-type': 'application/json' },
-            // body: JSON.stringify({
-            //     artistSearch : this.props.searchTerm
-            // })
-        })
-        .then(r => r.json())    
-        .then(artists => {
-            console.log(artists)
-            const artistList = artists.map(grimes => {
-                return(
-                    <li
-                    key={grimes.id}>
-                    {grimes.name}</li>
-                )
-            })
-            this.setState({
-                artistArray: artistList
-            })
-        } )
+    // componentDidMount() {
         
 
-    }
+    // }
     render()  {
     return (
         <div>
@@ -55,6 +34,30 @@ class SearchbyArtist extends Component {
 }
 
 _showList = () => {
+    // console.log(this.props.searchTerm)
+    fetch('/APIartistList', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({
+            searchArtist: this.props.searchTerm
+        })
+        
+    })
+    .then(r => r.json())    
+    .then(artists => {
+        console.log(artists)
+        const artistList = artists.map(grimes => {
+            return(
+                <li
+                key={grimes.id}>
+                {grimes.name}</li>
+            )
+        })
+        this.setState({
+            artistArray: artistList
+        })
+    } )
+    
     this.setState({
         showAPIList: true
     });

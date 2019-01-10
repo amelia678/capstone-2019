@@ -24,22 +24,22 @@ class MusicPal extends Component {
         super(props);
         this.state = {
             // showAPIList: false,
-            searchTerm: '',
+            // searchTerm: '',
             artistSearch: '',
-            events: [],
+            // events: [],
             users: [],
         }
     }
 
-    componentDidMount() {
-        fetch('/eventList')
-            .then(r => r.json())
-            .then(eventsArray => {
-                this.setState({
-                    events: eventsArray
-                })
-            })
-    }
+    // componentDidMount() {
+    //     fetch('/eventList')
+    //         .then(r => r.json())
+    //         .then(eventsArray => {
+    //             this.setState({
+    //                 events: eventsArray
+    //             })
+    //         })
+    // }
 
     render() {
 
@@ -79,8 +79,8 @@ class MusicPal extends Component {
                                         handleInput={(this._setArtistSearch)}{...props} />
                                 }}
                                 />
-                                <EventList
-                                    events={this._searchEvents(this.state.searchTerm)} />
+                                {/* <EventList
+                                    events={this._searchEvents(this.state.searchTerm)} /> */}
                             <div className="userProfile">
                             <Route path="/profile" render={(props) => {
                                 return <Profile {...props} />
@@ -89,9 +89,7 @@ class MusicPal extends Component {
 
                             </div>
                             <Placeholder />
-                            {/* <Route path="/oneEvent" render={(props) => {
-                                return <OneEvent {...props} />
-                            }} /> */}
+            
                         </div>
                         
                         <Route path="/logout" render={(props) => {
@@ -105,27 +103,27 @@ class MusicPal extends Component {
         )
     }
 
-    _setSearchTerm = (term) => {
-        this.setState({
-            searchTerm: term
-        })
-    }
+    // _setSearchTerm = (term) => {
+    //     this.setState({
+    //         searchTerm: term
+    //     })
+    // }
 
-    _searchEvents = (term) => {
-        const filteredEvents = this.state.events.filter(event => {
+    // _searchEvents = (term) => {
+    //     const filteredEvents = this.state.events.filter(event => {
 
-            const termMatchesArtist = event.name.includes(term)
-            const termMatchesLocation = event.city.includes(term)
+    //         const termMatchesArtist = event.name.includes(term)
+    //         const termMatchesLocation = event.city.includes(term)
 
-            return termMatchesArtist || termMatchesLocation
+    //         return termMatchesArtist || termMatchesLocation
 
-        });
-        if (this.state.searchTerm.length === 0) {
-            return [];
-        } else {
-            return filteredEvents
-        }
-    }
+    //     });
+    //     if (this.state.searchTerm.length === 0) {
+    //         return [];
+    //     } else {
+    //         return filteredEvents
+    //     }
+    // }
 
     _setArtistSearch = (term) => {
         this.setState({
