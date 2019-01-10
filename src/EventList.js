@@ -1,46 +1,60 @@
 import React from 'react';
-// // import EventfulCall from './EventfulCall';
 
-const EventList = (props) => {
-    console.log(props.events)
-    return (
-        <div>
-            <ul>
-                {props.events.map(event => {
-                    //                  const eventList = this.props.events.map(event => {
-                    return (
+import OneEvent from './OneEvent';
 
-                        <li key={event.id}>{event.artist} at {event.venue} in {event.city}, {event.state} on {event.date} <button>I'm going!</button></li>
+class EventList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: this.props.events,
+            event: null
+        }
+    }
 
-                        //                     <li
-                        //                         onClick={() => {
-                        //                             this._showEvent(event.id)
-                        //                         }}
-                        //                         key={event.id}>
-                        //                         {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
-                        //                     </li>
-                    )
-                })}
+    render() {
+        console.log(this.props.events)
+        return (
+            <div>
+                <ul>
+                    {this.props.events.map(event => {
+                        return (
 
-            </ul>
+                            <li
+                                onClick={() => {
+                                    this._showEvent(event.id)
+                                }}
+                                key={event.id}>
+                                {event.artist} at
+                                    {event.venue} in
+                                    {event.city}, {event.state} on
+                                    {event.date}
+                                {this.state.event ? <OneEvent
+                                    event={(this.state.event)}
+                                /> : null}
+                            </li>
+
+                        )
+                    })}
+
+                </ul>
 
 
-        </div>
-    )
+            </div>
+        )
+    }
 
-    //     _showEvent = (id) => {
-    //         console.log(`this id ${id} was clicked`)
-    //         let clickedEvent = this.state.eventArray.find(oneEvent => {
+    _showEvent = (id) => {
+        console.log(`this id ${id} was clicked`)
+        let clickedEvent = this.state.events.find(oneEvent => {
 
-    //             return id === oneEvent.id
-    //         })
-    //         this.setState({
-    //             event: clickedEvent
-    //         })
+            return id === oneEvent.id
+        })
+        this.setState({
+            event: clickedEvent
+        })
 
-    //     }
+    }
 
 }
-
 
 export default EventList;

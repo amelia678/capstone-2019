@@ -26,7 +26,6 @@ class Search extends Component {
 
         return (
 
-
             <div>
                 <div className="searchDB">
                     <h2>Search events by artist, keyword, or city:</h2>
@@ -71,19 +70,6 @@ class Search extends Component {
             return filteredEvents
         }
     }
-
-    _showEvent = (id) => {
-        console.log(`this id ${id} was clicked`)
-        let clickedEvent = this.state.eventArray.find(oneEvent => {
-
-            return id === oneEvent.id
-        })
-        this.setState({
-            event: clickedEvent
-        })
-
-    }
-
 }
 
 export default Search;
