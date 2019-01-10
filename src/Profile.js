@@ -26,7 +26,7 @@ class Profile extends Component {
 
                 this.setState({
                     username: user.username,
-                    city: user.userCity
+                    home: user.userHome
                 })
             })
     }
@@ -40,7 +40,7 @@ class Profile extends Component {
                 <p>About Me:</p>
                 <ul>
                     <li>{this.state.username}</li>
-                    <li>{this.state.city}, {this.state.state}</li>
+                    <li>{this.state.home}</li>
                 </ul>
                 <UpcomingShows
                     myShows={this.state.myShows} />
