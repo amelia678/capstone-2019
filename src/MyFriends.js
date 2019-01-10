@@ -22,17 +22,18 @@ class MyFriends extends React.Component {
 
         const friendsList = this.state.myFriends.map(friend => {
             return (
-                <li key={friend.id}>{friend.name}</li>
+                <li key={friend.id}>{friend.username} in {friend.home} <button>chat</button></li >
             )
         })
 
         return (
             <div>
                 <p>My Friends:</p>
+
                 <ul>
                     {friendsList}
                 </ul>
-            </div>
+            </div >
         )
     }
 }
