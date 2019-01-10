@@ -60,7 +60,7 @@ ul {
   outline: 2px solid royalblue;
   padding: 10px;
   width: 90%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .APIenchilada{
@@ -93,14 +93,16 @@ ul {
 
 .eventImage {
   max-height: 300px;
-  width: 70%;
+  width: 80%;
   opacity: 0.9;
 
 }
 
 .OneEventPlacehoder {
   outline: 5px solid hotpink;
-  width: 50%
+  width: 70%;
+  margin: auto;
+
 }
 
 .logout {

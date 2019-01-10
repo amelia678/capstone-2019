@@ -81,7 +81,11 @@ class MusicPal extends Component {
                                 />
                                 <EventList
                                     events={this._searchEvents(this.state.searchTerm)} />
-
+                            <div className="userProfile">
+                            <Route path="/profile" render={(props) => {
+                                return <Profile {...props} />
+                            }} />
+                        </div>
 
                             </div>
                             <Placeholder />
@@ -89,11 +93,7 @@ class MusicPal extends Component {
                                 return <OneEvent {...props} />
                             }} /> */}
                         </div>
-                        <div className="userProfile">
-                            <Route path="/profile" render={(props) => {
-                                return <Profile {...props} />
-                            }} />
-                        </div>
+                        
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
                         }} />
