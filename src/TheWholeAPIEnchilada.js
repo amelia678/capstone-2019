@@ -11,7 +11,8 @@ class TheWholeAPIEnchilada extends React.Component {
             searchLocation: '',
             searchArtist: '',
             searchkeyword: '',
-            showAPIList: false
+            showAPIList: false,
+            eventArray: []
         }
     }
 
@@ -33,9 +34,7 @@ class TheWholeAPIEnchilada extends React.Component {
                 />
                 <button onClick={this._showList}>search</button>
                 {this.state.showAPIList ? <EventfulCall
-                    searchLocation={(this.state.searchLocation)}
-                    searchArtist={(this.state.searchArtist)}
-                    searchKeyword={(this.state.searchKeyword)}
+                   eventArray = {this.state.eventArray}
                 /> : null}
             </div>
         )
@@ -73,14 +72,41 @@ class TheWholeAPIEnchilada extends React.Component {
     //     }
     // }
 
-    _showList = (e) => {
+    _showList = () => {
         // e.preventDefault();
-
         this.setState({
-            showAPIList: true
-        });
+            showAPIList: false
+        })
         console.log('enchilada launch sequence commenced');
+        console.log(this.state.searchArtist)
+        console.log(this.state.searchLocation)
+        console.log(this.state.searchkeyword    )
+
+
+        fetch('/APIEventList', {
+            method: 'post', //so it knows it's a post on this side
+            headers: { 'Content-type': 'application/json' }, //automatically set these
+            body: JSON.stringify({
+                searchLocation: this.state.searchLocation,
+                searchArtist: this.state.searchArtist,
+                searchKeyword: this.state.searchKeyword || ''
+            }), //whatever i want to send back
+
+        })
+            .then(r => {
+                return r.json()
+            })
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    eventArray: data,
+                    showAPIList: true
+                })
+            })
+        
     }
+
+    
 
 }
 

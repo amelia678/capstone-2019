@@ -9,10 +9,6 @@ class SearchbyArtist extends Component {
         }
     }
 
-    // componentDidMount() {
-        
-
-    // }
     render()  {
     return (
         <div>
@@ -34,7 +30,6 @@ class SearchbyArtist extends Component {
 }
 
 _showList = () => {
-    // console.log(this.props.searchTerm)
     fetch('/APIartistList', {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
@@ -50,7 +45,8 @@ _showList = () => {
             return(
                 <li
                 key={grimes.id}>
-                {grimes.name}</li>
+                {grimes.name}<button>Add to my list</button>
+                </li>
             )
         })
         this.setState({

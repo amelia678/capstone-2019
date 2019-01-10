@@ -52,10 +52,10 @@ class MusicPal extends Component {
                             <NavBar />
                         </div>
                         <h1>MusicPal</h1>
-                        <h2>Find your music... find your pals</h2>
                         <div className="eventInfo">
                             <div className="searchBar">
-
+                                <Route path ="/" render ={() => {
+                                return <h2>Find your music... find your pals</h2>}}/>  
                                 <Route path="/login" render={(props) => {
                                     return <Login {...props} />
                                 }}
