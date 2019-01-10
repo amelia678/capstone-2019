@@ -9,8 +9,7 @@ class Register extends Component {
             username: '',
             password: '',
             emailAddress: '',
-            city: '',
-            state: ''
+            home: ''
         }
     }
 
@@ -49,18 +48,11 @@ class Register extends Component {
                             type="email" name="email"></input>
                     </label>
 
-                    <label> <span class="shadow">City:</span>
+                    <label> <span class="shadow">Home:</span>
                         <input
-                            onChange={this._updateCity}
-                            value={this.state.city}
-                            type="text" name="city"></input>
-                    </label>
-
-                    <label> <span class="shadow">State:</span>
-                        <input
-                            onChange={this._updateState}
-                            value={this.state.state}
-                            type="text" name="state"></input>
+                            onChange={this._updateHome}
+                            value={this.state.home}
+                            type="text" name="home"></input>
                     </label>
 
                     <label>
@@ -108,15 +100,9 @@ class Register extends Component {
         })
     }
 
-    _updateCity = event => {
+    _updateHome = event => {
         this.setState({
-            city: event.target.value
-        })
-    }
-
-    _updateState = event => {
-        this.setState({
-            state: event.target.value
+            home: event.target.value
         })
     }
 }

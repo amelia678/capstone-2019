@@ -16,6 +16,7 @@ class AddEventtoDB extends React.Component {
             method: 'post', //so it knows it's a post on this side
             headers: { 'Content-type': 'application/json' }, //automatically set these
             body: JSON.stringify({
+                eventID: this.props.eventID,
                 artist: this.props.artist,
                 venue: this.props.venue,
                 city: this.props.city,
