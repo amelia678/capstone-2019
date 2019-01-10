@@ -4,10 +4,10 @@ import Profile from './Profile';
 import EventList from './EventList'
 // import EventfulCall from './EventfulCall';
 import NavBar from './NavBar';
-import OneEvent from './OneEvent';
+// import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
-import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
+// import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
 
@@ -55,46 +55,50 @@ class MusicPal extends Component {
                         <div className="eventInfo">
                             <div className="searchBar">
 
-
                                 <Route path="/login" render={(props) => {
                                     return <Login {...props} />
                                 }}
                                 />
+
                                 <Route path="/register" render={(props) => {
                                     return <Register  {...props} />
-
                                 }}
                                 />
+
                                 <Route path="/home" render={(props) => {
                                     return <Search
                                         searchTerm={(this.state.searchTerm)} {...props}
                                         handleInput={(this._setSearchTerm)} {...props} />
                                 }}
-
                                 />
+
                                 <Route path="/search-artists" render={(props) => {
-                                    return <SearchbyArtist 
-                                        searchTerm ={(this.state.artistSearch)}{...props}
+                                    return <SearchbyArtist
+                                        searchTerm={(this.state.artistSearch)}{...props}
                                         handleInput={(this._setArtistSearch)}{...props} />
                                 }}
                                 />
-                                <EventList
-                                    events={this._searchEvents(this.state.searchTerm)} />
 
+                                <EventList
+                                    events={this._searchEvents(this.state.searchTerm)}
+                                />
 
                             </div>
-                            {/* <Route path="/oneEvent" render={(props) => {
-                                return <OneEvent {...props} />
-                            }} /> */}
                         </div>
                         <div className="userProfile">
+
                             <Route path="/profile" render={(props) => {
                                 return <Profile {...props} />
-                            }} />
+                            }}
+                            />
+
                         </div>
+
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
-                        }} />
+                        }}
+                        />
+
                     </div>
                 </div>
             </Router>
@@ -110,7 +114,7 @@ class MusicPal extends Component {
     _searchEvents = (term) => {
         const filteredEvents = this.state.events.filter(event => {
 
-            const termMatchesArtist = event.name.includes(term)
+            const termMatchesArtist = event.artist.includes(term)
             const termMatchesLocation = event.city.includes(term)
 
             return termMatchesArtist || termMatchesLocation
@@ -125,7 +129,7 @@ class MusicPal extends Component {
 
     _setArtistSearch = (term) => {
         this.setState({
-            artistSearch : term
+            artistSearch: term
         })
     }
 }

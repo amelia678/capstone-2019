@@ -8,7 +8,7 @@ const EventList = (props) => {
             <ul>
                 {props.events.map(event => {
                     return (
-                        <li href='#'>{event.name} at {event.venue} in {event.location} on {event.date} <button>I'm going!</button></li>
+                        <li key={event.id}>{event.name} at {event.venue} in {event.location} on {event.date} <button>I'm going!</button></li>
                     )
                 })}
 
