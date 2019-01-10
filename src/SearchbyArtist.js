@@ -16,7 +16,7 @@ class SearchbyArtist extends Component {
     render()  {
     return (
         <div>
-            <p>search for artists here from last.fm</p>
+            <h3>Search an Artist</h3>
             <input
             value={this.props.searchTerm}
             onChange={(event) => {

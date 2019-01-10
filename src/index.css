@@ -57,14 +57,14 @@ ul {
   flex-direction: row;
 }
 .userProfile {
-  outline: 2px solid royalblue;
+  /* outline: 2px solid royalblue; */
   padding: 10px;
   width: 90%;
   /* margin: auto; */
 }
 
 .APIenchilada{
-  outline: 7px solid green;
+  /* outline: 7px solid green; */
   /* display: flex; */
 }
 .oneEvent {
