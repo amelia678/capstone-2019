@@ -17,7 +17,7 @@ class TheWholeAPIEnchilada extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="APIenchilada">
                 <p>no results? search for more events from eventful.com</p>
                 <APISearchLocation
                     searchLocation={(this.state.searchLocation)}

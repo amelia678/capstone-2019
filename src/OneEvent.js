@@ -50,6 +50,7 @@ class OneEvent extends React.Component {
 
         return (
             <div className="oneEvent" >
+            
                 <div>
                     <ul>
                         {/* <p>an event goes here</p> */}

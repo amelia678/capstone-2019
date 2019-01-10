@@ -7,9 +7,10 @@ import NavBar from './NavBar';
 import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
-import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
+// import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
+import Placeholder from './Placeholder';
 
 
 import {
@@ -83,6 +84,7 @@ class MusicPal extends Component {
 
 
                             </div>
+                            <Placeholder />
                             {/* <Route path="/oneEvent" render={(props) => {
                                 return <OneEvent {...props} />
                             }} /> */}
@@ -95,7 +97,9 @@ class MusicPal extends Component {
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
                         }} />
+                    
                     </div>
+                    
                 </div>
             </Router>
         )

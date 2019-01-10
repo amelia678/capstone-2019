@@ -14,7 +14,7 @@ class SearchbyArtist extends Component {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
             // body: JSON.stringify({
-
+            //     artistSearch : this.props.searchTerm
             // })
         })
         .then(r => r.json())    
@@ -22,7 +22,9 @@ class SearchbyArtist extends Component {
             console.log(artists)
             const artistList = artists.map(grimes => {
                 return(
-                    <li>{grimes.id}</li>
+                    <li
+                    key={grimes.id}>
+                    {grimes.name}</li>
                 )
             })
             this.setState({
@@ -42,10 +44,21 @@ class SearchbyArtist extends Component {
                 this.props.handleInput(event.target.value)
             }}
             ></input>
-            <button>search</button>
+            <button
+            onClick={this._showList}
+            >search</button>
             <div>{this.state.artistArray}</div>
         </div>
     )
+
+
+}
+
+_showList = () => {
+    this.setState({
+        showAPIList: true
+    });
+    console.log('we appreciate power')
 }
 
 
