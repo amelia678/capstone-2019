@@ -12,6 +12,7 @@ class Login extends Component {
     render() {
         return (
             <div>
+                <h2>Login</h2>
                 <form action="" method="POST">
                     <label>
                         <span >Username:</span>

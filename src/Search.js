@@ -1,30 +1,71 @@
-import React from 'react';
+import React, {Component} from 'react';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
+import EventList from './EventList';
 
-const Search = (props) => {
+class Search extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchTerm: '',
+            events: [],
+        }
+    }
+
+    componentDidMount() {
+        fetch('/eventList')
+            .then(r => r.json())
+            .then(eventsArray => {
+                this.setState({
+                    events: eventsArray
+                })
+            })
+    }
+    
+    render() {
     return (
         <div>
-
-            <h2>Search events by artist, genre, or city:</h2>
+        <div className="searchDB">
+        <h2>Search events by artist, genre, or city:</h2>
             <input
-                value={props.searchTerm}
-                onChange={(event) => {
-                    props.handleInput(event.target.value)
-                }}
+            value={this.state.searchTerm}
+            onChange={(event) => {
+                this._setSearchTerm(event.target.value)
+            }}
             ></input>
-
+        <EventList events={this._searchEvents(this.state.searchTerm)}/>
+        
+        <div className="APIenchilada">
         <TheWholeAPIEnchilada />
-
-            <div className="OneEventPlacehoder">
-                <img className="eventImage" src="https://assets.rbl.ms/19048490/980x.jpg" alt="gaga rockin the keytar"></img>
-            </div>
-
-
-
         </div>
-
-
-    )
+        
+        </div>
+        
+        </div>
+        )
+    }
+        
+    
+        _setSearchTerm = (term) => {
+                this.setState({
+                    searchTerm: term
+                })
+            }
+        
+        _searchEvents = (term) => {
+                const filteredEvents = this.state.events.filter(event => {
+        
+                    const termMatchesArtist = event.name.includes(term)
+                    const termMatchesLocation = event.city.includes(term)
+        
+                    return termMatchesArtist || termMatchesLocation
+        
+                });
+                if (this.state.searchTerm.length === 0) {
+                    return [];
+                } else {
+                    return filteredEvents
+                }
+            }
+    
 }
-
 export default Search;

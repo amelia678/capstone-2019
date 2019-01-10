@@ -10,6 +10,7 @@ import Register from './Register';
 // import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
+import Placeholder from './Placeholder';
 
 
 import {
@@ -23,22 +24,22 @@ class MusicPal extends Component {
         super(props);
         this.state = {
             // showAPIList: false,
-            searchTerm: '',
+            // searchTerm: '',
             artistSearch: '',
-            events: [],
+            // events: [],
             users: [],
         }
     }
 
-    componentDidMount() {
-        fetch('/eventList')
-            .then(r => r.json())
-            .then(eventsArray => {
-                this.setState({
-                    events: eventsArray
-                })
-            })
-    }
+    // componentDidMount() {
+    //     fetch('/eventList')
+    //         .then(r => r.json())
+    //         .then(eventsArray => {
+    //             this.setState({
+    //                 events: eventsArray
+    //             })
+    //         })
+    // }
 
     render() {
 
@@ -79,13 +80,10 @@ class MusicPal extends Component {
                                 }}
                                 />
 
-                                <EventList
-                                    events={this._searchEvents(this.state.searchTerm)}
-                                />
+                               
 
-                            </div>
-                        </div>
                         <div className="userProfile">
+
 
                             <Route path="/profile" render={(props) => {
                                 return <Profile {...props} />
@@ -94,38 +92,24 @@ class MusicPal extends Component {
 
                         </div>
 
+                            </div>
+                            <Placeholder />
+            
+                        </div>
+                        
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
-                        }}
-                        />
+                        }} />
+                    
 
                     </div>
+                    
                 </div>
             </Router>
         )
     }
 
-    _setSearchTerm = (term) => {
-        this.setState({
-            searchTerm: term
-        })
-    }
-
-    _searchEvents = (term) => {
-        const filteredEvents = this.state.events.filter(event => {
-
-            const termMatchesArtist = event.artist.includes(term)
-            const termMatchesLocation = event.city.includes(term)
-
-            return termMatchesArtist || termMatchesLocation
-
-        });
-        if (this.state.searchTerm.length === 0) {
-            return [];
-        } else {
-            return filteredEvents
-        }
-    }
+   
 
     _setArtistSearch = (term) => {
         this.setState({

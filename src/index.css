@@ -46,23 +46,34 @@ ul {
   width: 90%;
   margin:auto;
   padding: 10px;
-  
+  /* display: flex;
+  flex-direction: row; */
+ 
 }
 
+.APIevents {
+  outline: solid 5px red;
+  display: flex;
+  flex-direction: row;
+}
 .userProfile {
-  outline: 2px solid royalblue;
+  /* outline: 2px solid royalblue; */
   padding: 10px;
   width: 90%;
-  margin: auto;
+  /* margin: auto; */
 }
 
+.APIenchilada{
+  /* outline: 7px solid green; */
+  /* display: flex; */
+}
 .oneEvent {
   outline: solid 5px powderblue;
   width: 90%;
   height: 200px;
   margin: auto;
- 
-  
+  background-color: antiquewhite;
+  vertical-align: top;
 }
 
 .eventInfo {
@@ -81,9 +92,16 @@ ul {
 }
 
 .eventImage {
-  max-height: 200px;
-  width: 60%;
+  max-height: 300px;
+  width: 80%;
   opacity: 0.9;
+
+}
+
+.OneEventPlacehoder {
+  outline: 5px solid hotpink;
+  width: 70%;
+  margin: auto;
 
 }
 
