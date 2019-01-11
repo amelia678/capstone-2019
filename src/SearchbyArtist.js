@@ -1,74 +1,97 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
+import AddArtistToUser from './AddArtistToUser';
 
 class SearchbyArtist extends Component {
     constructor(props) {
         super(props);
         this.state = {
             artistArray: [],
-            showAPIList: false
+            showAPIList: false,
+            addToList: null
         }
     }
 
-    render()  {
-      
-    return (
-        <div>
-            <h3>Search an Artist</h3>
-            <input
-            value={this.props.searchTerm}
-            onChange={(event) => {
-                this.props.handleInput(event.target.value)
-            }}
-            ></input>
-            <button
-            onClick={this._showList}
-            >search</button>
+    render() {
+
+        return (
             <div>
-            {this.state.artistArray}
+                <h3>Search an Artist</h3>
+                <input
+                    value={this.props.searchTerm}
+                    onChange={(event) => {
+                        this.props.handleInput(event.target.value)
+                    }}
+                ></input>
+                <button
+                    onClick={this._showList}
+                >search</button>
+                <div>
+                    {this.state.artistArray}
+                </div>
             </div>
-        </div>
-    )
+        )
 
 
-}
+    }
 
-_showList = () => {
-    fetch('/APIartistList', {
-        method: 'POST',
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify({
-            searchArtist: this.props.searchTerm
-        })
-        
-    })
-    .then(r => r.json())    
-    .then(artists => {
-        console.log(artists)
-        const artistList = artists.map(grimes => {
-            return(
-                <li
-                key={grimes.id}>
-                {grimes.name}<button>Add to my list</button>
-                </li>
-            )
-        })
-        if (artistList.length === 0) {
-            this.setState({
-                artistArray : 'No results found'
+    _showList = () => {
+        fetch('/APIartistList', {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                searchArtist: this.props.searchTerm
             })
-        } else {
+
+        })
+            .then(r => r.json())
+            .then(artists => {
+                console.log(artists)
+                const artistList = artists.map(grimes => {
+                    return (
+                        <li
+                            key={grimes.id}>
+                            {grimes.name}
+                            <button onClick={() => {
+                                this._addEvent(grimes.name)
+                            }}
+                            >Add to My Artists!</button>
+                            {this.state.addToList ? <AddArtistToUser
+                                artist={(grimes.name)}
+                            /> : null}
+                        </li>
+                    )
+                })
+                if (artistList.length === 0) {
+                    this.setState({
+                        artistArray: 'No results found'
+                    })
+                } else {
+                    this.setState({
+                        artistArray: artistList
+                    })
+                }
+            })
+
         this.setState({
-            artistArray: artistList
+            showAPIList: true
+        });
+
+
+
+
+    }
+
+    _addEvent = (jeff) => {
+        console.log('is this jeff?')
+        console.log(jeff)
+        let clickedArtist = this.state.artistArray.find(thisOne => {
+            return jeff === thisOne.name
+        })
+        this.setState({
+            addToList: clickedArtist
         })
     }
-    } )
-    
-    this.setState({
-        showAPIList: true
-    });
-}
 
-
- 
 }
 export default SearchbyArtist;

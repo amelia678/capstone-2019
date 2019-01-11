@@ -24,6 +24,8 @@ class AddAPItoDB extends React.Component {
                 state: this.props.state,
                 date: this.props.date
             }), //whatever i want to send back
+        }).then(result => {
+            console.log(result)
         })
 
         // }
