@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
-
+import EventList from './EventList';
 
 class Search extends Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class Search extends Component {
                 this._setSearchTerm(event.target.value)
             }}
             ></input>
-        
+            <EventList events = {this._searchEvents(this.state.searchTerm)} />
         <div className="APIenchilada">
         <TheWholeAPIEnchilada />
         </div>

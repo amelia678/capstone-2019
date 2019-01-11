@@ -8,7 +8,7 @@ import Register from './Register';
 import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
 import Placeholder from './Placeholder';
-import OneEvent from './OneEvent';
+// import OneEvent from './OneEvent';
 
 import {
     BrowserRouter as Router,
