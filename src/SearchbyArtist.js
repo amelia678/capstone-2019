@@ -10,6 +10,7 @@ class SearchbyArtist extends Component {
     }
 
     render()  {
+      
     return (
         <div>
             <h3>Search an Artist</h3>
@@ -22,7 +23,9 @@ class SearchbyArtist extends Component {
             <button
             onClick={this._showList}
             >search</button>
-            <div>{this.state.artistArray}</div>
+            <div>
+            {this.state.artistArray}
+            </div>
         </div>
     )
 
@@ -49,15 +52,20 @@ _showList = () => {
                 </li>
             )
         })
+        if (artistList.length === 0) {
+            this.setState({
+                artistArray : 'No results found'
+            })
+        } else {
         this.setState({
             artistArray: artistList
         })
+    }
     } )
     
     this.setState({
         showAPIList: true
     });
-    console.log('we appreciate power')
 }
 
 

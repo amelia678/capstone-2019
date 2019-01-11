@@ -49,7 +49,7 @@ class EventfulCall extends React.Component {
         console.log(this.state.eventArray);
         let content;
 
-
+        // NOT WORKING
         // console.log(this.state.eventArray.artist);
         // console.log("^^ title bitches");
         if (this.state.eventArray.length === 0) {
@@ -74,7 +74,8 @@ class EventfulCall extends React.Component {
             const eventList = this.state.eventArray.map(event => {
 
                 return (
-                    <li onClick={() => {
+                    <li className="eventList"
+                     onClick={() => {
                         this._showEvent(event.id)
                     }}
                         key={event.id}>

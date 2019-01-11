@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import Search from './Search';
 import Profile from './Profile';
-import EventList from './EventList'
-// import EventfulCall from './EventfulCall';
 import NavBar from './NavBar';
-// import OneEvent from './OneEvent';
 import Login from './Login';
 import Register from './Register';
-// import TheWholeAPIEnchilada from './TheWholeAPIEnchilada';
 import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
 import Placeholder from './Placeholder';
@@ -66,7 +62,7 @@ class MusicPal extends Component {
                                 }}
                                 />
 
-                                <Route path="/home" render={(props) => {
+                               <Route path="/home" render={(props) => {
                                     return <Search
                                         searchTerm={(this.state.searchTerm)} {...props}
                                         handleInput={(this._setSearchTerm)} {...props} />

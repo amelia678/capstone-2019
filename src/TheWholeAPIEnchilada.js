@@ -18,7 +18,7 @@ class TheWholeAPIEnchilada extends React.Component {
 
     render() {
         return (
-            <div className="APIenchilada">
+            <div >
                 <p>no results? search for more events from eventful.com</p>
                 <APISearchLocation
                     searchLocation={(this.state.searchLocation)}
@@ -56,31 +56,12 @@ class TheWholeAPIEnchilada extends React.Component {
         })
     }
 
-    // _searchEvents = (term) => {
-    //     const filteredEvents = this.state.events.filter(event => {
-
-    //         const termMatchesArtist = event.name.includes(term)
-    //         const termMatchesLocation = event.location.includes(term)
-
-    //         return termMatchesArtist || termMatchesLocation
-
-    //     });
-    //     if (this.state.searchTerm.length === 0) {
-    //         return [];
-    //     } else {
-    //         return filteredEvents
-    //     }
-    // }
-
     _showList = () => {
         // e.preventDefault();
         this.setState({
             showAPIList: false
         })
         console.log('enchilada launch sequence commenced');
-        console.log(this.state.searchArtist)
-        console.log(this.state.searchLocation)
-        console.log(this.state.searchkeyword    )
 
 
         fetch('/APIEventList', {

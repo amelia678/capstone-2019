@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
-import EventList from './EventList';
+
 
 class Search extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class Search extends Component {
     return (
         <div>
         <div className="searchDB">
-        <h2>Search events by artist, genre, or city:</h2>
+        <h3>Search events by artist, genre, or city:</h3>
             <input
             value={this.state.searchTerm}
             onChange={(event) => {

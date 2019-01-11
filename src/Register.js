@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-
+import { get } from 'https';
+import axios from 'axios';
+// make a handleSubmit
+// change backend route
 
 class Register extends Component {
     constructor(props) {
@@ -9,9 +12,11 @@ class Register extends Component {
             username: '',
             password: '',
             emailAddress: '',
-            home: ''
+            home: '',
+            
         }
     }
+
 
     render() {
 
@@ -56,9 +61,11 @@ class Register extends Component {
                     </label>
 
                     <label>
-                        <input type="submit" value="Sign Up!"></input>
+                        <input 
+                        onSubmit={this._checkUsername}
+                        type="submit" value="Sign Up!"></input>
                     </label>
-
+                
                 </form>
             </div>
         )
@@ -105,6 +112,25 @@ class Register extends Component {
             home: event.target.value
         })
     }
+
+    _checkUsername = (e) => {
+        e.preventDefault();
+        axios
+        .post('/registerAPI/', this.state)
+        .then(r => {
+            // return r.text()
+            
+            console.log(r.data)
+            })
+        // .then(r => {
+        //     if (r.status === "taken") {
+        //         alert("That username already exists")
+        //     }
+        // })
+    }
+    
+  
+    
 }
 
 export default Register;
