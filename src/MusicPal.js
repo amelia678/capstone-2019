@@ -7,7 +7,7 @@ import Register from './Register';
 import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
 import Placeholder from './Placeholder';
-
+import OneEvent from './OneEvent';
 
 import {
     BrowserRouter as Router,
@@ -19,23 +19,11 @@ class MusicPal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // showAPIList: false,
-            // searchTerm: '',
             artistSearch: '',
-            // events: [],
             users: [],
         }
     }
 
-    // componentDidMount() {
-    //     fetch('/eventList')
-    //         .then(r => r.json())
-    //         .then(eventsArray => {
-    //             this.setState({
-    //                 events: eventsArray
-    //             })
-    //         })
-    // }
 
     render() {
 
@@ -89,9 +77,10 @@ class MusicPal extends Component {
                         </div>
 
                             </div>
-                            <Placeholder />
-            
-                        </div>
+                        <Placeholder />
+                
+                            />
+                         </div>
                         
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />

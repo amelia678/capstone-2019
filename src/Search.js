@@ -32,7 +32,6 @@ class Search extends Component {
                 this._setSearchTerm(event.target.value)
             }}
             ></input>
-        {/* <EventList events={this._searchEvents(this.state.searchTerm)}/> */}
         
         <div className="APIenchilada">
         <TheWholeAPIEnchilada />

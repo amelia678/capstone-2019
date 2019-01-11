@@ -19,32 +19,6 @@ class EventfulCall extends React.Component {
         }
     }
 
-    // componentDidMount() {
-    //     console.log('leave britney alone')
-    //     console.log(this.props.searchLocation)
-    //     console.log(this.props.searchArtist)
-
-    //     fetch('/APIEventList', {
-    //         method: 'post', //so it knows it's a post on this side
-    //         headers: { 'Content-type': 'application/json' }, //automatically set these
-    //         body: JSON.stringify({
-    //             searchLocation: this.props.searchLocation,
-    //             searchArtist: this.props.searchArtist,
-    //             searchKeyword: this.props.searchKeyword || ''
-    //         }), //whatever i want to send back
-
-    //     })
-    //         .then(r => {
-    //             return r.json()
-    //         })
-    //         .then(data => {
-    //             console.log(data);
-    //             this.setState({
-    //                 eventArray: data,
-    //             })
-    //         })
-    // }
-
     render() {
         console.log(this.state.eventArray);
         let content;
@@ -65,7 +39,7 @@ class EventfulCall extends React.Component {
             !this.state.eventArray[0].artist) {
             content = (
                 <div>
-                    <h1>no concerts for you</h1>
+                    <h2>no concerts for you</h2>
                 </div>
             )
         }
