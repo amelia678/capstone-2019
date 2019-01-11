@@ -1,10 +1,13 @@
 import React from 'react';
 
+import OneUserEvent from './OneUserEvent';
+
 class UpcomingShows extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             myShows: [],
+            event: null
         }
     }
 
@@ -24,7 +27,15 @@ class UpcomingShows extends React.Component {
         const showList = this.state.myShows.map(show => {
             // console.log(show);
             return (
-                <li key={show.id}>{show.artist} at {show.venue} in {show.location} on {show.date}</li>
+                <li onClick={() => {
+                    this._showEvent(show.id)
+                }}
+                    key={show.id}>
+                    {show.artist} at
+                {show.venue} in
+                {show.city}, {show.state} on
+                {show.date}
+                </li>
             )
         })
         // console.log(this.state.myShows);
@@ -34,8 +45,22 @@ class UpcomingShows extends React.Component {
                 <ul>
                     {showList}
                 </ul>
+                {this.state.event ? <OneUserEvent
+                    event={(this.state.event)}
+                /> : null}
             </div>
-        )
+        );
+    }
+
+    _showEvent = (id) => {
+        console.log(`this id ${id} was clicked`)
+        let clickedEvent = this.state.myShows.find(thisOne => {
+
+            return id === thisOne.id
+        })
+        this.setState({
+            event: clickedEvent
+        })
     }
 }
 
