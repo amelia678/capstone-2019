@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AddAPItoDB from './AddAPItoDB';
+import Placeholder from './Placeholder';
 
 class OneAPIEvent extends React.Component {
     constructor(props) {
@@ -83,7 +84,7 @@ class OneAPIEvent extends React.Component {
                     state={(this.props.event.state)}
                     date={(this.props.event.date)}
                 /> : null}
-
+               {this.state.addToList ? <Placeholder /> : null}
             </div >
         )
     }
@@ -96,7 +97,7 @@ class OneAPIEvent extends React.Component {
             console.log(this.state.addToList);
             console.log(this.props.event.artist);
         })
-
+        
     }
 
 

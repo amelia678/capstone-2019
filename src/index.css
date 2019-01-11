@@ -56,11 +56,6 @@ ul {
 
 }
 
-.APIevents {
-  /* outline: solid 5px red; */
-  display: flex;
-  flex-direction: row;
-}
 .userProfile {
   /* outline: 2px solid royalblue; */
   padding: 10px;
@@ -68,22 +63,48 @@ ul {
   /* margin: auto; */
 }
 
+.APIbundle {
+  /* outline: solid 5px purple; */
+  display: flex;
+  flex-direction: row-reverse;
+  /* max-height: 50%;
+  overflow: auto; */
+}
+.APIevents {
+  /* outline: solid 5px blue; */
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  max-height: 600px;
+  overflow: auto;
+}
 
+
+.oneAPIEvent{
+  /* outline: 5px solid red; */
+  width: 70%;
+  /* margin-left: auto; */
+  /* margin: auto; */
+  /* display: table-header-group; */
+  
+}
 .oneEvent {
   border: solid 5px powderblue;
   width: 90%;
-  height: 200px;
+  min-height: 225px;
   margin: auto;
   background-color: antiquewhite;
   border-radius: 3px
 }
 
 .eventInfo {
-  outline: solid 2px purple;
+  /* outline: solid 2px purple; */
   display: flex;
  
 
 }
+
 
 
 .musicpal-home {
@@ -102,7 +123,7 @@ ul {
 }
 
 .OneEventPlacehoder {
-  outline: 5px solid hotpink;
+  /* outline: 5px solid hotpink; */
   width: 70%;
   margin: auto;
 
@@ -122,8 +143,12 @@ ul {
   border-radius: 3px;
   margin: 5px;
   padding: 5px;
+ 
 }
-
+.list-overflow {
+  max-height: 50%;
+  overflow: auto;
+}
 /* Common "breakpoints"
 S, M, L, XL, Party size
 
@@ -133,7 +158,16 @@ S, M, L, XL, Party size
 1200px
 1400px */
 
+@media screen and (max-width: 500px) {
+  .APIbundle {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .oneEvent {
+    width: 100%
+  }
+}
 @media screen and (max-width: 768px) {
 
   .eventInfo {

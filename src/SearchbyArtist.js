@@ -12,23 +12,24 @@ class SearchbyArtist extends Component {
         }
     }
 
-    render() {
 
-        return (
-            <div>
-                <h3>Search an Artist</h3>
-                <input
-                    value={this.props.searchTerm}
-                    onChange={(event) => {
-                        this.props.handleInput(event.target.value)
-                    }}
-                ></input>
-                <button
-                    onClick={this._showList}
-                >search</button>
-                <div>
-                    {this.state.artistArray}
-                </div>
+    render()  {
+      
+    return (
+        <div>
+            <h3>Search an Artist</h3>
+            <input
+            value={this.props.searchTerm}
+            onChange={(event) => {
+                this.props.handleInput(event.target.value)
+            }}
+            ></input>
+            <button
+            onClick={this._showList}
+            >search</button>
+            <div >
+             {this.state.artistArray}
+
             </div>
         )
 
@@ -42,6 +43,11 @@ class SearchbyArtist extends Component {
             body: JSON.stringify({
                 searchArtist: this.props.searchTerm
             })
+
+
+
+        
+    })
 
         })
             .then(r => r.json())

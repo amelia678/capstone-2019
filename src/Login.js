@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     Link
 } from 'react-router-dom';
+import axios from 'axios';
 
 class Login extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Login extends Component {
         return (
             <div>
                 <h2>Login</h2>
-                <form action="" method="POST">
+                <form onSubmit={(e) => this._checkCredentials(e)}>
                     <label>
                         <span >Username:</span>
                         <input
@@ -39,6 +40,24 @@ class Login extends Component {
         )
     }
 
+    _checkCredentials = (e) => {
+        e.preventDefault();
+        axios
+        .post('/API/login', this.state)
+        .then(r => {
+            if (r.data.status == 'incorrect') {
+                alert("Wrong username or password")
+            }
+            else {
+                this.props.history.push('/profile')
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+        console.log('attemping to log in ...')
+
+    }
     _updateUsername = event => {
         this.setState({
             username: event.target.value

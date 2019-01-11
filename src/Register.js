@@ -27,7 +27,7 @@ class Register extends Component {
         return (
             <div>
                 <h3>Register an account here:</h3>
-                <form>
+                <form onSubmit={(e) => this._checkUsername(e)} >
 
                     <label><span> Your name:</span>
                         <input
@@ -66,7 +66,7 @@ class Register extends Component {
 
                     <label>
                         <input 
-                        onSubmit={this._checkUsername}
+                        
                         type="submit" value="Sign Up!"></input>
                     </label>
                 
@@ -116,13 +116,13 @@ class Register extends Component {
     _checkUsername = (e) => {
         e.preventDefault();
         axios
-        .post('/registerAPI/', this.state)
+        .post('/API/register', this.state)
         .then(r => {
             // return r.text()
             
             console.log(r.data)
-            if (r.data.status !== 'okay') {
-                alert("Try again music-luver")
+            if (r.data.status === 'taken') {
+                alert("Try again music-luver (that username is already taken)")
             }
             else {
                 this.props.history.push('/profile')
@@ -131,6 +131,7 @@ class Register extends Component {
         .catch(err => {
             console.log(err)
         })
+        console.log('i have been submitted')
     }
     
   

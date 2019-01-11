@@ -27,7 +27,8 @@ class UpcomingShows extends React.Component {
         const showList = this.state.myShows.map(show => {
             // console.log(show);
             return (
-                <li onClick={() => {
+
+                <li className="eventList"  onClick={() => {
                     this._showEvent(show.id)
                 }}
                     key={show.id}>
@@ -36,13 +37,14 @@ class UpcomingShows extends React.Component {
                 {show.city}, {show.state} on
                 {show.date}
                 </li>
+
             )
         })
         // console.log(this.state.myShows);
         return (
             <div>
                 <p>My Shows:</p>
-                <ul>
+                <ul >
                     {showList}
                 </ul>
                 {this.state.event ? <OneUserEvent

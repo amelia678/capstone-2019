@@ -44,7 +44,7 @@ class MusicPal extends Component {
                         </div>
                         <div className="eventInfo">
                             <div className="searchBar">
-                                <Route path ="/" render ={() => {
+                                <Route path ="/" exact render ={() => {
                                 return <h2>Find your music... find your pals</h2>}}/>  
                                 <Route path="/login" render={(props) => {
                                     return <Login {...props} />
@@ -82,8 +82,8 @@ class MusicPal extends Component {
                                 </div>
 
                             </div>
+                            {/* <Placeholder /> */}
 
-                            <Placeholder />
 
                         </div>
 

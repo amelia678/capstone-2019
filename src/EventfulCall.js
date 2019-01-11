@@ -48,6 +48,7 @@ class EventfulCall extends React.Component {
             const eventList = this.state.eventArray.map(event => {
 
                 return (
+                    <ul>
                     <li className="eventList"
                      onClick={() => {
                         this._showEvent(event.id)
@@ -55,13 +56,13 @@ class EventfulCall extends React.Component {
                         key={event.id}>
                         {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
                     </li>
-
+                    </ul>
                 )
             })
             content = (
 
-                < div >
-                    <ul>
+                < div   >
+                    <ul className="list-overflow">
                         {eventList}
                     </ul>
                 </div >
@@ -70,13 +71,16 @@ class EventfulCall extends React.Component {
         }
 
         return (
-            <div>
-                <div className="APIevents">
-                    {content}
-                </div>
+            <div className="APIbundle">
+                <div className="oneAPIEvent">
                 {this.state.event ? <OneAPIEvent
                     event={(this.state.event)}
                 /> : null}
+                </div>
+                <div className="APIevents">
+                    {content}
+                </div>
+                
             </div>
         );
     }
