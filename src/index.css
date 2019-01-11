@@ -76,7 +76,7 @@ ul {
   flex-direction: row;
   width: 90%;
   margin: auto;
-  max-height: 50%;
+  max-height: 600px;
   overflow: auto;
 }
 
@@ -84,7 +84,10 @@ ul {
 .oneAPIEvent{
   /* outline: 5px solid red; */
   width: 70%;
-  margin: auto;
+  /* margin-left: auto; */
+  /* margin: auto; */
+  /* display: table-header-group; */
+  
 }
 .oneEvent {
   border: solid 5px powderblue;
