@@ -44,6 +44,7 @@ class Profile extends Component {
                 </ul>
                 <UpcomingShows
                     myShows={this.state.myShows} />
+                <Link to="/home">Search More Shows</Link>
                 <FavoriteArtists
                     myArtists={this.state.myArtists} />
                 <Link to="/search-artists">Search More Artists</Link>

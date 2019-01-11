@@ -9,11 +9,8 @@ class SearchbyArtist extends Component {
         }
     }
 
-    // componentDidMount() {
-        
-
-    // }
     render()  {
+      
     return (
         <div>
             <h3>Search an Artist</h3>
@@ -26,7 +23,9 @@ class SearchbyArtist extends Component {
             <button
             onClick={this._showList}
             >search</button>
-            <div>{this.state.artistArray}</div>
+            <div>
+            {this.state.artistArray}
+            </div>
         </div>
     )
 
@@ -34,7 +33,6 @@ class SearchbyArtist extends Component {
 }
 
 _showList = () => {
-    // console.log(this.props.searchTerm)
     fetch('/APIartistList', {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
@@ -50,18 +48,24 @@ _showList = () => {
             return(
                 <li
                 key={grimes.id}>
-                {grimes.name}</li>
+                {grimes.name}<button>Add to my list</button>
+                </li>
             )
         })
+        if (artistList.length === 0) {
+            this.setState({
+                artistArray : 'No results found'
+            })
+        } else {
         this.setState({
             artistArray: artistList
         })
+    }
     } )
     
     this.setState({
         showAPIList: true
     });
-    console.log('we appreciate power')
 }
 
 

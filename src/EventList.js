@@ -1,6 +1,8 @@
+
 import React from 'react';
 
 import EventListItem from './EventListItem';
+
 
 class EventList extends React.Component {
     constructor(props) {
@@ -45,14 +47,18 @@ class EventList extends React.Component {
         console.log(`this id ${id} was clicked`)
         let clickedEvent = this.props.events.find(oneEvent => {
 
-            return id === oneEvent.id
-        })
+
+             return id === oneEvent.id
+      })
         this.setState({
             event: clickedEvent
         })
 
-    }
+     }
 
-}
+ }
+
 
 export default EventList;
+
+

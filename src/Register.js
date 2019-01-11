@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+// import { get } from 'https';
+import axios from 'axios';
+import {
+    Link
+} from 'react-router-dom';
 
+// make a handleSubmit
+// change backend route
 
 class Register extends Component {
     constructor(props) {
@@ -10,45 +17,47 @@ class Register extends Component {
             password: '',
             emailAddress: '',
             home: ''
+            
         }
     }
+
 
     render() {
 
         return (
             <div>
-                <h3>Not a member yet? Register an account here:</h3>
-                <form action="" method="POST">
+                <h3>Register an account here:</h3>
+                <form>
 
-                    <label><span class="shadow"> Your name:</span>
+                    <label><span> Your name:</span>
                         <input
                             value={this.state.name}
                             onChange={this._updateName}
                             type="text" name="name"></input>
                     </label>
 
-                    <label> <span class="shadow">Username:</span>
+                    <label> <span >Username:</span>
                         <input
                             value={this.state.username}
                             onChange={this._updateUsername}
                             type="text" name="username"></input>
                     </label>
 
-                    <label><span class="shadow"> Password:</span>
+                    <label><span > Password:</span>
                         <input
                             value={this.state.password}
                             onChange={this._updatePassword}
                             type="password" name="password"></input>
                     </label>
 
-                    <label> <span class="shadow">Email:</span>
+                    <label> <span>Email:</span>
                         <input
                             value={this.state.emailAddress}
                             onChange={this._updateEmail}
                             type="email" name="email"></input>
                     </label>
 
-                    <label> <span class="shadow">Home:</span>
+                    <label> <span>Home:</span>
                         <input
                             onChange={this._updateHome}
                             value={this.state.home}
@@ -56,19 +65,17 @@ class Register extends Component {
                     </label>
 
                     <label>
-                        <input type="submit" value="Sign Up!"></input>
+                        <input 
+                        onSubmit={this._checkUsername}
+                        type="submit" value="Sign Up!"></input>
                     </label>
-
+                
                 </form>
+                <Link to="/login">Already a member?</Link>
             </div>
         )
     }
 
-    // _resetForm = () => {
-    //     this.setState({
-    //         ...defaultUser
-    //     })
-    // }
 
     _updateName = event => {
         this.setState({
@@ -105,6 +112,29 @@ class Register extends Component {
             home: event.target.value
         })
     }
+
+    _checkUsername = (e) => {
+        e.preventDefault();
+        axios
+        .post('/registerAPI/', this.state)
+        .then(r => {
+            // return r.text()
+            
+            console.log(r.data)
+            if (r.data.status !== 'okay') {
+                alert("Try again music-luver")
+            }
+            else {
+                this.props.history.push('/profile')
+            }
+            })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+    
+  
+    
 }
 
 export default Register;
