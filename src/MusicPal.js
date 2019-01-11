@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Search from './Search';
 import Profile from './Profile';
+
 import NavBar from './NavBar';
 import Login from './Login';
 import Register from './Register';
@@ -32,10 +33,15 @@ class MusicPal extends Component {
             <Router>
                 <div>
                     <div className="musicpal-home">
-                        <div className="navBar-container">
-                            <NavBar />
+                        <div className="top-of-page">
+                            <div className="navBar-container">
+                                <NavBar />
+                            </div>
+                            <div className="title">
+                                <h1>MusicPal</h1>
+                            
+                            </div>
                         </div>
-                        <h1>MusicPal</h1>
                         <div className="eventInfo">
                             <div className="searchBar">
                                 <Route path ="/" render ={() => {
@@ -64,37 +70,37 @@ class MusicPal extends Component {
                                 }}
                                 />
 
-                               
 
-                        <div className="userProfile">
+                                <div className="userProfile">
 
 
-                            <Route path="/profile" render={(props) => {
-                                return <Profile {...props} />
-                            }}
-                            />
+                                    <Route path="/profile" render={(props) => {
+                                        return <Profile {...props} />
+                                    }}
+                                    />
+
+                                </div>
+
+                            </div>
+
+                            <Placeholder />
 
                         </div>
 
-                            </div>
-                        <Placeholder />
-                
-                            />
-                         </div>
-                        
+
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
                         }} />
-                    
+
 
                     </div>
-                    
+
                 </div>
             </Router>
         )
     }
 
-   
+
 
     _setArtistSearch = (term) => {
         this.setState({

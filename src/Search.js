@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
 
 
@@ -8,6 +8,7 @@ class Search extends Component {
         this.state = {
             searchTerm: '',
             events: [],
+            event: null
         }
     }
 
@@ -20,8 +21,9 @@ class Search extends Component {
                 })
             })
     }
-    
+
     render() {
+
     return (
         <div>
         <div className="searchDB">
@@ -40,31 +42,31 @@ class Search extends Component {
         </div>
         
         </div>
+
         )
     }
-        
-    
-        _setSearchTerm = (term) => {
-                this.setState({
-                    searchTerm: term
-                })
-            }
-        
-        _searchEvents = (term) => {
-                const filteredEvents = this.state.events.filter(event => {
-        
-                    const termMatchesArtist = event.name.includes(term)
-                    const termMatchesLocation = event.city.includes(term)
-        
-                    return termMatchesArtist || termMatchesLocation
-        
-                });
-                if (this.state.searchTerm.length === 0) {
-                    return [];
-                } else {
-                    return filteredEvents
-                }
-            }
-    
+
+    _setSearchTerm = (term) => {
+        this.setState({
+            searchTerm: term
+        })
+    }
+
+    _searchEvents = (term) => {
+        const filteredEvents = this.state.events.filter(event => {
+
+            const termMatchesArtist = event.artist.includes(term)
+            const termMatchesLocation = event.city.includes(term)
+
+            return termMatchesArtist || termMatchesLocation
+
+        });
+        if (this.state.searchTerm.length === 0) {
+            return [];
+        } else {
+            return filteredEvents
+        }
+    }
 }
+
 export default Search;

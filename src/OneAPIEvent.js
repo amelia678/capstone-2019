@@ -1,8 +1,8 @@
 import React from 'react';
 
-import AddEventtoDB from './AddEventtoDB';
+import AddAPItoDB from './AddAPItoDB';
 
-class OneEvent extends React.Component {
+class OneAPIEvent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,15 +37,29 @@ class OneEvent extends React.Component {
         console.log(this.props.event);
         console.log(this.state.friends)
 
-        const attendeeList = this.state.friends.map(pal => {
-            return (
-                <li key={pal.id}>{pal.username} from {pal.city}, {pal.state}</li>
+        // const attendeeList = this.state.friends.map(pal => {
+        //     return (
+        //         <li key={pal.id}>{pal.username} from {pal.home}</li>
+        //     )
+        // })
+
+        let attendeeList;
+        if (this.state.friends.length === 0) {
+            attendeeList = (
+                <li>none so far!</li>
             )
-        })
+        } else {
+            attendeeList =
+                this.state.friends.map(pal => {
+                    return (
+                        <li key={pal.id}>{pal.username} from {pal.home}</li>
+                    )
+                })
+        }
 
         return (
             <div className="oneEvent" >
-            
+
                 <div>
                     <ul>
                         {/* <p>an event goes here</p> */}
@@ -59,8 +73,9 @@ class OneEvent extends React.Component {
 
                 <button onClick={() => {
                     this._addEvent()
-                }}>I'm going!</button>
-                {this.state.addToList ? <AddEventtoDB
+                }}>I want to go!</button>
+                {this.state.addToList ? <AddAPItoDB
+                    attendeeList={(this.state.attendeeList)}
                     eventID={(this.props.event.id)}
                     artist={(this.props.event.artist)}
                     venue={(this.props.event.venue)}
@@ -87,4 +102,4 @@ class OneEvent extends React.Component {
 
 }
 
-export default OneEvent;
+export default OneAPIEvent;
