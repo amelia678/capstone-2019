@@ -13,38 +13,17 @@ class EventfulCall extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            eventArray: [],
-            event: null
+            eventArray: this.props.eventArray,
+            event: null,
+
         }
-    }
-
-    componentDidMount() {
-        fetch('/APIEventList', {
-            method: 'post', //so it knows it's a post on this side
-            headers: { 'Content-type': 'application/json' }, //automatically set these
-            body: JSON.stringify({
-                searchLocation: this.props.searchLocation,
-                searchArtist: this.props.searchArtist,
-                searchKeyword: this.props.searchKeyword || ''
-            }), //whatever i want to send back
-
-        })
-            .then(r => {
-                return r.json()
-            })
-            .then(data => {
-                console.log(data);
-                this.setState({
-                    eventArray: data,
-                })
-            })
     }
 
     render() {
         console.log(this.state.eventArray);
         let content;
 
-
+        // NOT WORKING
         // console.log(this.state.eventArray.artist);
         // console.log("^^ title bitches");
         if (this.state.eventArray.length === 0) {
@@ -60,7 +39,7 @@ class EventfulCall extends React.Component {
             !this.state.eventArray[0].artist) {
             content = (
                 <div>
-                    <h1>no concerts for you</h1>
+                    <h2>no concerts for you</h2>
                 </div>
             )
         }
@@ -69,7 +48,8 @@ class EventfulCall extends React.Component {
             const eventList = this.state.eventArray.map(event => {
 
                 return (
-                    <li onClick={() => {
+                    <li className="eventList"
+                     onClick={() => {
                         this._showEvent(event.id)
                     }}
                         key={event.id}>

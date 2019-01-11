@@ -46,13 +46,11 @@ ul {
   width: 90%;
   margin:auto;
   padding: 10px;
-  /* display: flex;
-  flex-direction: row; */
  
 }
 
 .APIevents {
-  outline: solid 5px red;
+  /* outline: solid 5px red; */
   display: flex;
   flex-direction: row;
 }
@@ -63,17 +61,13 @@ ul {
   /* margin: auto; */
 }
 
-.APIenchilada{
-  /* outline: 7px solid green; */
-  /* display: flex; */
-}
 .oneEvent {
-  outline: solid 5px powderblue;
+  border: solid 5px powderblue;
   width: 90%;
   height: 200px;
   margin: auto;
   background-color: antiquewhite;
-  vertical-align: top;
+  border-radius: 3px
 }
 
 .eventInfo {
@@ -95,6 +89,7 @@ ul {
   max-height: 300px;
   width: 80%;
   opacity: 0.9;
+  border-radius: 3px;
 
 }
 
@@ -111,6 +106,14 @@ ul {
   border-radius: 3px;
   text-decoration: none;
 
+}
+
+.eventList {
+  border: solid 1px slategray;
+  background-color: aliceblue;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
 }
 
 /* Common "breakpoints"
