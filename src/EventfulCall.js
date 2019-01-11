@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import AddAPItoDB from './AddAPItoDB';
-import OneEvent from './OneEvent';
+import OneAPIEvent from './OneAPIEvent';
 
 // let onLoadingGIF = [
 //     {< iframe src = "https://giphy.com/embed/2r04CWsFWwixW" width = "480" height = "360" frameBorder = "0" class= "giphy-embed" allowFullScreen ></iframe > <p><a href="https://giphy.com/gifs/kermit-the-frog-jim-henson-muppet-movie-2r04CWsFWwixW">via GIPHY</a></p>},
@@ -94,7 +94,7 @@ class EventfulCall extends React.Component {
                 <div className="APIevents">
                     {content}
                 </div>
-                {this.state.event ? <OneEvent
+                {this.state.event ? <OneAPIEvent
                     event={(this.state.event)}
                 /> : null}
             </div>

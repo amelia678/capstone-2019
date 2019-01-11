@@ -30,10 +30,17 @@ h2 {
 ul {
   list-style-type: none;
 }
+
+/* .top-of-page {
+  display: flex;
+  flex-direction: row;
+} */
+
 .navBar-container {
   height: 50px;
   /* outline: solid 5px yellow; */
   margin: 10px;
+  /* margin-right: 5px; */
 }
 .navBar {
   /* outline: solid 2px seagreen; */
@@ -48,7 +55,6 @@ ul {
   padding: 10px;
   /* display: flex;
   flex-direction: row; */
- 
 }
 
 .APIevents {
@@ -63,7 +69,7 @@ ul {
   /* margin: auto; */
 }
 
-.APIenchilada{
+.APIenchilada {
   /* outline: 7px solid green; */
   /* display: flex; */
 }

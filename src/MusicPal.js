@@ -48,11 +48,15 @@ class MusicPal extends Component {
             <Router>
                 <div>
                     <div className="musicpal-home">
-                        <div className="navBar-container">
-                            <NavBar />
+                        <div className="top-of-page">
+                            <div className="navBar-container">
+                                <NavBar />
+                            </div>
+                            <div className="title">
+                                <h1>MusicPal</h1>
+                                <h3>Find your music... find your pals</h3>
+                            </div>
                         </div>
-                        <h1>MusicPal</h1>
-                        <h2>Find your music... find your pals</h2>
                         <div className="eventInfo">
                             <div className="searchBar">
 

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import OneEvent from './OneEvent';
+import EventListItem from './EventListItem';
 
 class EventList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            events: this.props.events,
+            // events: this.props.events,
             event: null
         }
     }
@@ -28,24 +28,22 @@ class EventList extends React.Component {
                                     {event.venue} in
                                     {event.city}, {event.state} on
                                     {event.date}
-                                {this.state.event ? <OneEvent
-                                    event={(this.state.event)}
-                                /> : null}
                             </li>
 
                         )
                     })}
 
                 </ul>
-
-
+                {this.state.event ? <EventListItem
+                    event={(this.state.event)}
+                /> : null}
             </div>
         )
     }
 
     _showEvent = (id) => {
         console.log(`this id ${id} was clicked`)
-        let clickedEvent = this.state.events.find(oneEvent => {
+        let clickedEvent = this.props.events.find(oneEvent => {
 
             return id === oneEvent.id
         })
