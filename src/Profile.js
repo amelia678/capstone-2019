@@ -38,7 +38,7 @@ class Profile extends Component {
             <div>
                 <h2>My Profile</h2>
                 <p>About Me:</p>
-                <ul>
+                <ul >
                     <li>{this.state.username}</li>
                     <li>{this.state.home}</li>
                 </ul>

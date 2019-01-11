@@ -36,8 +36,8 @@ class Search extends Component {
             }}
             ></input>
             <EventList events = {this._searchEvents(this.state.searchTerm)} />
-        <div className="APIenchilada">
-        <TheWholeAPIEnchilada />
+            <div className="APIenchilada">
+            <TheWholeAPIEnchilada />
         </div>
         
         </div>

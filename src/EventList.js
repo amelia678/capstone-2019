@@ -2,6 +2,8 @@
 import React from 'react';
 
 import EventListItem from './EventListItem';
+import Placeholder from './Placeholder';
+
 
 
 class EventList extends React.Component {
@@ -16,12 +18,17 @@ class EventList extends React.Component {
     render() {
         console.log(this.props.events)
         return (
-            <div>
-                <ul>
+            <div className="APIbundle">
+                <div className="oneAPIEvent">
+                {this.state.event ? <EventListItem
+                    event={(this.state.event)}
+                /> : null}
+                </div>
+                <ul >
                     {this.props.events.map(event => {
                         return (
 
-                            <li
+                            <li className="eventList"
                                 onClick={() => {
                                     this._showEvent(event.id)
                                 }}
@@ -36,9 +43,7 @@ class EventList extends React.Component {
                     })}
 
                 </ul>
-                {this.state.event ? <EventListItem
-                    event={(this.state.event)}
-                /> : null}
+                
             </div>
         )
     }

@@ -64,35 +64,39 @@ ul {
 }
 
 .APIbundle {
-  outline: solid 5px purple;
+  /* outline: solid 5px purple; */
   display: flex;
   flex-direction: row-reverse;
+  /* max-height: 50%;
+  overflow: auto; */
 }
 .APIevents {
-  outline: solid 5px blue;
+  /* outline: solid 5px blue; */
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 90%;
   margin: auto;
-
+  max-height: 50%;
+  overflow: auto;
 }
 
 
 .oneAPIEvent{
-  outline: 5px solid red;
-  width: 50%;
+  /* outline: 5px solid red; */
+  width: 70%;
+  margin: auto;
 }
 .oneEvent {
   border: solid 5px powderblue;
   width: 90%;
-  height: 200px;
+  min-height: 225px;
   margin: auto;
   background-color: antiquewhite;
   border-radius: 3px
 }
 
 .eventInfo {
-  outline: solid 2px purple;
+  /* outline: solid 2px purple; */
   display: flex;
  
 
@@ -116,7 +120,7 @@ ul {
 }
 
 .OneEventPlacehoder {
-  outline: 5px solid hotpink;
+  /* outline: 5px solid hotpink; */
   width: 70%;
   margin: auto;
 
@@ -136,8 +140,12 @@ ul {
   border-radius: 3px;
   margin: 5px;
   padding: 5px;
+ 
 }
-
+.list-overflow {
+  max-height: 50%;
+  overflow: auto;
+}
 /* Common "breakpoints"
 S, M, L, XL, Party size
 
@@ -147,7 +155,16 @@ S, M, L, XL, Party size
 1200px
 1400px */
 
+@media screen and (max-width: 500px) {
+  .APIbundle {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .oneEvent {
+    width: 100%
+  }
+}
 @media screen and (max-width: 768px) {
 
   .eventInfo {

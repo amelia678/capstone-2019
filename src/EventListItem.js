@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AddDBEventtoUser from './AddDBEventtoUser';
+import Placeholder from './Placeholder';
 
 class EventListItem extends React.Component {
     constructor(props) {
@@ -83,7 +84,7 @@ class EventListItem extends React.Component {
                     state={(this.props.event.state)}
                     date={(this.props.event.date)}
                 /> : null}
-
+                {this.state.addToList ? <Placeholder /> : null}
             </div >
         )
     }
