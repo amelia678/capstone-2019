@@ -23,8 +23,8 @@ class SearchbyArtist extends Component {
             <button
             onClick={this._showList}
             >search</button>
-            <div>
-            {this.state.artistArray}
+            <div >
+             {this.state.artistArray}
             </div>
         </div>
     )
@@ -46,10 +46,10 @@ _showList = () => {
         console.log(artists)
         const artistList = artists.map(grimes => {
             return(
-                <li
+                <ul className="eventList"
                 key={grimes.id}>
                 {grimes.name}<button>Add to my list</button>
-                </li>
+                </ul>
             )
         })
         if (artistList.length === 0) {
