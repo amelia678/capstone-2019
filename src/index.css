@@ -56,11 +56,6 @@ ul {
 
 }
 
-.APIevents {
-  /* outline: solid 5px red; */
-  display: flex;
-  flex-direction: row;
-}
 .userProfile {
   /* outline: 2px solid royalblue; */
   padding: 10px;
@@ -68,7 +63,25 @@ ul {
   /* margin: auto; */
 }
 
+.APIbundle {
+  outline: solid 5px purple;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.APIevents {
+  outline: solid 5px blue;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: auto;
 
+}
+
+
+.oneAPIEvent{
+  outline: 5px solid red;
+  width: 50%;
+}
 .oneEvent {
   border: solid 5px powderblue;
   width: 90%;
@@ -84,6 +97,7 @@ ul {
  
 
 }
+
 
 
 .musicpal-home {

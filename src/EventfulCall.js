@@ -70,13 +70,16 @@ class EventfulCall extends React.Component {
         }
 
         return (
-            <div>
-                <div className="APIevents">
-                    {content}
-                </div>
+            <div className="APIbundle">
+                <div className="oneAPIEvent">
                 {this.state.event ? <OneAPIEvent
                     event={(this.state.event)}
                 /> : null}
+                </div>
+                <div className="APIevents">
+                    {content}
+                </div>
+                
             </div>
         );
     }
