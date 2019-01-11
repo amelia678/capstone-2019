@@ -45,7 +45,7 @@ class Login extends Component {
         axios
         .post('/API/login', this.state)
         .then(r => {
-            if (r.data.status !== 'good to go ') {
+            if (r.data.status == 'incorrect') {
                 alert("Wrong username or password")
             }
             else {
