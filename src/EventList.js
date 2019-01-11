@@ -1,9 +1,7 @@
-
 import React from 'react';
 
 import EventListItem from './EventListItem';
 import Placeholder from './Placeholder';
-
 
 
 class EventList extends React.Component {
@@ -53,15 +51,15 @@ class EventList extends React.Component {
         let clickedEvent = this.props.events.find(oneEvent => {
 
 
-             return id === oneEvent.id
-      })
+            return id === oneEvent.id
+        })
         this.setState({
             event: clickedEvent
         })
 
-     }
+    }
 
- }
+}
 
 
 export default EventList;

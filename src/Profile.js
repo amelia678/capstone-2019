@@ -36,7 +36,7 @@ class Profile extends Component {
 
         return (
             <div>
-                <h2>My Profile</h2>
+                <h1>{this.state.username}'s Profile</h1>
                 <p>About Me:</p>
                 <ul >
                     <li>{this.state.username}</li>

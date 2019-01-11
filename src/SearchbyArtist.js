@@ -1,13 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
+import AddArtistToUser from './AddArtistToUser';
 
 class SearchbyArtist extends Component {
     constructor(props) {
         super(props);
         this.state = {
             artistArray: [],
-            showAPIList: false
+            showAPIList: false,
+            addToList: null
         }
     }
+
 
     render()  {
       
@@ -25,50 +29,75 @@ class SearchbyArtist extends Component {
             >search</button>
             <div >
              {this.state.artistArray}
+
             </div>
-        </div>
-    )
+        )
 
 
-}
+    }
 
-_showList = () => {
-    fetch('/APIartistList', {
-        method: 'POST',
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify({
-            searchArtist: this.props.searchTerm
-        })
+    _showList = () => {
+        fetch('/APIartistList', {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                searchArtist: this.props.searchTerm
+            })
+
+
+
         
     })
-    .then(r => r.json())    
-    .then(artists => {
-        console.log(artists)
-        const artistList = artists.map(grimes => {
-            return(
-                <ul className="eventList"
-                key={grimes.id}>
-                {grimes.name}<button>Add to my list</button>
-                </ul>
-            )
+
         })
-        if (artistList.length === 0) {
-            this.setState({
-                artistArray : 'No results found'
+            .then(r => r.json())
+            .then(artists => {
+                console.log(artists)
+                const artistList = artists.map(grimes => {
+                    return (
+                        <li
+                            key={grimes.id}>
+                            {grimes.name}
+                            <button onClick={() => {
+                                this._addEvent(grimes.name)
+                            }}
+                            >Add to My Artists!</button>
+                            {this.state.addToList ? <AddArtistToUser
+                                artist={(grimes.name)}
+                            /> : null}
+                        </li>
+                    )
+                })
+                if (artistList.length === 0) {
+                    this.setState({
+                        artistArray: 'No results found'
+                    })
+                } else {
+                    this.setState({
+                        artistArray: artistList
+                    })
+                }
             })
-        } else {
+
         this.setState({
-            artistArray: artistList
+            showAPIList: true
+        });
+
+
+
+
+    }
+
+    _addEvent = (jeff) => {
+        console.log('is this jeff?')
+        console.log(jeff)
+        let clickedArtist = this.state.artistArray.find(thisOne => {
+            return jeff === thisOne.name
+        })
+        this.setState({
+            addToList: clickedArtist
         })
     }
-    } )
-    
-    this.setState({
-        showAPIList: true
-    });
-}
 
-
- 
 }
 export default SearchbyArtist;
