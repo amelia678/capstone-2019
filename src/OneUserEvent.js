@@ -34,6 +34,12 @@ class OneUserEvent extends React.Component {
 
     render() {
 
+        // let attendeeList;
+        // if (this.state.friends.length === 1) {
+        //     attendeeList = (
+        //         <li>just me!</li>
+        //     )
+        // } else {
         let attendeeList =
             this.state.friends.map(pal => {
                 return (

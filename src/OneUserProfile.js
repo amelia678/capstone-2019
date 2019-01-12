@@ -1,8 +1,8 @@
 import React from 'react';
 
 import GetMemberShows from './GetMemberShows';
-// import FavoriteArtists from './FavoriteArtists';
-// import MyFriends from './MyFriends';
+import GetMemberArtists from './GetMemberArtists';
+import GetMemberFriends from './GetMemberFriends';
 
 class OneUserProfile extends React.Component {
     constructor(props) {
@@ -45,15 +45,17 @@ class OneUserProfile extends React.Component {
                     <li>{this.state.username}'s shows:</li>
                     <ul><GetMemberShows
                         userID={this.props.showPal} /></ul>
-                    {/* <li>{this.state.username}'s artists:</li>
-                    <ul><FavoriteArtists
-                        myArtists={this.state.myArtists} /></ul>
+                    <li>{this.state.username}'s artists:</li>
+                    <ul><GetMemberArtists
+                        userId={this.props.showPal} /></ul>
                     <li>{this.state.username}'s friends:</li>
-                    <ul><MyFriends
-                        myFriends={this.state.myFriends} /></ul> */}
+                    <ul><GetMemberFriends
+                        userID={this.props.showPal} /></ul>
                 </ul>
-            </div>
+                <button link='mailto: {this.state.email}'> email me!</button>
+            </div >
         )
+
     }
 }
 
