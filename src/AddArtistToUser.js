@@ -14,6 +14,7 @@ class AddArtistToUser extends React.Component {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
+                id: this.props.artist.id,
                 artist: this.props.artist
             }),
         })
