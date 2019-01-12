@@ -28,14 +28,11 @@ class UpcomingShows extends React.Component {
             // console.log(show);
             return (
 
-                <li className="eventList"  onClick={() => {
+                <li className="eventList" onClick={() => {
                     this._showEvent(show.id)
                 }}
                     key={show.id}>
-                    {show.artist} at
-                {show.venue} in
-                {show.city}, {show.state} on
-                {show.date}
+                    {show.artist} at {show.venue} in {show.city}, {show.state} on {show.date}
                 </li>
 
             )

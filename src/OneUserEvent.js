@@ -8,7 +8,8 @@ class OneUserEvent extends React.Component {
         this.state = {
             deleteFromList: false,
             friends: [],
-            members: []
+            members: [],
+            showPal: false
         }
     }
 
@@ -35,7 +36,11 @@ class OneUserEvent extends React.Component {
         let attendeeList =
             this.state.friends.map(pal => {
                 return (
-                    <li key={pal.id}>{pal.username} from {pal.home}</li>
+                    <li
+                        onClick={() => {
+                            this._showPal(pal.id)
+                        }}
+                        key={pal.id}>{pal.username} from {pal.home}</li>
                 )
             })
         //determine here how long the attendee list, and if it is just this req.session.user, then need to call deletefromeventstable also
@@ -60,6 +65,12 @@ class OneUserEvent extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    _showPal = (id) => {
+        this.setState({
+            showUserProfile: true
+        })
     }
 
     _deleteEvent = (e) => {
