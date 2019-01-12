@@ -2,6 +2,7 @@ import React from 'react';
 
 import AddAPItoDB from './AddAPItoDB';
 import Placeholder from './Placeholder';
+import OneUserProfile from './OneUserProfile';
 
 class OneAPIEvent extends React.Component {
     constructor(props) {
@@ -53,7 +54,11 @@ class OneAPIEvent extends React.Component {
             attendeeList =
                 this.state.friends.map(pal => {
                     return (
-                        <li key={pal.id}>{pal.username} from {pal.home}</li>
+                        <li
+                            onClick={() => {
+                                this._showPal(pal.id)
+                            }}
+                            key={pal.id}>{pal.username} from {pal.home}</li>
                     )
                 })
         }
@@ -84,7 +89,12 @@ class OneAPIEvent extends React.Component {
                     state={(this.props.event.state)}
                     date={(this.props.event.date)}
                 /> : null}
-               {this.state.addToList ? <Placeholder /> : null}
+                {this.state.addToList ? <Placeholder /> : null}
+                {
+                    this.state.showPal ? <OneUserProfile
+                        showPal={(this.state.showPal)}
+                    /> : null
+                }
             </div >
         )
     }
@@ -97,9 +107,20 @@ class OneAPIEvent extends React.Component {
             console.log(this.state.addToList);
             console.log(this.props.event.artist);
         })
-        
+
     }
 
+    _showPal = (id) => {
+        console.log(`look at one friend with id ${id}`)
+        // let clickedPal = this.state.friends.find(jeff => {
+        //     return id === jeff.id
+        // })
+        // console.log(`clickedpal ${clickedPal}`)
+        this.setState({
+            showPal: id
+        })
+        // console.log(this.state)
+    }
 
 }
 

@@ -13,7 +13,10 @@ class Profile extends Component {
         super(props);
         this.state = {
             id: "",
-            username: ""
+            username: "",
+            name: "",
+            email: "",
+            home: ""
         }
     }
 
@@ -25,8 +28,12 @@ class Profile extends Component {
             .then(user => {
 
                 this.setState({
+                    id: user.id,
                     username: user.username,
-                    home: user.userHome
+                    name: user.name,
+                    email: user.email,
+                    home: user.home
+
                 })
             })
     }
@@ -36,18 +43,21 @@ class Profile extends Component {
 
         return (
             <div>
-                <h1>{this.state.username}'s Profile</h1>
+                <h1>{this.state.name}'s Profile</h1>
                 <p>About Me:</p>
                 <ul >
                     <li>{this.state.username}</li>
                     <li>{this.state.home}</li>
                 </ul>
+                <p>My Shows:</p>
                 <UpcomingShows
                     myShows={this.state.myShows} />
                 <Link to="/home">Search More Shows</Link>
+                <p>My Artists:</p>
                 <FavoriteArtists
                     myArtists={this.state.myArtists} />
                 <Link to="/search-artists">Search More Artists</Link>
+                <p>My Friends:</p>
                 <MyFriends
                     myFriends={this.state.myFriends} />
                 <Link className="logout" to="/logout">Logout</Link>

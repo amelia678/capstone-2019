@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MyFriends extends React.Component {
+class GetMemberFriends extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,7 +9,13 @@ class MyFriends extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/myFriends')
+        fetch('/palFriends', {
+            method: 'post',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                userID: this.props.userID
+            }),
+        })
             .then(r => r.json())
             .then(friendArray => {
                 this.setState({
@@ -38,4 +44,4 @@ class MyFriends extends React.Component {
     }
 }
 
-export default MyFriends;
+export default GetMemberFriends;

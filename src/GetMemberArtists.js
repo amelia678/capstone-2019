@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FavoriteArtists extends React.Component {
+class GetMemberArtists extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,7 +9,13 @@ class FavoriteArtists extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/myArtists')
+        fetch('/palArtists', {
+            method: 'post',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                userID: this.props.userID
+            }),
+        })
             .then(r => r.json())
             .then(artistArray => {
                 this.setState({
@@ -37,4 +43,4 @@ class FavoriteArtists extends React.Component {
     }
 }
 
-export default FavoriteArtists;
+export default GetMemberArtists;

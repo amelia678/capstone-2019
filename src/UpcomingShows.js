@@ -12,7 +12,9 @@ class UpcomingShows extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/upcomingShows')
+        fetch('/upcomingShows',
+
+        )
             .then(r => r.json())
             .then(showArray => {
                 // console.log(showArray);
@@ -28,14 +30,11 @@ class UpcomingShows extends React.Component {
             // console.log(show);
             return (
 
-                <li className="eventList"  onClick={() => {
+                <li className="eventList" onClick={() => {
                     this._showEvent(show.id)
                 }}
                     key={show.id}>
-                    {show.artist} at
-                {show.venue} in
-                {show.city}, {show.state} on
-                {show.date}
+                    {show.artist} at {show.venue} in {show.city}, {show.state} on {show.date}
                 </li>
 
             )
@@ -43,7 +42,7 @@ class UpcomingShows extends React.Component {
         // console.log(this.state.myShows);
         return (
             <div>
-                <p>My Shows:</p>
+
                 <ul >
                     {showList}
                 </ul>

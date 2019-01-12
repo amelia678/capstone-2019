@@ -13,23 +13,24 @@ class SearchbyArtist extends Component {
     }
 
 
-    render()  {
-      
-    return (
-        <div>
-            <h3>Search an Artist</h3>
-            <input
-            value={this.props.searchTerm}
-            onChange={(event) => {
-                this.props.handleInput(event.target.value)
-            }}
-            ></input>
-            <button
-            onClick={this._showList}
-            >search</button>
-            <div >
-             {this.state.artistArray}
+    render() {
 
+        return (
+            <div>
+                <h3>Search an Artist</h3>
+                <input
+                    value={this.props.searchTerm}
+                    onChange={(event) => {
+                        this.props.handleInput(event.target.value)
+                    }}
+                ></input>
+                <button
+                    onClick={this._showList}
+                >search</button>
+                <div >
+                    {this.state.artistArray}
+
+                </div>
             </div>
             <div>
                 {this.state.addToList ?  <AddArtistToUser
@@ -50,10 +51,12 @@ class SearchbyArtist extends Component {
 
 
 
+
         
     })
 
        
+
             .then(r => r.json())
             .then(artists => {
                 console.log(artists)

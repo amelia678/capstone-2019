@@ -1,14 +1,16 @@
 import React from 'react';
 
 import DeleteEvent from './DeleteEvent';
+import OneUserProfile from './OneUserProfile';
 
 class OneUserEvent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            deleteFromList: false,
+            deleteFromList: null,
             friends: [],
-            members: []
+            members: [],
+            showPal: null
         }
     }
 
@@ -32,20 +34,35 @@ class OneUserEvent extends React.Component {
 
     render() {
 
+        // let attendeeList;
+        // if (this.state.friends.length === 1) {
+        //     attendeeList = (
+        //         <li>just me!</li>
+        //     )
+        // } else {
         let attendeeList =
             this.state.friends.map(pal => {
                 return (
-                    <li key={pal.id}>{pal.username} from {pal.home} 
-                    <button>Profile </button>
-                    </li>
-                    
+
+                    <div>
+                        < li
+                            onClick={() => {
+                                this._showPal(pal.id)
+                            }
+                            }
+                            key={pal.id} > {pal.username} from {pal.home}</li >
+
+                    </div>
+
                 )
             })
         //determine here how long the attendee list, and if it is just this req.session.user, then need to call deletefromeventstable also
 
         return (
+
             <div className="event-profileContainer">
             <div className="oneEvent profile-event">
+
                 <div>
                     <ul>
                         <li>Artist: {this.props.event.artist} </li>
@@ -62,6 +79,13 @@ class OneUserEvent extends React.Component {
                         /> : null}
                     </ul>
                 </div>
+
+                {
+                    this.state.showPal ? <OneUserProfile
+                        showPal={(this.state.showPal)}
+                    /> : null
+                }
+
                 
             </div>
             <div className="friendProfile">
@@ -70,9 +94,23 @@ class OneUserEvent extends React.Component {
                 <p>from here</p>
                 <p>this is the music they like</p>
             </div>
+
             </div>
         )
     }
+
+    _showPal = (id) => {
+        console.log(`look at one friend with id ${id}`)
+        // let clickedPal = this.state.friends.find(jeff => {
+        //     return id === jeff.id
+        // })
+        // console.log(`clickedpal ${clickedPal}`)
+        this.setState({
+            showPal: id
+        })
+        // console.log(this.state)
+    }
+
 
     _deleteEvent = (e) => {
         this.setState({
