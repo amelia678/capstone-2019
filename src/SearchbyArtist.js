@@ -31,9 +31,8 @@ class SearchbyArtist extends Component {
              {this.state.artistArray}
 
             </div>
+            </div>
         )
-
-
     }
 
     _showList = () => {
@@ -49,13 +48,13 @@ class SearchbyArtist extends Component {
         
     })
 
-        })
+       
             .then(r => r.json())
             .then(artists => {
                 console.log(artists)
                 const artistList = artists.map(grimes => {
                     return (
-                        <li
+                        <li className="eventList"
                             key={grimes.id}>
                             {grimes.name}
                             <button onClick={() => {
