@@ -155,14 +155,15 @@ ul {
   display: flex;
 }
 .friendProfile {
-  outline: 3px solid lightcoral;
-  background-color: lightblue;
+  border: 5px solid lightgreen;
+  background-color: linen;
   width: 50%;
   margin: 5px;
+  border-radius: 3px;
 }
 
 .profile-event {
-  outline: solid 4px brown;
+  /* outline: solid 4px brown; */
   width: 50%;
   margin: 5px;
 }
