@@ -1,7 +1,7 @@
 import React from 'react';
 
 import EventListItem from './EventListItem';
-import Placeholder from './Placeholder';
+
 
 
 class EventList extends React.Component {

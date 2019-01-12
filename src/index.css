@@ -149,6 +149,24 @@ ul {
   max-height: 50%;
   overflow: auto;
 }
+
+.event-profileContainer{
+  /* outline: solid 5px palegreen; */
+  display: flex;
+}
+.friendProfile {
+  border: 5px solid lightgreen;
+  background-color: linen;
+  width: 50%;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.profile-event {
+  /* outline: solid 4px brown; */
+  width: 50%;
+  margin: 5px;
+}
 /* Common "breakpoints"
 S, M, L, XL, Party size
 
@@ -166,6 +184,15 @@ S, M, L, XL, Party size
 
   .oneEvent {
     width: 100%
+  }
+
+  
+  .event-profileContainer {
+    flex-direction: column;
+  }
+
+  .friendProfile {
+    width: 100%;
   }
 }
 @media screen and (max-width: 768px) {

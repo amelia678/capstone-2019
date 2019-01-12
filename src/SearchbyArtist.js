@@ -32,9 +32,13 @@ class SearchbyArtist extends Component {
 
                 </div>
             </div>
+            <div>
+                {this.state.addToList ?  <AddArtistToUser
+                artist={this.state.addToList}
+                /> : null }
+                </div>
+            </div>
         )
-
-
     }
 
     _showList = () => {
@@ -44,24 +48,32 @@ class SearchbyArtist extends Component {
             body: JSON.stringify({
                 searchArtist: this.props.searchTerm
             })
-        })
+
+
+
+
+        
+    })
+
+       
 
             .then(r => r.json())
             .then(artists => {
                 console.log(artists)
                 const artistList = artists.map(grimes => {
                     return (
-                        <li
-                            key={grimes.id}>
+                        
+                        <ul className="eventList"
+                            key={grimes.name}>
                             {grimes.name}
                             <button onClick={() => {
                                 this._addEvent(grimes.name)
                             }}
                             >Add to My Artists!</button>
-                            {this.state.addToList ? <AddArtistToUser
-                                artist={(grimes.name)}
-                            /> : null}
-                        </li>
+
+                        </ul>
+                        
+                     
                     )
                 })
                 if (artistList.length === 0) {
@@ -72,7 +84,8 @@ class SearchbyArtist extends Component {
                     this.setState({
                         artistArray: artistList
                     })
-                }
+                } 
+                
             })
 
         this.setState({
@@ -88,11 +101,19 @@ class SearchbyArtist extends Component {
         console.log('is this jeff?')
         console.log(jeff)
         let clickedArtist = this.state.artistArray.find(thisOne => {
-            return jeff === thisOne.name
+            // console.log(thisOne)
+            return jeff === thisOne.key
         })
         this.setState({
-            addToList: clickedArtist
+            addToList: jeff
+            
+        }, () => {
+            console.log(this.state.addToList)
+            console.log(clickedArtist)
+            console.log(jeff)
         })
+
+        
     }
 
 }
