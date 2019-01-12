@@ -82,12 +82,6 @@ class OneUserEvent extends React.Component {
                 
                 
             </div>
-            {/* <div className="friendProfile">
-                <p>friend's profile goes here</p>
-                <p>here's their name</p>
-                <p>from here</p>
-                <p>this is the music they like</p>
-            </div> */}
             <div >
                     {this.state.showPal ? <OneUserProfile
                         showPal={(this.state.showPal)}
