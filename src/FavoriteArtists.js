@@ -28,7 +28,7 @@ class FavoriteArtists extends React.Component {
 
         return (
             <div>
-                <p>My Artists:</p>
+
                 <ul>
                     {artistList}
                 </ul>

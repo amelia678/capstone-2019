@@ -18,9 +18,9 @@ class EventList extends React.Component {
         return (
             <div className="APIbundle">
                 <div className="oneAPIEvent">
-                {this.state.event ? <EventListItem
-                    event={(this.state.event)}
-                /> : null}
+                    {this.state.event ? <EventListItem
+                        event={(this.state.event)}
+                    /> : null}
                 </div>
                 <ul >
                     {this.props.events.map(event => {
@@ -31,17 +31,14 @@ class EventList extends React.Component {
                                     this._showEvent(event.id)
                                 }}
                                 key={event.id}>
-                                {event.artist} at
-                                    {event.venue} in
-                                    {event.city}, {event.state} on
-                                    {event.date}
+                                {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
                             </li>
 
                         )
                     })}
 
                 </ul>
-                
+
             </div>
         )
     }

@@ -42,12 +42,15 @@ class Profile extends Component {
                     <li>{this.state.username}</li>
                     <li>{this.state.home}</li>
                 </ul>
+                <p>My Shows:</p>
                 <UpcomingShows
                     myShows={this.state.myShows} />
                 <Link to="/home">Search More Shows</Link>
+                <p>My Artists:</p>
                 <FavoriteArtists
                     myArtists={this.state.myArtists} />
                 <Link to="/search-artists">Search More Artists</Link>
+                <p>My Friends:</p>
                 <MyFriends
                     myFriends={this.state.myFriends} />
                 <Link className="logout" to="/logout">Logout</Link>

@@ -1,15 +1,16 @@
 import React from 'react';
 
 import DeleteEvent from './DeleteEvent';
+import OneUserProfile from './OneUserProfile';
 
 class OneUserEvent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            deleteFromList: false,
+            deleteFromList: null,
             friends: [],
             members: [],
-            showPal: false
+            showPal: null
         }
     }
 
@@ -36,17 +37,21 @@ class OneUserEvent extends React.Component {
         let attendeeList =
             this.state.friends.map(pal => {
                 return (
-                    <li
-                        onClick={() => {
-                            this._showPal(pal.id)
-                        }}
-                        key={pal.id}>{pal.username} from {pal.home}</li>
+                    <div>
+                        < li
+                            onClick={() => {
+                                this._showPal(pal.id)
+                            }
+                            }
+                            key={pal.id} > {pal.username} from {pal.home}</li >
+
+                    </div>
                 )
             })
         //determine here how long the attendee list, and if it is just this req.session.user, then need to call deletefromeventstable also
 
         return (
-            <div className="oneEvent">
+            <div className="oneEvent" >
                 <div>
                     <ul>
                         <li>Artist: {this.props.event.artist} </li>
@@ -63,15 +68,27 @@ class OneUserEvent extends React.Component {
                         /> : null}
                     </ul>
                 </div>
+                {
+                    this.state.showPal ? <OneUserProfile
+                        showPal={(this.state.showPal)}
+                    /> : null
+                }
             </div>
         )
     }
 
     _showPal = (id) => {
+        console.log(`look at one friend with id ${id}`)
+        // let clickedPal = this.state.friends.find(jeff => {
+        //     return id === jeff.id
+        // })
+        // console.log(`clickedpal ${clickedPal}`)
         this.setState({
-            showUserProfile: true
+            showPal: id
         })
+        // console.log(this.state)
     }
+
 
     _deleteEvent = (e) => {
         this.setState({

@@ -12,7 +12,9 @@ class UpcomingShows extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/upcomingShows')
+        fetch('/upcomingShows',
+
+        )
             .then(r => r.json())
             .then(showArray => {
                 // console.log(showArray);
@@ -40,7 +42,7 @@ class UpcomingShows extends React.Component {
         // console.log(this.state.myShows);
         return (
             <div>
-                <p>My Shows:</p>
+
                 <ul >
                     {showList}
                 </ul>

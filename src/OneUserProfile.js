@@ -1,44 +1,57 @@
 import React from 'react';
 
+import GetMemberShows from './GetMemberShows';
+// import FavoriteArtists from './FavoriteArtists';
+// import MyFriends from './MyFriends';
+
 class OneUserProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            id: '',
+            username: '',
         }
     }
 
-    ComponentDidMount() {
-        fetch('/friendProfile')
+    componentDidMount() {
+        fetch('/palProfile', {
+            method: 'post',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                userID: this.props.showPal
+            }),
+        })
 
             .then(r => r.json())
             .then(user => {
 
                 this.setState({
+                    id: user.id,
                     username: user.username,
-                    home: user.userHome
+
                 })
             })
-    }
+    };
+
+
 
     render() {
+        console.log(this.state)
         return (
             <div>
-                <h1>{this.state.username}'s Profile</h1>
-                <p>About Me:</p>
-                <ul >
-                    <li>{this.state.username}</li>
-                    <li>{this.state.home}</li>
+                <h3>THIS MA FRIEND {this.state.username}</h3>
+                <ul>
+                    {/* <li>{this.state.home}</li> */}
+                    <li>{this.state.username}'s shows:</li>
+                    <ul><GetMemberShows
+                        userID={this.props.showPal} /></ul>
+                    {/* <li>{this.state.username}'s artists:</li>
+                    <ul><FavoriteArtists
+                        myArtists={this.state.myArtists} /></ul>
+                    <li>{this.state.username}'s friends:</li>
+                    <ul><MyFriends
+                        myFriends={this.state.myFriends} /></ul> */}
                 </ul>
-                <UpcomingShows
-                    myShows={this.state.myShows} />
-                <Link to="/home">Search More Shows</Link>
-                <FavoriteArtists
-                    myArtists={this.state.myArtists} />
-                <Link to="/search-artists">Search More Artists</Link>
-                <MyFriends
-                    myFriends={this.state.myFriends} />
-                <Link className="logout" to="/logout">Logout</Link>
             </div>
         )
     }
