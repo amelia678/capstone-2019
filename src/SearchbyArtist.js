@@ -31,12 +31,12 @@ class SearchbyArtist extends Component {
                     {this.state.artistArray}
 
                 </div>
-            </div>
+            
             <div>
                 {this.state.addToList ?  <AddArtistToUser
                 artist={this.state.addToList}
                 /> : null }
-                </div>
+            </div>
             </div>
         )
     }

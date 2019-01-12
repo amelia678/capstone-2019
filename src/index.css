@@ -157,14 +157,15 @@ ul {
 .friendProfile {
   border: 5px solid lightgreen;
   background-color: linen;
-  width: 50%;
+  width: 100%;
   margin: 5px;
   border-radius: 3px;
+  text-align: initial;
 }
 
 .profile-event {
   /* outline: solid 4px brown; */
-  width: 50%;
+  width: 100%;
   margin: 5px;
 }
 /* Common "breakpoints"
