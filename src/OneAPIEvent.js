@@ -10,6 +10,7 @@ class OneAPIEvent extends React.Component {
         this.state = {
             addToList: false,
             friends: [],
+            showPal: null
         }
     }
 
