@@ -24,7 +24,9 @@ class Profile extends Component {
 
         fetch('/profile')
 
-            .then(r => r.json())
+            .then(r => {
+                return r.json()
+            })
             .then(user => {
 
                 this.setState({
