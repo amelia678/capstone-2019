@@ -68,22 +68,22 @@ class Register extends Component {
 
                     <label> <span>Likes:</span>
                         <input
-                            onChange={this._updateHome}
-                            value={this.state.home}
+                            onChange={this._updateLikes}
+                            value={this.state.likes}
                             type="text" name="likes"></input>
                     </label>
 
                     <label> <span>Dislikes:</span>
                         <input
-                            onChange={this._updateHome}
-                            value={this.state.home}
+                            onChange={this._updateDislikes}
+                            value={this.state.dislikes}
                             type="text" name="dislikes"></input>
                     </label>
 
                     <label> <span>Are you interested in connecting with another user to attend events with?</span>
                         <input
-                            onChange={this._updateHome}
-                            value={this.state.home}
+                            onChange={this._updatePal}
+                            value={this.state.pal}
                             type="text" name="pal"></input>
                     </label>
 
@@ -133,6 +133,24 @@ class Register extends Component {
     _updateHome = event => {
         this.setState({
             home: event.target.value
+        })
+    }
+
+    _updateLikes = event => {
+        this.setState({
+            likes: event.target.value
+        })
+    }
+
+    _updateDislikes = event => {
+        this.setState({
+            dislikes: event.target.value
+        })
+    }
+
+    _updatePal = event => {
+        this.setState({
+            pal: event.target.value
         })
     }
 
