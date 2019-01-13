@@ -9,6 +9,8 @@ import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
 import Placeholder from './Placeholder';
 // import OneEvent from './OneEvent';
+import Delete from './Delete';
+import Update from './Update';
 
 import {
     BrowserRouter as Router,
@@ -39,13 +41,14 @@ class MusicPal extends Component {
                             </div>
                             <div className="title">
                                 <h1>MusicPal</h1>
-                            
+
                             </div>
                         </div>
                         <div className="eventInfo">
                             <div className="searchBar">
-                                <Route path ="/" exact render ={() => {
-                                return <h2>Find your music... find your pals</h2>}}/>  
+                                <Route path="/" exact render={() => {
+                                    return <h2>Find your music... find your pals</h2>
+                                }} />
                                 <Route path="/login" render={(props) => {
                                     return <Login {...props} />
                                 }}
@@ -56,7 +59,7 @@ class MusicPal extends Component {
                                 }}
                                 />
 
-                               <Route path="/home" render={(props) => {
+                                <Route path="/home" render={(props) => {
                                     return <Search
                                         searchTerm={(this.state.searchTerm)} {...props}
                                         handleInput={(this._setSearchTerm)} {...props} />
@@ -90,6 +93,12 @@ class MusicPal extends Component {
 
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
+                        }} />
+                        <Route path="/delete" render={(props) => {
+                            return <Delete {...props} />
+                        }} />
+                        <Route path="/update" render={(props) => {
+                            return <Update {...props} />
                         }} />
 
 

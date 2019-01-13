@@ -16,8 +16,10 @@ class Register extends Component {
             username: '',
             password: '',
             emailAddress: '',
-            home: ''
-            
+            home: '',
+            likes: '',
+            dislikes: '',
+            pal: ''
         }
     }
 
@@ -64,12 +66,33 @@ class Register extends Component {
                             type="text" name="home"></input>
                     </label>
 
-                    <label>
-                        <input 
-                        
-                        type="submit" value="Sign Up!"></input>
+                    <label> <span>Likes:</span>
+                        <input
+                            onChange={this._updateHome}
+                            value={this.state.home}
+                            type="text" name="likes"></input>
                     </label>
-                
+
+                    <label> <span>Dislikes:</span>
+                        <input
+                            onChange={this._updateHome}
+                            value={this.state.home}
+                            type="text" name="dislikes"></input>
+                    </label>
+
+                    <label> <span>Are you interested in connecting with another user to attend events with?</span>
+                        <input
+                            onChange={this._updateHome}
+                            value={this.state.home}
+                            type="text" name="pal"></input>
+                    </label>
+
+                    <label>
+                        <input
+
+                            type="submit" value="Sign Up!"></input>
+                    </label>
+
                 </form>
                 <Link to="/login">Already a member?</Link>
             </div>
@@ -116,26 +139,26 @@ class Register extends Component {
     _checkUsername = (e) => {
         e.preventDefault();
         axios
-        .post('/API/register', this.state)
-        .then(r => {
-            // return r.text()
-            
-            console.log(r.data)
-            if (r.data.status === 'taken') {
-                alert("Try again music-luver (that username is already taken)")
-            }
-            else {
-                this.props.history.push('/profile')
-            }
+            .post('/API/register', this.state)
+            .then(r => {
+                // return r.text()
+
+                console.log(r.data)
+                if (r.data.status === 'taken') {
+                    alert("Try again music-luver (that username is already taken)")
+                }
+                else {
+                    this.props.history.push('/profile')
+                }
             })
-        .catch(err => {
-            console.log(err)
-        })
+            .catch(err => {
+                console.log(err)
+            })
         console.log('i have been submitted')
     }
-    
-  
-    
+
+
+
 }
 
 export default Register;
