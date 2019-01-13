@@ -12,6 +12,7 @@ body {
   color: steelblue;
   font-family: 'Raleway', sans-serif;
   text-shadow: .5px .5px lightgray;
+  
 }
   
 
@@ -51,11 +52,24 @@ ul {
   text-align: right;
   list-style-type: none;
 }
+
+.login {
+  outline: 1px solid blanchedalmond;
+  background-color: lemonchiffon;
+  width: 70%;
+  height: 200px;
+  margin: auto;
+  padding: 10px;
+  opacity: 0.9;
+}
+
+
 .searchBar {
-  /* outline: 2px solid plum; */
+  /* border: 2px solid plum; */
   width: 90%;
   margin:auto;
   padding: 10px;
+  border-radius: 2px
 
 }
 
@@ -152,6 +166,20 @@ ul {
   padding: 5px;
  
 }
+.artistSection {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.artistList {
+  border: solid 1px slategray;
+  background-color: lavender;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+  width: 30%;
+  
+}
 .list-overflow {
   max-height: 50%;
   overflow: auto;
@@ -163,7 +191,7 @@ ul {
 }
 .friendProfile {
   border: 5px solid lightgreen;
-  background-color: linen;
+  background-color: whitesmoke;
   width: 100%;
   margin: 5px;
   border-radius: 3px;

@@ -25,7 +25,7 @@ class Register extends Component {
     render() {
 
         return (
-            <div>
+            <div className="login">
                 <h3>Register an account here:</h3>
                 <form onSubmit={(e) => this._checkUsername(e)} >
 

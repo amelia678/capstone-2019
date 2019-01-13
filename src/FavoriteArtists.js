@@ -22,14 +22,15 @@ class FavoriteArtists extends React.Component {
 
         const artistList = this.state.myArtists.map(artist => {
             return (
-                <li key={artist.id}>{artist.name}</li>
+                <li className="artistList"
+                 key={artist.id}>{artist.name}</li>
             )
         })
 
         return (
             <div>
 
-                <ul>
+                <ul className="artistSection" >
                     {artistList}
                 </ul>
             </div>
