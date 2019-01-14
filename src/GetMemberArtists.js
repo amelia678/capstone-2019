@@ -9,12 +9,14 @@ class GetMemberArtists extends React.Component {
     }
 
     componentDidMount() {
+        console.log('looking for palartists')
+        console.log(this.props.userID)
         fetch('/palArtists', {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
                 userID: this.props.userID
-            }),
+            })
         })
             .then(r => r.json())
             .then(artistArray => {
