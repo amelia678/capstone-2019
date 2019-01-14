@@ -42,12 +42,16 @@ class OneUserProfile extends React.Component {
                 <h3>THIS MA FRIEND {this.state.username}</h3>
                 <ul>
                     {/* <li>{this.state.home}</li> */}
+                    <h4>{this.state.username}'s likes:</h4>
+                    <ul></ul>
+                    <h4>{this.state.username}'s dislikes:</h4>
+                    <ul></ul>
                     <h4>{this.state.username}'s shows:</h4>
                     <ul><GetMemberShows
                         userID={this.props.showPal} /></ul>
                     <h4>{this.state.username}'s artists:</h4>
                     <h4><GetMemberArtists
-                        userId={this.props.showPal} /></h4>
+                        userID={this.props.showPal} /></h4>
                     <h4>{this.state.username}'s friends:</h4>
                     <ul><GetMemberFriends
                         userID={this.props.showPal} /></ul >
