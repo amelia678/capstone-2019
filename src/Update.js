@@ -26,7 +26,7 @@ class Update extends Component {
     }
 
     componentDidMount() {
-        fetch('/profile')
+        fetch('/API/profile')
 
             .then(r => {
                 return r.json()
@@ -36,7 +36,6 @@ class Update extends Component {
                 this.setState({
                     id: user.id,
                     name: user.name,
-
                     username: user.username,
                     password: user.password,
                     emailAddress: user.email,
@@ -53,6 +52,7 @@ class Update extends Component {
         return (
             <div>
                 <h3>Update your information here:</h3>
+                <form onSubmit={(e) => this._checkUsername(e)} ></form>
                 <form>
                     <label><span> Your name:</span>
                         <input
@@ -128,7 +128,7 @@ class Update extends Component {
                             name={(this.state.name)}
                             username={(this.state.username)}
                             password={(this.state.password)}
-                            email={(this.state.emailAddress)}
+                            emailAddress={(this.state.emailAddress)}
                             home={(this.state.home)}
                             likes={(this.state.likes)}
                             dislikes={(this.state.dislikes)}
@@ -204,7 +204,7 @@ class Update extends Component {
                     alert("Try again music-luver (that username is already taken)")
                 }
                 else {
-                    this.props.history.push('/profile')
+                    this.props.history.push('/login')
                 }
             })
             .catch(err => {
