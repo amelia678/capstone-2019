@@ -6,6 +6,8 @@ import axios from 'axios';
 // } from 'react-router-dom';
 import SubmitUpdate from './SubmitUpdate';
 
+// make a handleSubmit
+// change backend route
 
 class Update extends Component {
     constructor(props) {
@@ -24,7 +26,7 @@ class Update extends Component {
     }
 
     componentDidMount() {
-        fetch('/API/profile')
+        fetch('/profile')
 
             .then(r => {
                 return r.json()
