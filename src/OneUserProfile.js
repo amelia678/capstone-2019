@@ -3,6 +3,7 @@ import React from 'react';
 import GetMemberShows from './GetMemberShows';
 import GetMemberArtists from './GetMemberArtists';
 import GetMemberFriends from './GetMemberFriends';
+import AddFriend from './AddFriend';
 
 class OneUserProfile extends React.Component {
     constructor(props) {
@@ -10,6 +11,10 @@ class OneUserProfile extends React.Component {
         this.state = {
             id: '',
             username: '',
+            email: '',
+            likes: '',
+            dislikes: '',
+            pal: ''
         }
     }
 
@@ -28,7 +33,10 @@ class OneUserProfile extends React.Component {
                 this.setState({
                     id: user.id,
                     username: user.username,
-
+                    email: user.email,
+                    likes: user.likes,
+                    dislikes: user.dislikes,
+                    pal: user.pal
                 })
             }) 
     };
@@ -37,30 +45,50 @@ class OneUserProfile extends React.Component {
 
     render() {
         console.log(this.state)
+        console.log('^^ oneuserprofile state')
         return (
             <div className="friendProfile" >
-                <h3>THIS MA FRIEND {this.state.username}</h3>
+                <h3>all about {this.state.username}</h3>
                 <ul>
                     {/* <li>{this.state.home}</li> */}
                     <h4>{this.state.username}'s likes:</h4>
-                    <ul></ul>
+                    <p>{this.state.likes}</p>
                     <h4>{this.state.username}'s dislikes:</h4>
-                    <ul></ul>
+                    <p>{this.state.dislikes}</p>
+                    <h4>{this.state.username} is interested in pals for event attendance? </h4>
+                    <p>{this.state.pal} </p>
                     <h4>{this.state.username}'s shows:</h4>
                     <ul><GetMemberShows
                         userID={this.props.showPal} /></ul>
                     <h4>{this.state.username}'s artists:</h4>
-                    <h4><GetMemberArtists
-                        userID={this.props.showPal} /></h4>
+                    <ul><GetMemberArtists
+                        userID={this.props.showPal} /></ul>
                     <h4>{this.state.username}'s friends:</h4>
                     <ul><GetMemberFriends
                         userID={this.props.showPal} /></ul >
                 </ul>
-                <button link='mailto: {this.state.email}'> email me!</button>
+                <a className="logout"
+                    href={`mailto: (${this.state.email})`}>
+                    <label> email me!</label></a>
+                <p className="logout"
+                    onClick={() => {
+                        this.setState({
+                            addFriend: true
+                        })
+                    }}>add as friend</p>
+                {this.state.addFriend ? <AddFriend
+                    friend_id={(this.state.id)}
+                /> : null}
+
             </div >
         )
 
     }
+
+    // _addToFriends = (id) => {
+
+    //     addFriend: true
+    // }
 }
 
 export default OneUserProfile;
