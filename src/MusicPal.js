@@ -7,7 +7,7 @@ import Login from './Login';
 import Register from './Register';
 import Logout from './Logout';
 import SearchbyArtist from './SearchbyArtist';
-import Placeholder from './Placeholder';
+// import Placeholder from './Placeholder';
 // import OneEvent from './OneEvent';
 import Delete from './Delete';
 import Update from './Update';

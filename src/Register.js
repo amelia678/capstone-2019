@@ -167,7 +167,7 @@ class Register extends Component {
                     alert("Try again music-luver (that username is already taken)")
                 }
                 else {
-                    this.props.history.push('/update')
+                    this.props.history.push('/profile')
                 }
             })
             .catch(err => {
