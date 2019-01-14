@@ -30,7 +30,7 @@ class OneUserProfile extends React.Component {
                     username: user.username,
 
                 })
-            })
+            }) 
     };
 
 

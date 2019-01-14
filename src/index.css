@@ -185,7 +185,7 @@ ul {
   
 }
 .list-overflow {
-  max-height: 50%;
+  min-height: 50%;
   overflow: auto;
 }
 
