@@ -15,8 +15,8 @@ class SubmitUpdate extends React.Component {
             body: JSON.stringify({
                 name: this.props.name,
                 username: this.props.username,
-                email: this.props.email,
                 password: this.props.password,
+                email: this.props.emailAddress,
                 home: this.props.home,
                 likes: this.props.likes,
                 dislikes: this.props.dislikes,
