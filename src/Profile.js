@@ -4,6 +4,7 @@ import FavoriteArtists from './FavoriteArtists';
 import MyFriends from './MyFriends';
 
 
+
 import {
     Link
 } from 'react-router-dom';
@@ -16,7 +17,10 @@ class Profile extends Component {
             username: "",
             name: "",
             email: "",
-            home: ""
+            home: "",
+            likes: "",
+            dislikes: "",
+            pal: ""
         }
     }
 
@@ -24,7 +28,9 @@ class Profile extends Component {
 
         fetch('/profile')
 
-            .then(r => r.json())
+            .then(r => {
+                return r.json()
+            })
             .then(user => {
 
                 this.setState({
@@ -32,8 +38,10 @@ class Profile extends Component {
                     username: user.username,
                     name: user.name,
                     email: user.email,
-                    home: user.home
-
+                    home: user.home,
+                    likes: user.likes,
+                    dislikes: user.dislikes,
+                    pal: user.pal
                 })
             })
     }
@@ -46,21 +54,26 @@ class Profile extends Component {
                 <h1>{this.state.name}'s Profile</h1>
                 <p>About Me:</p>
                 <ul >
-                    <li>{this.state.username}</li>
-                    <li>{this.state.home}</li>
+                    <li className="eventList">My Username: {this.state.username}</li>
+                    <li className="eventList">My home: {this.state.home}</li>
+                    <li className="eventList">My likes: {this.state.likes}</li>
+                    <li className="eventList">My dislikes: {this.state.dislikes}</li>
+                    <li className="eventList">I am interested in finding pals to go to events with: {this.state.pal}</li>
                 </ul>
                 <p>My Shows:</p>
                 <UpcomingShows
                     myShows={this.state.myShows} />
                 <Link to="/home">Search More Shows</Link>
                 <p>My Artists:</p>
-                <FavoriteArtists
-                    myArtists={this.state.myArtists} />
+                {/* <FavoriteArtists
+                    myArtists={this.state.myArtists} /> */}
                 <Link to="/search-artists">Search More Artists</Link>
                 <p>My Friends:</p>
                 <MyFriends
                     myFriends={this.state.myFriends} />
+                <Link className="logout" to="/update">Update my Info</Link>
                 <Link className="logout" to="/logout">Logout</Link>
+                <Link className="logout" to="/delete">Delete my Account</Link>
             </div>
         )
     }

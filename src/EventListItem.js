@@ -2,6 +2,7 @@ import React from 'react';
 
 import AddDBEventtoUser from './AddDBEventtoUser';
 import Placeholder from './Placeholder';
+import OneUserProfile from './OneUserProfile';
 
 class EventListItem extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class EventListItem extends React.Component {
         this.state = {
             addToList: false,
             friends: [],
+            showPal: null
         }
     }
 
@@ -53,7 +55,12 @@ class EventListItem extends React.Component {
             attendeeList =
                 this.state.friends.map(pal => {
                     return (
-                        <li key={pal.id}>{pal.username} from {pal.home}</li>
+                        <li onClick={() => {
+                            this._showPal(pal.id)
+                        }}
+                            key={pal.id}>
+                            {pal.username} from {pal.home}
+                        </li>
                     )
                 })
         }
@@ -85,6 +92,11 @@ class EventListItem extends React.Component {
                     date={(this.props.event.date)}
                 /> : null}
                 {this.state.addToList ? <Placeholder /> : null}
+                {
+                    this.state.showPal ? <OneUserProfile
+                        showPal={(this.state.showPal)}
+                    /> : null
+                }
             </div >
         )
     }
@@ -100,6 +112,14 @@ class EventListItem extends React.Component {
 
     }
 
+    _showPal = (id) => {
+        console.log(`look at one friend with id ${id}`)
+
+        this.setState({
+            showPal: id
+        })
+        // console.log(this.state)
+    }
 
 }
 

@@ -12,8 +12,7 @@ class UpcomingShows extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/upcomingShows',
-
+        fetch('/upcomingShows'
         )
             .then(r => r.json())
             .then(showArray => {
@@ -49,7 +48,7 @@ class UpcomingShows extends React.Component {
                 {this.state.event ? <OneUserEvent
                     event={(this.state.event)}
                 /> : null}
-                
+
             </div>
         );
     }

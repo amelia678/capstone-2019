@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 // import { get } from 'https';
 import axios from 'axios';
-import {
-    Link
-} from 'react-router-dom';
+// import {
+//     Link
+// } from 'react-router-dom';
+import SubmitUpdate from './SubmitUpdate';
 
 // make a handleSubmit
 // change backend route
 
-class Register extends Component {
+class Update extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,20 +20,41 @@ class Register extends Component {
             home: '',
             likes: '',
             dislikes: '',
-            pal: ''
+            pal: '',
+            updateSubmit: false
         }
     }
 
+    componentDidMount() {
+        fetch('/profile')
+
+            .then(r => {
+                return r.json()
+            })
+            .then(user => {
+
+                this.setState({
+                    id: user.id,
+                    username: user.username,
+                    name: user.name,
+                    email: user.email,
+                    home: user.home,
+                    likes: user.likes,
+                    dislikes: user.dislikes,
+                    pal: user.pal
+                })
+            })
+    }
 
     render() {
 
         return (
-            <div className="login">
-                <h3>Register an account here:</h3>
-                <form onSubmit={(e) => this._checkUsername(e)} >
-
+            <div>
+                <h3>Update your information here:</h3>
+                <form>
                     <label><span> Your name:</span>
                         <input
+                            placeholder={this.state.name}
                             value={this.state.name}
                             onChange={this._updateName}
                             type="text" name="name"></input>
@@ -40,6 +62,7 @@ class Register extends Component {
 
                     <label> <span >Username:</span>
                         <input
+                            placeholder={this.state.username}
                             value={this.state.username}
                             onChange={this._updateUsername}
                             type="text" name="username"></input>
@@ -47,6 +70,7 @@ class Register extends Component {
 
                     <label><span > Password:</span>
                         <input
+                            placeholder={this.state.password}
                             value={this.state.password}
                             onChange={this._updatePassword}
                             type="password" name="password"></input>
@@ -54,13 +78,15 @@ class Register extends Component {
 
                     <label> <span>Email:</span>
                         <input
-                            value={this.state.emailAddress}
+                            placeholder={this.state.email}
+                            value={this.state.email}
                             onChange={this._updateEmail}
                             type="email" name="email"></input>
                     </label>
 
                     <label> <span>Home:</span>
                         <input
+                            placeholder={this.state.home}
                             onChange={this._updateHome}
                             value={this.state.home}
                             type="text" name="home"></input>
@@ -68,6 +94,7 @@ class Register extends Component {
 
                     <label> <span>Likes:</span>
                         <input
+                            placeholder={this.state.likes}
                             onChange={this._updateLikes}
                             value={this.state.likes}
                             type="text" name="likes"></input>
@@ -75,6 +102,7 @@ class Register extends Component {
 
                     <label> <span>Dislikes:</span>
                         <input
+                            placeholder={this.state.dislikes}
                             onChange={this._updateDislikes}
                             value={this.state.dislikes}
                             type="text" name="dislikes"></input>
@@ -82,6 +110,7 @@ class Register extends Component {
 
                     <label> <span>Are you interested in connecting with another user to attend events with?</span>
                         <input
+                            placeholder={this.state.pal}
                             onChange={this._updatePal}
                             value={this.state.pal}
                             type="text" name="pal"></input>
@@ -89,13 +118,26 @@ class Register extends Component {
 
                     <label>
                         <input
-
-                            type="submit" value="Sign Up!"></input>
+                            onClick={() => {
+                                this._submitUpdate()
+                            }}
+                            type="submit" value="Update"></input>
+                        {this.state.updateSubmit ? <SubmitUpdate
+                            name={(this.state.name)}
+                            username={(this.state.username)}
+                            password={(this.state.password)}
+                            emailAddress={(this.state.email)}
+                            home={(this.state.home)}
+                            likes={(this.state.likes)}
+                            dislikes={(this.state.dislikes)}
+                            pal={(this.state.pal)}
+                        /> : null
+                        }
                     </label>
 
                 </form>
-                <Link to="/login">Already a member?</Link>
-            </div>
+
+            </div >
         )
     }
 
@@ -166,7 +208,7 @@ class Register extends Component {
                     alert("Try again music-luver (that username is already taken)")
                 }
                 else {
-                    this.props.history.push('/update')
+                    this.props.history.push('/profile')
                 }
             })
             .catch(err => {
@@ -175,8 +217,12 @@ class Register extends Component {
         console.log('i have been submitted')
     }
 
+    _submitUpdate = () => {
+        this.setState({ updateSubmit: true })
+    }
+
 
 
 }
 
-export default Register;
+export default Update;
