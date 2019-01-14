@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
 import EventList from './EventList';
-import Placeholder from './Placeholder';
+// import Placeholder from './Placeholder';
 
 class Search extends Component {
     constructor(props) {
@@ -25,24 +25,24 @@ class Search extends Component {
 
     render() {
 
-    return (
-        <div className="login">
-        <div className="searchDB ">
-        <h3>Search events by artist, genre, or city:</h3>
-            <input
-            value={this.state.searchTerm}
-            onChange={(event) => {
-                this._setSearchTerm(event.target.value)
-            }}
-            ></input>
-            <EventList events = {this._searchEvents(this.state.searchTerm)} />
-            <div className="APIenchilada">
-            <TheWholeAPIEnchilada />
-        </div>
-        
-        </div>
-       
-        </div>
+        return (
+            <div className="login">
+                <div className="searchDB ">
+                    <h3>Search events by artist, genre, or city:</h3>
+                    <input
+                        value={this.state.searchTerm}
+                        onChange={(event) => {
+                            this._setSearchTerm(event.target.value)
+                        }}
+                    ></input>
+                    <EventList events={this._searchEvents(this.state.searchTerm)} />
+                    <div className="APIenchilada">
+                        <TheWholeAPIEnchilada />
+                    </div>
+
+                </div>
+
+            </div>
 
         )
     }

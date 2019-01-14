@@ -35,26 +35,26 @@ class Login extends Component {
 
                     <input type="submit" value="Login"></input>
                 </form>
-            <Link to="register">Not a member yet?</Link>
+                <Link to="register">Not a member yet?</Link>
             </div>
         )
     }
 
     _checkCredentials = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         axios
-        .post('/API/login', this.state)
-        .then(r => {
-            if (r.data.status == 'incorrect') {
-                alert("Wrong username or password")
-            }
-            else {
-                this.props.history.push('/profile')
-            }
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            .post('/API/login', this.state)
+            .then(r => {
+                if (r.data.status === 'incorrect') {
+                    alert("Wrong username or password")
+                }
+                else {
+                    this.props.history.push('/profile')
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
         console.log('attemping to log in ...')
 
     }

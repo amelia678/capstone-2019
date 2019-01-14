@@ -65,8 +65,8 @@ class Profile extends Component {
                     myShows={this.state.myShows} />
                 <Link to="/home">Search More Shows</Link>
                 <p>My Artists:</p>
-                {/* <FavoriteArtists
-                    myArtists={this.state.myArtists} /> */}
+                <FavoriteArtists
+                    myArtists={this.state.myArtists} />
                 <Link to="/search-artists">Search More Artists</Link>
                 <p>My Friends:</p>
                 <MyFriends
