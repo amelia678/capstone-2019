@@ -64,7 +64,10 @@ ul {
   border-radius: 10px;
 }
 
-
+.registerBlock {
+  display:flex;
+  flex-direction: column;
+}
 .searchBar {
   /* border: 2px solid plum; */
   width: 90%;

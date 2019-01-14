@@ -87,7 +87,7 @@ class MusicPal extends Component {
                             </div>
                             {/* <Placeholder /> */}
 
-
+                        
                         </div>
 
 
@@ -102,8 +102,8 @@ class MusicPal extends Component {
                         }} />
 
 
+                    <footer>Amelia Schulz / Clare Barton</footer>
                     </div>
-
                 </div>
             </Router>
         )
