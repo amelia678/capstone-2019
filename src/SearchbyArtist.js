@@ -33,11 +33,13 @@ class SearchbyArtist extends Component {
 
                     </div>
                 </div>
+
                 <div>
                     {this.state.addToList ? <AddArtistToUser
                         artist={this.state.addToList}
                     /> : null}
                 </div>
+
             </div>
         )
     }

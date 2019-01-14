@@ -61,39 +61,34 @@ class OneUserEvent extends React.Component {
         return (
 
             <div className="event-profileContainer">
-                <div className="oneEvent profile-event">
 
-                    <div>
-                        <ul>
-                            <li>Artist: {this.props.event.artist} </li>
-                            <li>Venue: {this.props.event.venue} in {this.props.event.city}, {this.props.event.state}</li>
-                            <li>Date: {this.props.event.date}</li>
-                            <li>Musicpal members going to this concert: <ul>{attendeeList}</ul> </li>
-                            <li>I'm going!</li>
-                            <button onClick={() => {
-                                this._deleteEvent()
-                            }}>I have to cancel. <span role="img" alt="frowny face emoji">☹️ </span></button>
-                            {this.state.deleteFromList ? <DeleteEvent
-                                eventID={(this.props.event.id)}
-                                artist={(this.props.event.artist)}
-                            /> : null}
-                        </ul>
-                    </div>
+            <div className="oneEvent profile-event">
 
-                    {
-                        this.state.showPal ? <OneUserProfile
-                            showPal={(this.state.showPal)}
-                        /> : null
-                    }
-
-
+                <div>
+                    <ul>
+                        <li>Artist: {this.props.event.artist} </li>
+                        <li>Venue: {this.props.event.venue} in {this.props.event.city}, {this.props.event.state}</li>
+                        <li>Date: {this.props.event.date}</li>
+                        <li>Musicpal members going to this concert: <ul>{attendeeList}</ul> </li>
+                        <li>I'm going!</li>
+                        <button onClick={() => {
+                            this._deleteEvent()
+                        }}>I have to cancel. <span role="img" alt="frowny face emoji">☹️ </span></button>
+                        {this.state.deleteFromList ? <DeleteEvent
+                            eventID={(this.props.event.id)}
+                            artist={(this.props.event.artist)}
+                        /> : null}
+                    </ul>
                 </div>
-                <div className="friendProfile">
-                    <p>friend's profile goes here</p>
-                    <p>here's their name</p>
-                    <p>from here</p>
-                    <p>this is the music they like</p>
-                </div>
+                
+                
+            </div>
+            <div >
+                    {this.state.showPal ? <OneUserProfile
+                        showPal={(this.state.showPal)}
+                    /> : null
+                }
+               </div>
 
             </div>
         )

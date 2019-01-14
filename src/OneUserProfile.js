@@ -38,19 +38,19 @@ class OneUserProfile extends React.Component {
     render() {
         console.log(this.state)
         return (
-            <div>
+            <div className="friendProfile" >
                 <h3>THIS MA FRIEND {this.state.username}</h3>
                 <ul>
                     {/* <li>{this.state.home}</li> */}
-                    <li>{this.state.username}'s shows:</li>
+                    <h4>{this.state.username}'s shows:</h4>
                     <ul><GetMemberShows
                         userID={this.props.showPal} /></ul>
-                    <li>{this.state.username}'s artists:</li>
-                    <ul><GetMemberArtists
-                        userId={this.props.showPal} /></ul>
-                    <li>{this.state.username}'s friends:</li>
+                    <h4>{this.state.username}'s artists:</h4>
+                    <h4><GetMemberArtists
+                        userId={this.props.showPal} /></h4>
+                    <h4>{this.state.username}'s friends:</h4>
                     <ul><GetMemberFriends
-                        userID={this.props.showPal} /></ul>
+                        userID={this.props.showPal} /></ul >
                 </ul>
                 <button link='mailto: {this.state.email}'> email me!</button>
             </div >
