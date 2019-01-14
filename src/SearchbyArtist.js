@@ -17,26 +17,29 @@ class SearchbyArtist extends Component {
 
         return (
             <div>
-                <h3>Search an Artist</h3>
-                <input
-                    value={this.props.searchTerm}
-                    onChange={(event) => {
-                        this.props.handleInput(event.target.value)
-                    }}
-                ></input>
-                <button
-                    onClick={this._showList}
-                >search</button>
-                <div >
-                    {this.state.artistArray}
+                <div>
+                    <h3>Search an Artist</h3>
+                    <input
+                        value={this.props.searchTerm}
+                        onChange={(event) => {
+                            this.props.handleInput(event.target.value)
+                        }}
+                    ></input>
+                    <button
+                        onClick={this._showList}
+                    >search</button>
+                    <div >
+                        {this.state.artistArray}
 
+                    </div>
                 </div>
-            
-            <div>
-                {this.state.addToList ?  <AddArtistToUser
-                artist={this.state.addToList}
-                /> : null }
-            </div>
+
+                <div>
+                    {this.state.addToList ? <AddArtistToUser
+                        artist={this.state.addToList}
+                    /> : null}
+                </div>
+
             </div>
         )
     }
@@ -52,17 +55,17 @@ class SearchbyArtist extends Component {
 
 
 
-        
-    })
 
-       
+        })
+
+
 
             .then(r => r.json())
             .then(artists => {
                 console.log(artists)
                 const artistList = artists.map(grimes => {
                     return (
-                        
+
                         <ul className="eventList"
                             key={grimes.name}>
                             {grimes.name}
@@ -72,8 +75,8 @@ class SearchbyArtist extends Component {
                             >Add to My Artists!</button>
 
                         </ul>
-                        
-                     
+
+
                     )
                 })
                 if (artistList.length === 0) {
@@ -84,8 +87,8 @@ class SearchbyArtist extends Component {
                     this.setState({
                         artistArray: artistList
                     })
-                } 
-                
+                }
+
             })
 
         this.setState({
@@ -106,14 +109,14 @@ class SearchbyArtist extends Component {
         })
         this.setState({
             addToList: jeff
-            
+
         }, () => {
             console.log(this.state.addToList)
             console.log(clickedArtist)
             console.log(jeff)
         })
 
-        
+
     }
 
 }

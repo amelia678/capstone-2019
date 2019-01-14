@@ -1,10 +1,13 @@
 import React from 'react';
 
+import OneUserProfile from './OneUserProfile';
+
 class MyFriends extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             myFriends: [],
+            showPal: null
         }
     }
 
@@ -22,7 +25,11 @@ class MyFriends extends React.Component {
 
         const friendsList = this.state.myFriends.map(friend => {
             return (
-                <li key={friend.id}>{friend.username} in {friend.home} </li >
+                <li onClick={() => {
+                    this._showPal(friend.id)
+                }}
+                    key={friend.id}>{
+                        friend.username} in {friend.home} </li >
             )
         })
 
@@ -33,9 +40,22 @@ class MyFriends extends React.Component {
                 <ul>
                     {friendsList}
                 </ul>
+                {
+                    this.state.showPal ? <OneUserProfile
+                        showPal={(this.state.showPal)}
+                    /> : null
+                }
             </div >
         )
     }
+
+    _showPal = (id) => {
+        console.log(`look at one friend with id ${id}`)
+        this.setState({
+            showPal: id
+        })
+    }
+
 }
 
 export default MyFriends;

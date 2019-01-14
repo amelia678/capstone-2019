@@ -61,6 +61,7 @@ class OneUserEvent extends React.Component {
         return (
 
             <div className="event-profileContainer">
+
             <div className="oneEvent profile-event">
 
                 <div>
@@ -88,16 +89,14 @@ class OneUserEvent extends React.Component {
                     /> : null
                 }
                </div>
+
             </div>
         )
     }
 
     _showPal = (id) => {
         console.log(`look at one friend with id ${id}`)
-        // let clickedPal = this.state.friends.find(jeff => {
-        //     return id === jeff.id
-        // })
-        // console.log(`clickedpal ${clickedPal}`)
+
         this.setState({
             showPal: id
         })

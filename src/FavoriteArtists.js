@@ -10,7 +10,8 @@ class FavoriteArtists extends React.Component {
 
     componentDidMount() {
         fetch('/myArtists')
-            .then(r => r.json())
+            .then(r => r.json()
+            )
             .then(artistArray => {
                 this.setState({
                     myArtists: artistArray
