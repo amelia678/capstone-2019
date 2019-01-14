@@ -35,9 +35,10 @@ class Update extends Component {
 
                 this.setState({
                     id: user.id,
-                    username: user.username,
                     name: user.name,
-                    email: user.email,
+                    username: user.username,
+                    password: user.password,
+                    emailAddress: user.email,
                     home: user.home,
                     likes: user.likes,
                     dislikes: user.dislikes,
@@ -78,8 +79,8 @@ class Update extends Component {
 
                     <label> <span>Email:</span>
                         <input
-                            placeholder={this.state.email}
-                            value={this.state.email}
+                            placeholder={this.state.emailAddress}
+                            value={this.state.emailAddress}
                             onChange={this._updateEmail}
                             type="email" name="email"></input>
                     </label>
@@ -87,32 +88,32 @@ class Update extends Component {
                     <label> <span>Home:</span>
                         <input
                             placeholder={this.state.home}
-                            onChange={this._updateHome}
                             value={this.state.home}
+                            onChange={this._updateHome}
                             type="text" name="home"></input>
                     </label>
 
                     <label> <span>Likes:</span>
                         <input
                             placeholder={this.state.likes}
-                            onChange={this._updateLikes}
                             value={this.state.likes}
+                            onChange={this._updateLikes}
                             type="text" name="likes"></input>
                     </label>
 
                     <label> <span>Dislikes:</span>
                         <input
                             placeholder={this.state.dislikes}
-                            onChange={this._updateDislikes}
                             value={this.state.dislikes}
+                            onChange={this._updateDislikes}
                             type="text" name="dislikes"></input>
                     </label>
 
                     <label> <span>Are you interested in connecting with another user to attend events with?</span>
                         <input
                             placeholder={this.state.pal}
-                            onChange={this._updatePal}
                             value={this.state.pal}
+                            onChange={this._updatePal}
                             type="text" name="pal"></input>
                     </label>
 
@@ -126,7 +127,7 @@ class Update extends Component {
                             name={(this.state.name)}
                             username={(this.state.username)}
                             password={(this.state.password)}
-                            emailAddress={(this.state.email)}
+                            emailAddress={(this.state.emailAddress)}
                             home={(this.state.home)}
                             likes={(this.state.likes)}
                             dislikes={(this.state.dislikes)}
@@ -163,12 +164,6 @@ class Update extends Component {
     _updateEmail = event => {
         this.setState({
             emailAddress: event.target.value
-        })
-    }
-
-    _updatePassword = event => {
-        this.setState({
-            password: event.target.value
         })
     }
 
