@@ -49,6 +49,8 @@ class Profile extends Component {
                     pal: user.pal,
                     isLoggedIn: true
                 })
+
+
             
        
                 // console.log(r)
@@ -65,6 +67,9 @@ class Profile extends Component {
                     // })
       
         
+            })
+            .catch(err => {
+                console.log(err)
             })
 
         }

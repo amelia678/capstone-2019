@@ -19,6 +19,9 @@ class MyFriends extends React.Component {
                     myFriends: friendArray
                 })
             })
+            .catch(err => {
+                console.log(err)
+            })
     };
 
     render() {
