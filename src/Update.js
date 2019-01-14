@@ -4,6 +4,7 @@ import axios from 'axios';
 // import {
 //     Link
 // } from 'react-router-dom';
+import SubmitUpdate from './SubmitUpdate';
 
 // make a handleSubmit
 // change backend route
@@ -19,7 +20,8 @@ class Update extends Component {
             home: '',
             likes: '',
             dislikes: '',
-            pal: ''
+            pal: '',
+            updateSubmit: false
         }
     }
 
@@ -116,8 +118,21 @@ class Update extends Component {
 
                     <label>
                         <input
-
-                            type="submit" value="Update!"></input>
+                            onClick={() => {
+                                this._submitUpdate()
+                            }}
+                            type="submit" value="Update"></input>
+                        {this.state.updateSubmit ? <SubmitUpdate
+                            name={(this.state.name)}
+                            username={(this.state.username)}
+                            password={(this.state.password)}
+                            emailAddress={(this.state.email)}
+                            home={(this.state.home)}
+                            likes={(this.state.likes)}
+                            dislikes={(this.state.dislikes)}
+                            pal={(this.state.pal)}
+                        /> : null
+                        }
                     </label>
 
                 </form>
@@ -200,6 +215,10 @@ class Update extends Component {
                 console.log(err)
             })
         console.log('i have been submitted')
+    }
+
+    _submitUpdate = () => {
+        this.setState({ updateSubmit: true })
     }
 
 
