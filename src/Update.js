@@ -37,7 +37,7 @@ class Update extends Component {
                     id: user.id,
                     username: user.username,
                     name: user.name,
-                    email: user.email,
+                    emailAddress: user.email,
                     home: user.home,
                     likes: user.likes,
                     dislikes: user.dislikes,
@@ -78,8 +78,8 @@ class Update extends Component {
 
                     <label> <span>Email:</span>
                         <input
-                            placeholder={this.state.email}
-                            value={this.state.email}
+                            placeholder={this.state.emailAddress}
+                            value={this.state.emailAddress}
                             onChange={this._updateEmail}
                             type="email" name="email"></input>
                     </label>
@@ -126,7 +126,7 @@ class Update extends Component {
                             name={(this.state.name)}
                             username={(this.state.username)}
                             password={(this.state.password)}
-                            emailAddress={(this.state.email)}
+                            email={(this.state.emailAddress)}
                             home={(this.state.home)}
                             likes={(this.state.likes)}
                             dislikes={(this.state.dislikes)}
