@@ -125,12 +125,6 @@ class Register extends Component {
         })
     }
 
-    _updatePassword = event => {
-        this.setState({
-            password: event.target.value
-        })
-    }
-
     _updateHome = event => {
         this.setState({
             home: event.target.value
