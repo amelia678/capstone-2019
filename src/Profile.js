@@ -53,18 +53,7 @@ class Profile extends Component {
 
             
        
-                // console.log(r)
-                // return r.json()
-                
-            
-            
-            // .catch(data => {
-            //     console.log(data)
-            //     if (data.isLoggedIn === false) {
-
-                    
-            //     }
-                    // })
+         
       
         
             })
