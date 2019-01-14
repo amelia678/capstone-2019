@@ -12,6 +12,7 @@ body {
   color: steelblue;
   font-family: 'Raleway', sans-serif;
   text-shadow: .5px .5px lightgray;
+  
 }
   
 
@@ -51,11 +52,25 @@ ul {
   text-align: right;
   list-style-type: none;
 }
+
+.login {
+  border: 1px solid blanchedalmond;
+  background-color: lightyellow;
+  width: 90%;
+  min-height: 200px;
+  margin: auto;
+  padding: 10px;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+
+
 .searchBar {
-  /* outline: 2px solid plum; */
+  /* border: 2px solid plum; */
   width: 90%;
   margin:auto;
   padding: 10px;
+  border-radius: 2px
 
 }
 
@@ -79,7 +94,7 @@ ul {
   flex-direction: row;
   width: 90%;
   margin: auto;
-  max-height: 600px;
+  max-height: 800px;
   overflow: auto;
 }
 
@@ -118,7 +133,7 @@ ul {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .eventImage {
@@ -152,6 +167,23 @@ ul {
   padding: 5px;
  
 }
+.artistSection {
+  display: flex;
+  flex-wrap: wrap;
+ 
+  
+}
+
+.artistList {
+  border: solid 1px slategray;
+  background-color: lavender;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+  width: 30%;
+  /* margin: auto; */
+  
+}
 .list-overflow {
   max-height: 50%;
   overflow: auto;
@@ -163,7 +195,7 @@ ul {
 }
 .friendProfile {
   border: 5px solid lightgreen;
-  background-color: linen;
+  background-color: whitesmoke;
   width: 100%;
   margin: 5px;
   border-radius: 3px;

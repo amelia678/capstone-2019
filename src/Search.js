@@ -26,8 +26,8 @@ class Search extends Component {
     render() {
 
     return (
-        <div>
-        <div className="searchDB">
+        <div className="login">
+        <div className="searchDB ">
         <h3>Search events by artist, genre, or city:</h3>
             <input
             value={this.state.searchTerm}

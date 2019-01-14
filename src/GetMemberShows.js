@@ -28,7 +28,9 @@ class GetMemberShows extends React.Component {
         const showList = this.state.myShows.map(show => {
 
             return (
-                <li key={show.id}>
+                <li 
+                className="eventList"
+                key={show.id}>
                     {show.artist} at {show.venue} in {show.city}, {show.state} on {show.date}
                 </li>
             )
