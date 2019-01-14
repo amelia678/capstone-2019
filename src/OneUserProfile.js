@@ -38,7 +38,7 @@ class OneUserProfile extends React.Component {
                     dislikes: user.dislikes,
                     pal: user.pal
                 })
-            }) 
+            })
     };
 
 
@@ -70,12 +70,12 @@ class OneUserProfile extends React.Component {
                 <a className="logout"
                     href={`mailto: (${this.state.email})`}>
                     <label> email me!</label></a>
-                <p className="logout"
+                <label className="logout"
                     onClick={() => {
                         this.setState({
                             addFriend: true
                         })
-                    }}>add as friend</p>
+                    }}>add as friend</label>
                 {this.state.addFriend ? <AddFriend
                     friend_id={(this.state.id)}
                 /> : null}

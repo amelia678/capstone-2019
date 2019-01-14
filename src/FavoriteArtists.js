@@ -29,12 +29,15 @@ class FavoriteArtists extends React.Component {
 
         const artistList = this.state.myArtists.map(artist => {
             return (
+                // <div>
+
                 <li className="artistList"
-                    key={artist.id}>{artist.name}
+                    key={artist.id}>{artist.name} <br />
                     <button
                         onClick={() => {
                             this._deleteArtist(artist.id)
                         }}>Remove from My Artists</button></li>
+
             )
         })
 
@@ -45,11 +48,11 @@ class FavoriteArtists extends React.Component {
                     {artistList}
                 </ul>
                 <div>
-                    {this.state.event ? <DeleteArtist
+                    {this.state.artist ? <DeleteArtist
                         artist={(this.state.artist)}
-                    /> : null}
-                </div>
-            </div>
+                    /> : null}</div>
+
+            </div >
         )
     }
 

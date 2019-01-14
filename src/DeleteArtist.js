@@ -4,11 +4,12 @@ class DeleteArtist extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            something: ''
         }
     }
 
     componentDidMount() {
+        console.log('are you my mummy?')
         fetch('/deleteArtistFromUser', {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
