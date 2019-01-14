@@ -36,6 +36,7 @@ class Update extends Component {
                 this.setState({
                     id: user.id,
                     name: user.name,
+
                     username: user.username,
                     password: user.password,
                     emailAddress: user.email,
@@ -127,7 +128,7 @@ class Update extends Component {
                             name={(this.state.name)}
                             username={(this.state.username)}
                             password={(this.state.password)}
-                            emailAddress={(this.state.emailAddress)}
+                            email={(this.state.emailAddress)}
                             home={(this.state.home)}
                             likes={(this.state.likes)}
                             dislikes={(this.state.dislikes)}

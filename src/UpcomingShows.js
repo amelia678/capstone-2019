@@ -21,6 +21,11 @@ class UpcomingShows extends React.Component {
                     myShows: showArray
                 })
             })
+            .catch( err => {
+                console.log(err)
+            }
+              
+            )
     };
 
     render() {

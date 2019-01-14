@@ -20,19 +20,24 @@ class Profile extends Component {
             home: "",
             likes: "",
             dislikes: "",
-            pal: ""
+            pal: "",
+            isLoggedIn: false
         }
     }
 
     componentDidMount() {
 
-        fetch('/profile')
-
-            .then(r => {
-                return r.json()
-            })
-            .then(user => {
-
+        fetch('/API/user/isValid')
+        .then(r => {
+            return r.json()
+        })
+        
+            .then (({user, isLoggedIn}) => {
+                console.log(user)
+                if (isLoggedIn === false) {
+                    this.props.history.push('/login')
+                }
+                
                 this.setState({
                     id: user.id,
                     username: user.username,
@@ -41,11 +46,33 @@ class Profile extends Component {
                     home: user.home,
                     likes: user.likes,
                     dislikes: user.dislikes,
-                    pal: user.pal
+                    pal: user.pal,
+                    isLoggedIn: true
                 })
-            })
-    }
 
+
+            
+       
+                // console.log(r)
+                // return r.json()
+                
+            
+            
+            // .catch(data => {
+            //     console.log(data)
+            //     if (data.isLoggedIn === false) {
+
+                    
+            //     }
+                    // })
+      
+        
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+        }
 
     render() {
 
@@ -78,10 +105,4 @@ class Profile extends Component {
         )
     }
 };
-
-
-
-
-
-
 export default Profile;

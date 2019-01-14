@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
 import EventList from './EventList';
-// import Placeholder from './Placeholder';
+
 
 class Search extends Component {
     constructor(props) {

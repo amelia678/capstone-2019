@@ -31,6 +31,7 @@ class Register extends Component {
                 <h3>Register an account here:</h3>
                 <form onSubmit={(e) => this._checkUsername(e)} >
 
+                    <div className="registerBlock">
                     <label><span> Your name:</span>
                         <input
                             value={this.state.name}
@@ -92,7 +93,7 @@ class Register extends Component {
 
                             type="submit" value="Sign Up!"></input>
                     </label>
-
+                    </div>
                 </form>
                 <Link to="/login">Already a member?</Link>
             </div>

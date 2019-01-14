@@ -17,6 +17,9 @@ class FavoriteArtists extends React.Component {
                     myArtists: artistArray
                 })
             })
+            .catch(err => {
+                console.log(err)
+            })
     };
 
     render() {
