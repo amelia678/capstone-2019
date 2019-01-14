@@ -52,7 +52,7 @@ class OneUserProfile extends React.Component {
                     <ul><GetMemberFriends
                         userID={this.props.showPal} /></ul >
                 </ul>
-                <button link='mailto: {this.state.email}'> email me!</button>
+                <a href='mailto: {this.state.email}'><label> email me!</label></a>
             </div >
         )
 
