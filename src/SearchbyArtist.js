@@ -103,16 +103,16 @@ class SearchbyArtist extends Component {
     _addEvent = (jeff) => {
         console.log('is this jeff?')
         console.log(jeff)
-        let clickedArtist = this.state.artistArray.find(thisOne => {
-            // console.log(thisOne)
-            return jeff === thisOne.key
-        })
+        // let clickedArtist = this.state.artistArray.find(thisOne => {
+        //     // console.log(thisOne)
+        //     return jeff === thisOne.key
+        // })
         this.setState({
             addToList: jeff
 
         }, () => {
             console.log(this.state.addToList)
-            console.log(clickedArtist)
+            // console.log(clickedArtist)
             console.log(jeff)
         })
 

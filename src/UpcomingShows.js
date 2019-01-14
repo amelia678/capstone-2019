@@ -21,10 +21,10 @@ class UpcomingShows extends React.Component {
                     myShows: showArray
                 })
             })
-            .catch( err => {
+            .catch(err => {
                 console.log(err)
             }
-              
+
             )
     };
 
