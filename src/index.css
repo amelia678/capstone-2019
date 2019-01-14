@@ -54,13 +54,14 @@ ul {
 }
 
 .login {
-  outline: 1px solid blanchedalmond;
-  background-color: lemonchiffon;
-  width: 70%;
-  height: 200px;
+  border: 1px solid blanchedalmond;
+  background-color: lightyellow;
+  width: 90%;
+  min-height: 200px;
   margin: auto;
   padding: 10px;
   opacity: 0.9;
+  border-radius: 10px;
 }
 
 
@@ -93,7 +94,7 @@ ul {
   flex-direction: row;
   width: 90%;
   margin: auto;
-  max-height: 600px;
+  max-height: 800px;
   overflow: auto;
 }
 
@@ -169,6 +170,8 @@ ul {
 .artistSection {
   display: flex;
   flex-wrap: wrap;
+ 
+  
 }
 
 .artistList {
@@ -178,6 +181,7 @@ ul {
   margin: 5px;
   padding: 5px;
   width: 30%;
+  /* margin: auto; */
   
 }
 .list-overflow {

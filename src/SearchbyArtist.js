@@ -16,7 +16,7 @@ class SearchbyArtist extends Component {
     render() {
 
         return (
-            <div>
+            <div className="login">
                 <h3>Search an Artist</h3>
                 <input
                     value={this.props.searchTerm}
