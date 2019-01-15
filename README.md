@@ -19,7 +19,7 @@
 </p>
 <!-- ![MusicPal event search](README-images/musicpal-eventsearch.png) -->
 
-![MusicPal artist search](README-images/musicpal-searchartist.png)
+![MusicPal artist search](README-images/localhost_3000_search-artists(iPhone 6_7_8).png)
 
 <h4>Technologies Used</h4>
 <ul>
@@ -34,7 +34,7 @@
 <li>Last fm API</li>
 </ul>
 
-![MusicPal Profile](README-images/musicpal-profile.png)
+![MusicPal Profile](README-images/localhost_3000_search-artists(iPad).png)
 
 <h4>Challenges</h4>
 ![Whiteboarding](README-images/whiteboarding-musicpal.png)
