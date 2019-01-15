@@ -48,6 +48,12 @@
 <img src='README-images/profile-ipad.png' width='500' height = '700'></img>
 </p>
 
+<p align='center'>
+<img src='README-images/friend-profile.png'width='500' height = '700'></img>
+</p>
+
+
+
 <h4>Challenges</h4>
 <p align='center'>
 <img src='README-images/whiteboarding-musicpal.png' width=600 height='400'></img>
