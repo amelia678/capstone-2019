@@ -19,9 +19,8 @@
 </p>
 
 
-<<<<<<< HEAD
 ![MusicPal artist search](README-images/profile-ipad.png)
-=======
+
 <p>
   <img src='README-images/localhost_3000_search-artists(iPhone 6_7_8).png)' width='500' height='900'></img>
 </p
