@@ -17,7 +17,7 @@
 <p align='center'>
 <img src='README-images/musicpal-eventsearch.png' width='500' height='300'></img>
 </p>
-<!-- ![MusicPal event search](README-images/musicpal-eventsearch.png) -->
+
 
 <p>
   <img src='README-images/localhost_3000_search-artists(iPhone 6_7_8).png)' width='500' height='900'></img>
@@ -43,7 +43,7 @@
 <h4>Challenges</h4>
 ![Whiteboarding](README-images/whiteboarding-musicpal.png)
 
-- Amelia : Making React Components is easy but figuring out to link them and pass information to each other proved difficult. On top of that, providing the backend routing from Express to render to proper React components took several trial and errors. 
+- Amelia : Making React Components is easy but figuring out to link them and pass information to each other proved difficult. On top of that, providing the backend routing from Express to render to proper React components required a lot trial and error. 
 
 <h4>Future Innovations</h4>
 <ul>
