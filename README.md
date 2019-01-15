@@ -23,7 +23,7 @@
 
 
 <p align='ceneter>
-    <img src='README-images/event-search.png'>
+          <img src='README-images/event-search.png'></img>
 </p>
 
 
