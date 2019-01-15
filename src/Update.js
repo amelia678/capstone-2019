@@ -50,10 +50,10 @@ class Update extends Component {
     render() {
 
         return (
-            <div>
+            <div className="login">
                 <h3>Update your information here:</h3>
                 <form onSubmit={(e) => this._checkUsername(e)} ></form>
-                <form>
+                <form className="registerBlock">
                     <label><span> Your name:</span>
                         <input
                             placeholder={this.state.name}

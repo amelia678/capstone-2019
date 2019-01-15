@@ -98,9 +98,11 @@ class Profile extends Component {
                 <p>My Friends:</p>
                 <MyFriends
                     myFriends={this.state.myFriends} />
+                <div className="profile-options">
                 <Link className="logout" to="/update">Update my Info</Link>
                 <Link className="logout" to="/logout">Logout</Link>
                 <Link className="logout" to="/delete">Delete my Account</Link>
+                </div>
             </div>
         )
     }

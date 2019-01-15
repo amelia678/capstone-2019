@@ -210,6 +210,13 @@ ul {
   width: 100%;
   margin: 5px;
 }
+
+.profile-options {
+  display: flex;
+  margin: 10px;
+  align-content: flex-end;
+}
+  
 /* Common "breakpoints"
 S, M, L, XL, Party size
 

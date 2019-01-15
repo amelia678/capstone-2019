@@ -67,6 +67,7 @@ class OneUserProfile extends React.Component {
                     <ul><GetMemberFriends
                         userID={this.props.showPal} /></ul >
                 </ul>
+                <div className="profile-options">
                 <a className="logout"
                     href={`mailto: (${this.state.email})`}>
                     <label> email me!</label></a>
@@ -79,7 +80,7 @@ class OneUserProfile extends React.Component {
                 {this.state.addFriend ? <AddFriend
                     friend_id={(this.state.id)}
                 /> : null}
-
+                </div>
             </div >
         )
 
