@@ -1,4 +1,4 @@
-[Youtube Walk-through](https://youtu.be/VyFSkcGR8kI)
+
 
 <h1>MusicPal</h1>
 <h3>Capstone Project for DigitalCrafts</h3>
@@ -65,3 +65,6 @@
 </ul>
 
 <p>Brought to you by Amelia Schulz and Clare Barton.</h4>
+
+
+[Youtube Walk-through](https://youtu.be/VyFSkcGR8kI)
