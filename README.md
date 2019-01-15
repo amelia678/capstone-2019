@@ -19,7 +19,11 @@
 <li>Node.js reasoning:</li>
 <li>React reasoning:</li>
 <li>PostgreSQL reasoning:</li>
-<li></li>
+<li>Express.js</li>
+<li>Nginx</li>
+<li>Amazon Web Services</li>
+<li>Eventful API</li>
+<li>Last fm API</li>
 </ul>
 
 <h4>Future Innovations</h4>
