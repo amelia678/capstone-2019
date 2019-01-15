@@ -110,6 +110,7 @@ class MusicPal extends Component {
                         }} />
 
 
+<<<<<<< HEAD
                         <footer>
                             &copy;Amelia Schulz & Clare Barton
                         <ul>
@@ -118,6 +119,13 @@ class MusicPal extends Component {
                             <ul>
                                 <i class="fa fa-github" aria-hidden="true"></i>
                             </ul>
+=======
+                    <footer>
+                        &copy;
+                        <a href="https://github.com/amelia678">Amelia Schulz</a> & 
+                        <a href="https://github.com/CB987/">Clare Barton</a>
+                        
+>>>>>>> d80ab8bd84c60c4b798be68a920c8ca191653cb2
 
                         </footer>
                     </div>
