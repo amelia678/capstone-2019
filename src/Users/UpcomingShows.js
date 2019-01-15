@@ -1,6 +1,6 @@
 import React from 'react';
 
-import OneUserEvent from './OneUserEvent';
+import OneUserEvent from '../Events/OneUserEvent';
 
 class UpcomingShows extends React.Component {
     constructor(props) {

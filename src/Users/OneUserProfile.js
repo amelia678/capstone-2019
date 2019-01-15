@@ -68,18 +68,18 @@ class OneUserProfile extends React.Component {
                         userID={this.props.showPal} /></ul >
                 </ul>
                 <div className="profile-options">
-                <a className="logout"
-                    href={`mailto: (${this.state.email})`}>
-                    <label> email me!</label></a>
-                <label className="logout"
-                    onClick={() => {
-                        this.setState({
-                            addFriend: true
-                        })
-                    }}>add as friend</label>
-                {this.state.addFriend ? <AddFriend
-                    friend_id={(this.state.id)}
-                /> : null}
+                    <a className="logout"
+                        href={`mailto: (${this.state.email})`}>
+                        <label> email me!</label></a>
+                    <label className="logout"
+                        onClick={() => {
+                            this.setState({
+                                addFriend: true
+                            })
+                        }}>add as friend</label>
+                    {this.state.addFriend ? <AddFriend
+                        friend_id={(this.state.id)}
+                    /> : null}
                 </div>
             </div >
         )

@@ -28,16 +28,16 @@ class Profile extends Component {
     componentDidMount() {
 
         fetch('/API/user/isValid')
-        .then(r => {
-            return r.json()
-        })
-        
-            .then (({user, isLoggedIn}) => {
+            .then(r => {
+                return r.json()
+            })
+
+            .then(({ user, isLoggedIn }) => {
                 console.log(user)
                 if (isLoggedIn === false) {
                     this.props.history.push('/login')
                 }
-                
+
                 this.setState({
                     id: user.id,
                     username: user.username,
@@ -51,28 +51,28 @@ class Profile extends Component {
                 })
 
 
-            
-       
+
+
                 // console.log(r)
                 // return r.json()
-                
-            
-            
-            // .catch(data => {
-            //     console.log(data)
-            //     if (data.isLoggedIn === false) {
 
-                    
-            //     }
-                    // })
-      
-        
+
+
+                // .catch(data => {
+                //     console.log(data)
+                //     if (data.isLoggedIn === false) {
+
+
+                //     }
+                // })
+
+
             })
             .catch(err => {
                 console.log(err)
             })
 
-        }
+    }
 
     render() {
 
@@ -99,9 +99,9 @@ class Profile extends Component {
                 <MyFriends
                     myFriends={this.state.myFriends} />
                 <div className="profile-options">
-                <Link className="logout" to="/update">Update my Info</Link>
-                <Link className="logout" to="/logout">Logout</Link>
-                <Link className="logout" to="/delete">Delete my Account</Link>
+                    <Link className="logout" to="/update">Update my Info</Link>
+                    <Link className="logout" to="/logout">Logout</Link>
+                    <Link className="logout" to="/delete">Delete my Account</Link>
                 </div>
             </div>
         )

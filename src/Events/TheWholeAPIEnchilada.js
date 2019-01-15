@@ -36,7 +36,7 @@ class TheWholeAPIEnchilada extends React.Component {
                 />
                 <button onClick={this._showList}>search</button>
                 {this.state.showAPIList ? <EventfulCall
-                   eventArray = {this.state.eventArray}
+                    eventArray={this.state.eventArray}
                 /> : null}
             </div>
         )
@@ -86,10 +86,10 @@ class TheWholeAPIEnchilada extends React.Component {
                     showAPIList: true
                 })
             })
-        
+
     }
 
-    
+
 
 }
 

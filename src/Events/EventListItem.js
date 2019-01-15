@@ -1,8 +1,8 @@
 import React from 'react';
 
 import AddDBEventtoUser from './AddDBEventtoUser';
-import Placeholder from './Placeholder';
-import OneUserProfile from './OneUserProfile';
+import Placeholder from '../Placeholder';
+import OneUserProfile from '../Users/OneUserProfile';
 
 class EventListItem extends React.Component {
     constructor(props) {
@@ -97,6 +97,11 @@ class EventListItem extends React.Component {
                         showPal={(this.state.showPal)}
                     /> : null
                 }
+                <div class="eventful-badge eventful-small">
+                    <a href="http://eventful.com/"> <img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+                        alt="Local Events, Concerts, Tickets" />
+                    </a>
+                </div>
             </div >
         )
     }

@@ -48,15 +48,17 @@ class EventfulCall extends React.Component {
             const eventList = this.state.eventArray.map(event => {
 
                 return (
-                    <ul>
-                    <li className="eventList"
-                     onClick={() => {
-                        this._showEvent(event.id)
-                    }}
-                        key={event.id}>
-                        {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
-                    </li>
-                    </ul>
+                    <div>
+                        <ul>
+                            <li className="eventList"
+                                onClick={() => {
+                                    this._showEvent(event.id)
+                                }}
+                                key={event.id}>
+                                {event.artist} at {event.venue} in {event.city}, {event.state} on {event.date}
+                            </li>
+                        </ul>
+                    </div>
                 )
             })
             content = (
@@ -73,14 +75,14 @@ class EventfulCall extends React.Component {
         return (
             <div className="APIbundle">
                 <div className="oneAPIEvent">
-                {this.state.event ? <OneAPIEvent
-                    event={(this.state.event)}
-                /> : null}
+                    {this.state.event ? <OneAPIEvent
+                        event={(this.state.event)}
+                    /> : null}
                 </div>
                 <div className="APIevents">
                     {content}
                 </div>
-                
+
             </div>
         );
     }

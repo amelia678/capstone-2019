@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DeleteArtist from './DeleteArtist';
+import DeleteArtist from '../Artists/DeleteArtist';
 
 class FavoriteArtists extends React.Component {
     constructor(props) {

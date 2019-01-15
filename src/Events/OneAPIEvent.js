@@ -1,8 +1,8 @@
 import React from 'react';
 
 import AddAPItoDB from './AddAPItoDB';
-import Placeholder from './Placeholder';
-import OneUserProfile from './OneUserProfile';
+import Placeholder from '../Placeholder';
+import OneUserProfile from '../Users/OneUserProfile';
 
 class OneAPIEvent extends React.Component {
     constructor(props) {
@@ -91,6 +91,11 @@ class OneAPIEvent extends React.Component {
                     date={(this.props.event.date)}
                 /> : null}
                 {this.state.addToList ? <Placeholder /> : null}
+                <div class="eventful-badge eventful-small">
+                    <a href="http://eventful.com/"> <img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+                        alt="Local Events, Concerts, Tickets" />
+                    </a>
+                </div>
                 {
                     this.state.showPal ? <OneUserProfile
                         showPal={(this.state.showPal)}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import DeleteEvent from './DeleteEvent';
-import OneUserProfile from './OneUserProfile';
+import OneUserProfile from '../Users/OneUserProfile';
 
 class OneUserEvent extends React.Component {
     constructor(props) {
@@ -80,7 +80,11 @@ class OneUserEvent extends React.Component {
                             /> : null}
                         </ul>
                     </div>
-
+                    <div class="eventful-badge eventful-small">
+                        <a href="http://eventful.com/"> <img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+                            alt="Local Events, Concerts, Tickets" />
+                        </a>
+                    </div>
 
                 </div>
                 <div >

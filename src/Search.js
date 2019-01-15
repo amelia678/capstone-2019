@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TheWholeAPIEnchilada from './TheWholeAPIEnchilada'
-import EventList from './EventList';
+import TheWholeAPIEnchilada from './Events/TheWholeAPIEnchilada'
+import EventList from './Events/EventList';
 
 
 class Search extends Component {

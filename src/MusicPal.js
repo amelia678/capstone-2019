@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Search from './Search';
-import Profile from './Profile';
+import Profile from './Users/Profile';
 
 import NavBar from './NavBar';
-import Login from './Login';
-import Register from './Register';
-import Logout from './Logout';
-import SearchbyArtist from './SearchbyArtist';
+import Login from './Users/Login';
+import Register from './Users/Register';
+import Logout from './Users/Logout';
+import SearchbyArtist from './Artists/SearchbyArtist';
 // import Placeholder from './Placeholder';
 // import OneEvent from './OneEvent';
-import Delete from './Delete';
-import Update from './Update';
+import Delete from './Users/Delete';
+import Update from './Users/Update';
 
 import {
     BrowserRouter as Router,
@@ -47,10 +47,10 @@ class MusicPal extends Component {
                                 <NavBar />
                             </div>
                             <div className="title">
-                                
+
                                 <h1>MusicPal</h1>
                             </div>
-                            
+
                         </div>
                         <div className="eventInfo">
                             <div className="searchBar">
@@ -95,7 +95,7 @@ class MusicPal extends Component {
                             </div>
                             {/* <Placeholder /> */}
 
-                        
+
                         </div>
 
 
@@ -110,16 +110,16 @@ class MusicPal extends Component {
                         }} />
 
 
-                    <footer>
-                        &copy;Amelia Schulz & Clare Barton
+                        <footer>
+                            &copy;Amelia Schulz & Clare Barton
                         <ul>
-                            {/* <li><a href="https://github.com/amelia678"><FontAwesomeIcon icon="github" /></a></li> */}
-                        </ul>
-                        <ul>
-                        <i class="fa fa-github" aria-hidden="true"></i>
-                        </ul>
+                                {/* <li><a href="https://github.com/amelia678"><FontAwesomeIcon icon="github" /></a></li> */}
+                            </ul>
+                            <ul>
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </ul>
 
-                    </footer>
+                        </footer>
                     </div>
                 </div>
             </Router>
