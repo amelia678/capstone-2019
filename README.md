@@ -19,11 +19,12 @@
 
 <p align='center'>
   <img src='README-images/search-artist-iphone.png' width='300' height='600'></img>
-</p
+</p>
 
 
-
-
+<p align='ceneter>
+    <img src='README-images/event-search.png'>
+</p>
 
 
 
