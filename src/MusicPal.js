@@ -17,6 +17,13 @@ import {
     Route,
 } from 'react-router-dom'
 
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { fagithub } from '@fortawesome/free-solid-svg-icons'
+
+// library.add(fagithub)
+
+
 
 class MusicPal extends Component {
     constructor(props) {
@@ -40,9 +47,10 @@ class MusicPal extends Component {
                                 <NavBar />
                             </div>
                             <div className="title">
+                                
                                 <h1>MusicPal</h1>
-
                             </div>
+                            
                         </div>
                         <div className="eventInfo">
                             <div className="searchBar">
@@ -102,7 +110,16 @@ class MusicPal extends Component {
                         }} />
 
 
-                    <footer>Amelia Schulz / Clare Barton</footer>
+                    <footer>
+                        &copy;Amelia Schulz & Clare Barton
+                        <ul>
+                            {/* <li><a href="https://github.com/amelia678"><FontAwesomeIcon icon="github" /></a></li> */}
+                        </ul>
+                        <ul>
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        </ul>
+
+                    </footer>
                     </div>
                 </div>
             </Router>
