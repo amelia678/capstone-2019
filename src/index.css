@@ -63,7 +63,9 @@ ul {
   opacity: 0.9;
   border-radius: 10px;
 }
-
+label{
+margin: 10px;
+}
 .registerBlock {
   display:flex;
   flex-direction: column;

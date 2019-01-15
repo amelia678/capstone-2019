@@ -2,6 +2,7 @@
 <h3>Capstone Project for DigitalCrafts</h3>
 <p>MusicPal is a site that allows users to connect with others that share their music tastes, strike up friendships, and find a pal to go to concerts with. Users can search for events based on the artist, genre of music, or location. Then, they can see other users who are also interested in that event, and choose to connect with them based on profile information.
 
+![MusicPal Home](README-images/musicpal-home.png)
 <h4>MVP</h4>
 <ul>
 <li>Users log into their account. (User information kept in PostgreSQL database.)</li>
@@ -13,14 +14,29 @@
 <li></li>
 </ul>
 
+![MusicPal event search](README-images/musicpal-eventsearch.png)
+
+![MusicPal artist search](README-images/musicpal-searchartist.png)
+
 <h4>Technologies Used</h4>
 <ul>
-<li>JavaScript reasoning:</li>
-<li>Node.js reasoning:</li>
-<li>React reasoning:</li>
-<li>PostgreSQL reasoning:</li>
-<li></li>
+<li>JavaScript</li>
+<li>Node.js </li>
+<li>React</li>
+<li>PostgreSQL</li>
+<li>Express.js</li>
+<li>Nginx</li>
+<li>Amazon Web Services</li>
+<li>Eventful API</li>
+<li>Last fm API</li>
 </ul>
+
+![MusicPal Profile](README-images/musicpal-profile.png)
+
+<h4>Challenges</h4>
+![Whiteboarding](README-images/whiteboarding-musicpal.png)
+
+- Amelia : Making React Components is easy but figuring out to link them and pass information to each other proved difficult. On top of that, providing the backend routing from Express to render to proper React components took several trial and errors. 
 
 <h4>Future Innovations</h4>
 <ul>
