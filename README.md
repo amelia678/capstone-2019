@@ -42,9 +42,7 @@
 <li>Last fm API</li>
 </ul>
 
-<p align='center'>
-<img src='README-images/musicpal-eventsearch.png' width='600' height='300'></img>
-</p>
+
 
 
 <h4>Challenges</h4>
