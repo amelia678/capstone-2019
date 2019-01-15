@@ -17,9 +17,9 @@
 <p align='center'>
 <img src='README-images/musicpal-eventsearch.png'></img>
 </p>
-<!-- ![MusicPal event search](README-images/musicpal-eventsearch.png) -->
 
-![MusicPal artist search](README-images/localhost_3000_search-artists(iPhone 6_7_8).png)
+
+![MusicPal artist search](README-images/profile-ipad.png)
 
 <h4>Technologies Used</h4>
 <ul>
