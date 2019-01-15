@@ -22,8 +22,8 @@
 </p>
 
 
-<p align='ceneter>
-          <img src='README-images/event-search.png'></img>
+<p align='center>
+    <img src='README-images/event-search.png'></img>
 </p>
 
 
