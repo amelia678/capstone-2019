@@ -23,7 +23,7 @@
 
 
 <p align='center'>
-    <img src='README-images/event-search.png'></img>
+    <img src='README-images/event-search.png' width='600' height='400'></img>
 </p>
 
 
