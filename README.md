@@ -11,14 +11,14 @@
 <li>Users can see other users who are going to that event, and select a user to see their profile information.</li>
 <li>Users can connect with other users going to the same event.</li>
 <li>Users can add each other to their friends list.</li>
-<li></li>
+
 </ul>
 
 
 
 
 <p align='center'>
-  <img  src='README-images/search-artist-iphone.png' width='300' height='600'></img>
+  <img src='README-images/search-artist-iphone.png' width='300' height='600'></img>
 </p
 
 <p align='center'>
@@ -60,7 +60,7 @@
 <li>Chatrooms for bands/ genres?</li>
 <li>Users can keep track of concerts attended in the past and with whom.</li>
 <li>Users can upload concert pics which crossreference and also show on event page.</li>
-<li></li>
+
 </ul>
 
 <p>Brought to you by Amelia Schulz and Clare Barton.</h4>
