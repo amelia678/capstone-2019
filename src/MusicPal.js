@@ -111,13 +111,10 @@ class MusicPal extends Component {
 
 
                     <footer>
-                        &copy;Amelia Schulz & Clare Barton
-                        <ul>
-                            {/* <li><a href="https://github.com/amelia678"><FontAwesomeIcon icon="github" /></a></li> */}
-                        </ul>
-                        <ul>
-                        <i class="fa fa-github" aria-hidden="true"></i>
-                        </ul>
+                        &copy;
+                        <a href="https://github.com/amelia678">Amelia Schulz</a> & 
+                        <a href="https://github.com/CB987/">Clare Barton</a>
+                        
 
                     </footer>
                     </div>
