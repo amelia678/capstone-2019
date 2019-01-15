@@ -14,8 +14,8 @@
 <li></li>
 </ul>
 
-<p align="center">
-<img src="README-images/musicpal-eventsearch.png"></img>
+<p align='center'>
+<img src='README-images/musicpal-eventsearch.png'></img>
 </p>
 <!-- ![MusicPal event search](README-images/musicpal-eventsearch.png) -->
 
