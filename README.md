@@ -15,7 +15,7 @@
 </ul>
 
 <p align='center'>
-<img src='README-images/musicpal-eventsearch.png'></img>
+<img src='README-images/musicpal-eventsearch.png' width='100' height='100'></img>
 </p>
 <!-- ![MusicPal event search](README-images/musicpal-eventsearch.png) -->
 
@@ -33,6 +33,7 @@
 <li>Eventful API</li>
 <li>Last fm API</li>
 </ul>
+
 
 ![MusicPal Profile](README-images/localhost_3000_search-artists(iPad).png)
 
