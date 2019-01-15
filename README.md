@@ -15,7 +15,7 @@
 </ul>
 
 <p align='center'>
-<img src='README-images/musicpal-eventsearch.png' width='500' height='300'></img>
+<img src='README-images/musicpal-eventsearch.png' width='700' height='300'></img>
 </p>
 
 <p align='center'>
@@ -23,7 +23,7 @@
 </p>
 
 <p>
-  <img src='README-images/localhost_3000_search-artists(iPhone 6_7_8).png)' width='500' height='900'></img>
+  <img src='README-images/search-artist-iphone.png' width='300' height='700'></img>
 </p
 
 
