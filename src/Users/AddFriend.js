@@ -25,7 +25,6 @@ class AddFriend extends React.Component {
             <p>Yay! You have a new MusicPal!</p>
         )
     }
-
 }
 
 export default AddFriend;

@@ -11,12 +11,8 @@ const APISearchLocation = (props) => {
                     props.handleInput(event.target.value)
                 }}
             ></input>
-            {/* <button onClick={() => { props._showList() }}>location</button> */}
-
-
         </div>
     )
-
 }
 
 export default APISearchLocation;

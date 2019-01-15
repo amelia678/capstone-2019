@@ -37,13 +37,11 @@ class FavoriteArtists extends React.Component {
                         onClick={() => {
                             this._deleteArtist(artist.id)
                         }}>Remove from My Artists</button></li>
-
             )
         })
 
         return (
             <div>
-
                 <ul className="artistSection" >
                     {artistList}
                 </ul>
@@ -51,22 +49,16 @@ class FavoriteArtists extends React.Component {
                     {this.state.artist ? <DeleteArtist
                         artist={(this.state.artist)}
                     /> : null}</div>
-
             </div >
         )
     }
 
     _deleteArtist = (id) => {
         console.log(`this artist ${id} was clicked`)
-        // let clickedArtist = this.state.myArtists.find(thisOne => {
-        //     return id === thisOne.key
-        // })
         this.setState({
             artist: id
         }, () => { console.log(this.state) })
-
     }
-
 }
 
 export default FavoriteArtists;

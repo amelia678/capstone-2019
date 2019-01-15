@@ -29,7 +29,6 @@ class OneUserProfile extends React.Component {
 
             .then(r => r.json())
             .then(user => {
-
                 this.setState({
                     id: user.id,
                     username: user.username,
@@ -40,8 +39,6 @@ class OneUserProfile extends React.Component {
                 })
             })
     };
-
-
 
     render() {
         console.log(this.state)
@@ -83,13 +80,7 @@ class OneUserProfile extends React.Component {
                 </div>
             </div >
         )
-
     }
-
-    // _addToFriends = (id) => {
-
-    //     addFriend: true
-    // }
 }
 
 export default OneUserProfile;

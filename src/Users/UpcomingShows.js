@@ -12,8 +12,7 @@ class UpcomingShows extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/upcomingShows'
-        )
+        fetch('/upcomingShows')
             .then(r => r.json())
             .then(showArray => {
                 // console.log(showArray);
@@ -24,7 +23,6 @@ class UpcomingShows extends React.Component {
             .catch(err => {
                 console.log(err)
             }
-
             )
     };
 
@@ -33,27 +31,23 @@ class UpcomingShows extends React.Component {
         const showList = this.state.myShows.map(show => {
             // console.log(show);
             return (
-
                 <li className="eventList" onClick={() => {
                     this._showEvent(show.id)
                 }}
                     key={show.id}>
                     {show.artist} at {show.venue} in {show.city}, {show.state} on {show.date}
                 </li>
-
             )
         })
         // console.log(this.state.myShows);
         return (
             <div>
-
                 <ul >
                     {showList}
                 </ul>
                 {this.state.event ? <OneUserEvent
                     event={(this.state.event)}
                 /> : null}
-
             </div>
         );
     }

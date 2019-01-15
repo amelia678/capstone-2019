@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-// import { get } from 'https';
 import axios from 'axios';
-// import {
-//     Link
-// } from 'react-router-dom';
-import SubmitUpdate from './SubmitUpdate';
 
-// make a handleSubmit
-// change backend route
+import SubmitUpdate from './SubmitUpdate';
 
 class Update extends Component {
     constructor(props) {
@@ -27,12 +21,10 @@ class Update extends Component {
 
     componentDidMount() {
         fetch('/API/profile')
-
             .then(r => {
                 return r.json()
             })
             .then(user => {
-
                 this.setState({
                     id: user.id,
                     name: user.name,
@@ -198,12 +190,10 @@ class Update extends Component {
             .post('/API/register', this.state)
             .then(r => {
                 // return r.text()
-
                 console.log(r.data)
                 if (r.data.status === 'taken') {
                     alert("Try again music-luver (that username is already taken)")
-                }
-                else {
+                } else {
                     this.props.history.push('/login')
                 }
             })
@@ -216,9 +206,6 @@ class Update extends Component {
     _submitUpdate = () => {
         this.setState({ updateSubmit: true })
     }
-
-
-
 }
 
 export default Update;

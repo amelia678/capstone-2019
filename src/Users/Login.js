@@ -12,8 +12,10 @@ class Login extends Component {
             password: ''
         }
     }
+
     render() {
         return (
+
             <div className="login">
                 <h2>Login</h2>
                 <form onSubmit={(e) => this._checkCredentials(e)}>
@@ -56,8 +58,8 @@ class Login extends Component {
                 console.log(err)
             })
         console.log('attemping to log in ...')
-
     }
+
     _updateUsername = event => {
         this.setState({
             username: event.target.value
@@ -70,4 +72,5 @@ class Login extends Component {
         })
     }
 }
+
 export default Login;

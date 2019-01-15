@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TheWholeAPIEnchilada from './Events/TheWholeAPIEnchilada'
 import EventList from './Events/EventList';
 
-
 class Search extends Component {
     constructor(props) {
         super(props);
@@ -41,9 +40,7 @@ class Search extends Component {
                     </div>
 
                 </div>
-
             </div>
-
         )
     }
 
