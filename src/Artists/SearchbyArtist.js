@@ -18,6 +18,7 @@ class SearchbyArtist extends Component {
 
             <div className="login">
                 <h3>Search an Artist</h3>
+                {/* <a href="last.fm"> <img className="logo" src="../images/lastfm_logo.png" alt="logo of last fm" /> </a> */}
                 <input
                     value={this.props.searchTerm}
                     onChange={(event) => {
