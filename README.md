@@ -22,7 +22,7 @@
 </p>
 
 
-<p align='center>
+<p align='center'>
     <img src='README-images/event-search.png'></img>
 </p>
 
