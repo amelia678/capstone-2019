@@ -47,7 +47,7 @@
 
 <h4>Challenges</h4>
 <p align='center'>
-<img src='README-images/whiteboarding-musicpal.png' width=700 height='300'></img>
+<img src='README-images/whiteboarding-musicpal.png' width=600 height='400'></img>
   </p>
 
 - Amelia : Making React Components is easy but figuring out to link them and pass information to each other proved difficult. On top of that, providing the backend routing from Express to render to proper React components required a lot trial and error. 
