@@ -60,6 +60,8 @@
   </p>
 
 - Amelia : Making React Components is easy but figuring out how to link them and pass information to each other proved difficult. On top of that, providing the backend routing from Express to render the proper React components required a lot trial and error. 
+- Clare : Backend talking to frontend was my biggest puzzle. I feel comfortable navigating PostGreSQL and even Node.js and Express, so coming at them through React was an engaging challenge. 
+
 
 <h4>Future Innovations</h4>
 <ul>
