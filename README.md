@@ -1,3 +1,5 @@
+#[Youtube Walkthrough](https://youtu.be/VyFSkcGR8kI)
+
 <h1>MusicPal</h1>
 <h3>Capstone Project for DigitalCrafts</h3>
 <p>MusicPal is a site that allows users to connect with others that share their music tastes, strike up friendships, and find a pal to go to concerts with. Users can search for events based on the artist, genre of music, or location. Then, they can see other users who are also interested in that event, and choose to connect with them based on profile information.
