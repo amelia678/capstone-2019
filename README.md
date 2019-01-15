@@ -21,9 +21,7 @@
   <img src='README-images/search-artist-iphone.png' width='300' height='600'></img>
 </p
 
-<p align='center'>
-<img src='README-images/profile-ipad.png' width='500' height = '700'></img>
-</p>
+
 
 
 
@@ -43,7 +41,9 @@
 </ul>
 
 
-
+<p align='center'>
+<img src='README-images/profile-ipad.png' width='500' height = '700'></img>
+</p>
 
 <h4>Challenges</h4>
 <p align='center'>
