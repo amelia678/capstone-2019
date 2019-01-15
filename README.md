@@ -65,8 +65,8 @@
 
 <h4>Future Innovations</h4>
 <ul>
-<li>Users can block or report another user (have a user agreement to agree to?)</li>
-<li>Chatrooms for bands/ genres?</li>
+<li>Users can message each other within the app</li>
+<li>Chatrooms for bands/ genres</li>
 <li>Users can keep track of concerts attended in the past and with whom.</li>
 <li>Users can upload concert pics which crossreference and also show on event page.</li>
 
