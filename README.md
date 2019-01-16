@@ -8,11 +8,16 @@
 <h4>MVP</h4>
 <ul>
 <li>Users log into their account. (User information kept in PostgreSQL database.)</li>
-<li>Users can search for concerts/ events by Artist, Location, or Genre. (Concert information retrieved through API calls to eventful.com and lastfm.)</li>
+
+<li>Users can search for concerts/ events by Artist, Location, or keyword. (Concert information retrieved through API calls.)</li>
+
 <li>Users can select an event to add to their presonal event list.</li>
 <li>Users can see other users who are going to that event, and select a user to see their profile information.</li>
 <li>Users can connect with other users going to the same event.</li>
 <li>Users can add each other to their friends list.</li>
+
+  <li> Users can delete events/ artists/ friends from their profile.</li>
+
 </ul>
 
 
@@ -42,7 +47,18 @@
 <li>Last fm API</li>
 </ul>
 
-![MusicPal Profile](README-images/localhost_3000_search-artists(iPad).png)
+
+
+<p align='center'>
+<img src='README-images/profile-ipad.png' width='500' height = '700'></img>
+</p>
+
+<p align='center'>
+<img src='README-images/friend-profile.png'width='500' height = '700'></img>
+</p>
+
+
+
 
 <p align='center'>
 <img src='README-images/profile-ipad.png' width='500' height = '700'></img>
@@ -69,6 +85,7 @@
 <li>Chatrooms for bands/ genres?</li>
 <li>Users can keep track of concerts attended in the past and with whom.</li>
 <li>Users can upload concert pics which crossreference and also show on event page.</li>
+
 </ul>
 
 <p>Brought to you by Amelia Schulz and Clare Barton.</h4>
