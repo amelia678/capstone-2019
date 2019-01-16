@@ -60,13 +60,6 @@
 
 
 
-<p align='center'>
-<img src='README-images/profile-ipad.png' width='500' height = '700'></img>
-</p>
-
-<p align='center'>
-<img src='README-images/friend-profile.png'width='500' height = '700'></img>
-</p>
 
 
 
