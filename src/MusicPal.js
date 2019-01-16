@@ -85,10 +85,13 @@ class MusicPal extends Component {
                             return <Update {...props} />
                         }} />
 
+
                         <footer>
                             &copy;
                         <a href="https://github.com/amelia678">Amelia Schulz</a> /
                         <a href="https://github.com/CB987/">Clare Barton</a>
+
+
                         </footer>
                     </div>
                 </div>

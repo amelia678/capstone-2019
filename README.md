@@ -1,3 +1,5 @@
+
+
 <h1>MusicPal</h1>
 <h3>Capstone Project for DigitalCrafts</h3>
 <p>MusicPal is a site that allows users to connect with others that share their music tastes, strike up friendships, and find a pal to go to concerts with. Users can search for events based on the artist, genre of music, or location. Then, they can see other users who are also interested in that event, and choose to connect with them based on profile information.
@@ -13,14 +15,18 @@
 <li>Users can add each other to their friends list.</li>
 </ul>
 
+
+
+
 <p align='center'>
-<img src='README-images/musicpal-eventsearch.png' width='500' height='300'></img>
+  <img src='README-images/search-artist-iphone.png' width='300' height='600'></img>
 </p>
 
 
-<p>
-  <img src='README-images/localhost_3000_search-artists(iPhone 6_7_8).png)' width='500' height='900'></img>
-</p
+<p align='center'>
+    <img src='README-images/event-search.png' width='700' height='400'></img>
+</p>
+
 
 
 <h4>Technologies Used</h4>
@@ -38,8 +44,20 @@
 
 ![MusicPal Profile](README-images/localhost_3000_search-artists(iPad).png)
 
+<p align='center'>
+<img src='README-images/profile-ipad.png' width='500' height = '700'></img>
+</p>
+
+<p align='center'>
+<img src='README-images/friend-profile.png'width='500' height = '700'></img>
+</p>
+
+
+
 <h4>Challenges</h4>
-![Whiteboarding](README-images/whiteboarding-musicpal.png)
+<p align='center'>
+<img src='README-images/whiteboarding-musicpal.png' width=600 height='400'></img>
+  </p>
 
 - Amelia : Making React Components is easy but figuring out to link them and pass information to each other proved difficult. On top of that, providing the backend routing from Express to render to proper React components required a lot trial and error. 
 - Clare : Backend talking to frontend was my biggest puzzle. I feel comfortable navigating PostGreSQL and even Node.js and Express, so coming at them through React was an engaging challenge. 
@@ -54,3 +72,6 @@
 </ul>
 
 <p>Brought to you by Amelia Schulz and Clare Barton.</h4>
+
+
+[Youtube Walk-through](https://youtu.be/VyFSkcGR8kI)
