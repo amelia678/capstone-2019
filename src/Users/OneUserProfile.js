@@ -77,6 +77,15 @@ class OneUserProfile extends React.Component {
                     {this.state.addFriend ? <AddFriend
                         friend_id={(this.state.id)}
                     /> : null}
+                    <label className="logout"
+                        onClick={() => {
+                            this.setState({
+                                deleteFriend: true
+                            })
+                        }}> This isn't working for me any more. Remove friend.</label>
+                    {this.state.deleteFriend ? <deleteFriend
+                        friend_id={(this.state.id)}
+                    /> : null}
                 </div>
             </div >
         )
