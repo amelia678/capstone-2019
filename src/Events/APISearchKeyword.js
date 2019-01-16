@@ -11,7 +11,6 @@ const APISearchKeyword = (props) => {
                     props.handleInput(event.target.value)
                 }}
             ></input>
-            {/* <button onClick={() => { this._showList() }}>keyword</button> */}
         </div>
     )
 }

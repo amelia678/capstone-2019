@@ -34,8 +34,6 @@ class GetMemberFriends extends React.Component {
 
         return (
             <div>
-
-
                 <ul>
                     {friendsList}
                 </ul>

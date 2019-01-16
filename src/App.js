@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
 import MusicPal from './MusicPal';
 
-
-
 class App extends Component {
-
-  // constructor(props) {
-  //   super(props);
-
 
   // }
   render() {
@@ -24,8 +17,6 @@ class App extends Component {
 
     );
   }
-
 }
-
 
 export default App;

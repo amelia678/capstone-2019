@@ -7,8 +7,6 @@ import Login from './Users/Login';
 import Register from './Users/Register';
 import Logout from './Users/Logout';
 import SearchbyArtist from './Artists/SearchbyArtist';
-// import Placeholder from './Placeholder';
-// import OneEvent from './OneEvent';
 import Delete from './Users/Delete';
 import Update from './Users/Update';
 
@@ -16,14 +14,6 @@ import {
     BrowserRouter as Router,
     Route,
 } from 'react-router-dom'
-
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { fagithub } from '@fortawesome/free-solid-svg-icons'
-
-// library.add(fagithub)
-
-
 
 class MusicPal extends Component {
     constructor(props) {
@@ -34,9 +24,7 @@ class MusicPal extends Component {
         }
     }
 
-
     render() {
-
         return (
 
             <Router>
@@ -47,11 +35,10 @@ class MusicPal extends Component {
                                 <NavBar />
                             </div>
                             <div className="title">
-
                                 <h1>MusicPal</h1>
                             </div>
-
                         </div>
+
                         <div className="eventInfo">
                             <div className="searchBar">
                                 <Route path="/" exact render={() => {
@@ -61,19 +48,16 @@ class MusicPal extends Component {
                                     return <Login {...props} />
                                 }}
                                 />
-
                                 <Route path="/register" render={(props) => {
                                     return <Register  {...props} />
                                 }}
                                 />
-
                                 <Route path="/home" render={(props) => {
                                     return <Search
                                         searchTerm={(this.state.searchTerm)} {...props}
                                         handleInput={(this._setSearchTerm)} {...props} />
                                 }}
                                 />
-
                                 <Route path="/search-artists" render={(props) => {
                                     return <SearchbyArtist
                                         searchTerm={(this.state.artistSearch)}{...props}
@@ -81,23 +65,15 @@ class MusicPal extends Component {
                                 }}
                                 />
 
-
                                 <div className="userProfile">
-
-
                                     <Route path="/profile" render={(props) => {
                                         return <Profile {...props} />
                                     }}
                                     />
 
                                 </div>
-
                             </div>
-                            {/* <Placeholder /> */}
-
-
                         </div>
-
 
                         <Route path="/logout" render={(props) => {
                             return <Logout {...props} />
@@ -110,11 +86,13 @@ class MusicPal extends Component {
                         }} />
 
 
-                    <footer>
-                        &copy;
-                        <a href="https://github.com/amelia678">Amelia Schulz</a> / 
+
+                        <footer>
+                            &copy;
+                        <a href="https://github.com/amelia678">Amelia Schulz</a> /
                         <a href="https://github.com/CB987/">Clare Barton</a>
-                        
+
+
 
                         </footer>
                     </div>
@@ -122,8 +100,6 @@ class MusicPal extends Component {
             </Router>
         )
     }
-
-
 
     _setArtistSearch = (term) => {
         this.setState({

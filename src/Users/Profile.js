@@ -3,8 +3,6 @@ import UpcomingShows from './UpcomingShows';
 import FavoriteArtists from './FavoriteArtists';
 import MyFriends from './MyFriends';
 
-
-
 import {
     Link
 } from 'react-router-dom';
@@ -26,7 +24,6 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-
         fetch('/API/user/isValid')
             .then(r => {
                 return r.json()
@@ -49,29 +46,10 @@ class Profile extends Component {
                     pal: user.pal,
                     isLoggedIn: true
                 })
-
-
-
-
-                // console.log(r)
-                // return r.json()
-
-
-
-                // .catch(data => {
-                //     console.log(data)
-                //     if (data.isLoggedIn === false) {
-
-
-                //     }
-                // })
-
-
             })
             .catch(err => {
                 console.log(err)
             })
-
     }
 
     render() {
@@ -107,4 +85,5 @@ class Profile extends Component {
         )
     }
 };
+
 export default Profile;

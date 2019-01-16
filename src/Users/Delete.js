@@ -25,7 +25,6 @@ class Delete extends React.Component {
                         We're sorry to see you go, but rock on!</p>
                 </div>
             )
-
         }
     }
 
@@ -40,9 +39,7 @@ class Delete extends React.Component {
                     </div>
                 )
             })
-
     }
-
 }
 
 export default Delete;

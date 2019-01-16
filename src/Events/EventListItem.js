@@ -40,12 +40,6 @@ class EventListItem extends React.Component {
         console.log(this.props.event);
         console.log(this.state.friends)
 
-        // const attendeeList = this.state.friends.map(pal => {
-        //     return (
-        //         <li key={pal.id}>{pal.username} from {pal.home}</li>
-        //     )
-        // })
-
         let attendeeList;
         if (this.state.friends.length === 0) {
             attendeeList = (
@@ -70,18 +64,17 @@ class EventListItem extends React.Component {
 
                 <div>
                     <ul>
-                        {/* <p>an event goes here</p> */}
                         <li>Artist: {this.props.event.artist} </li>
                         <li>Venue: {this.props.event.venue} in {this.props.event.city}, {this.props.event.state}</li>
                         <li>Date: {this.props.event.date}</li>
                         <li>Musicpal members going to this concert: <ul>{attendeeList}</ul> </li>
                     </ul>
-                    {/* <img className="eventImage" src="https://assets.rbl.ms/19048490/980x.jpg"></img> */}
                 </div>
 
                 <button onClick={() => {
                     this._addEvent()
                 }}>I want to go!</button>
+
                 {this.state.addToList ? <AddDBEventtoUser
                     attendeeList={(this.state.attendeeList)}
                     eventID={(this.props.event.id)}
@@ -91,18 +84,19 @@ class EventListItem extends React.Component {
                     state={(this.props.event.state)}
                     date={(this.props.event.date)}
                 /> : null}
+
                 {this.state.addToList ? <Placeholder /> : null}
-                {
-                    this.state.showPal ? <OneUserProfile
-                        showPal={(this.state.showPal)}
-                    /> : null
-                }
+
+                {this.state.showPal ? <OneUserProfile
+                    showPal={(this.state.showPal)}
+                /> : null}
+
                 <div class="eventful-badge eventful-small">
                     <a href="http://eventful.com/"> <img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
                         alt="Local Events, Concerts, Tickets" />
                     </a>
                 </div>
-            </div >
+            </div>
         )
     }
 
@@ -114,7 +108,6 @@ class EventListItem extends React.Component {
             console.log(this.state.addToList);
             console.log(this.props.event.artist);
         })
-
     }
 
     _showPal = (id) => {
@@ -125,7 +118,6 @@ class EventListItem extends React.Component {
         })
         // console.log(this.state)
     }
-
 }
 
 export default EventListItem;

@@ -65,7 +65,6 @@ class TheWholeAPIEnchilada extends React.Component {
         })
         console.log('enchilada launch sequence commenced');
 
-
         fetch('/APIEventList', {
             method: 'post', //so it knows it's a post on this side
             headers: { 'Content-type': 'application/json' }, //automatically set these
@@ -86,11 +85,7 @@ class TheWholeAPIEnchilada extends React.Component {
                     showAPIList: true
                 })
             })
-
     }
-
-
-
 }
 
 export default TheWholeAPIEnchilada;

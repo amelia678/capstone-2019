@@ -10,11 +10,8 @@ const APISearchArtist = (props) => {
                     props.handleInput(event.target.value)
                 }}
             ></input>
-            {/* <button onClick={() => { this._showList() }}>artist</button> */}
-
         </div>
     )
-
 }
 
 export default APISearchArtist;

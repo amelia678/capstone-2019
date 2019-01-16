@@ -12,13 +12,13 @@ class SearchbyArtist extends Component {
         }
     }
 
-
     render() {
 
         return (
 
             <div className="login">
                 <h3>Search an Artist</h3>
+                {/* <a href="last.fm"> <img className="logo" src="../images/lastfm_logo.png" alt="logo of last fm" /> </a */}
                 <input
                     value={this.props.searchTerm}
                     onChange={(event) => {
@@ -30,16 +30,12 @@ class SearchbyArtist extends Component {
                 >search</button>
                 <div >
                     {this.state.artistArray}
-
                 </div>
-
-
                 <div>
                     {this.state.addToList ? <AddArtistToUser
                         artist={this.state.addToList}
                     /> : null}
                 </div>
-
             </div>
         )
     }
@@ -51,15 +47,7 @@ class SearchbyArtist extends Component {
             body: JSON.stringify({
                 searchArtist: this.props.searchTerm
             })
-
-
-
-
-
         })
-
-
-
             .then(r => r.json())
             .then(artists => {
                 console.log(artists)
@@ -73,10 +61,7 @@ class SearchbyArtist extends Component {
                                 this._addEvent(grimes.name)
                             }}
                             >Add to My Artists!</button>
-
                         </ul>
-
-
                     )
                 })
                 if (artistList.length === 0) {
@@ -88,25 +73,16 @@ class SearchbyArtist extends Component {
                         artistArray: artistList
                     })
                 }
-
             })
 
         this.setState({
             showAPIList: true
         });
-
-
-
-
     }
 
     _addEvent = (jeff) => {
         console.log('is this jeff?')
         console.log(jeff)
-        // let clickedArtist = this.state.artistArray.find(thisOne => {
-        //     // console.log(thisOne)
-        //     return jeff === thisOne.key
-        // })
         this.setState({
             addToList: jeff
 
@@ -116,8 +92,7 @@ class SearchbyArtist extends Component {
             console.log(jeff)
         })
 
-
     }
-
 }
+
 export default SearchbyArtist;

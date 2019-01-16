@@ -4,6 +4,7 @@ import GetMemberShows from './GetMemberShows';
 import GetMemberArtists from './GetMemberArtists';
 import GetMemberFriends from './GetMemberFriends';
 import AddFriend from './AddFriend';
+import DeleteFriend from './DeleteFriend';
 
 class OneUserProfile extends React.Component {
     constructor(props) {
@@ -14,7 +15,9 @@ class OneUserProfile extends React.Component {
             email: '',
             likes: '',
             dislikes: '',
-            pal: ''
+            pal: '',
+            addFriend: false,
+            deleteFriend: false
         }
     }
 
@@ -29,7 +32,6 @@ class OneUserProfile extends React.Component {
 
             .then(r => r.json())
             .then(user => {
-
                 this.setState({
                     id: user.id,
                     username: user.username,
@@ -40,8 +42,6 @@ class OneUserProfile extends React.Component {
                 })
             })
     };
-
-
 
     render() {
         console.log(this.state)
@@ -80,16 +80,19 @@ class OneUserProfile extends React.Component {
                     {this.state.addFriend ? <AddFriend
                         friend_id={(this.state.id)}
                     /> : null}
+                    <label className="logout"
+                        onClick={() => {
+                            this.setState({
+                                deleteFriend: true
+                            })
+                        }}> This isn't working for me any more. Remove friend.</label>
+                    {this.state.deleteFriend ? <DeleteFriend
+                        friend_id={(this.state.id)}
+                    /> : null}
                 </div>
             </div >
         )
-
     }
-
-    // _addToFriends = (id) => {
-
-    //     addFriend: true
-    // }
 }
 
 export default OneUserProfile;

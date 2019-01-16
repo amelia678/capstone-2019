@@ -36,7 +36,6 @@ class GetMemberArtists extends React.Component {
 
         return (
             <div>
-
                 <ul>
                     {artistList}
                 </ul>

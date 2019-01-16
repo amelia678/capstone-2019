@@ -38,16 +38,12 @@ class MyFriends extends React.Component {
 
         return (
             <div>
-
-
                 <ul>
                     {friendsList}
                 </ul>
-                {
-                    this.state.showPal ? <OneUserProfile
-                        showPal={(this.state.showPal)}
-                    /> : null
-                }
+                {this.state.showPal ? <OneUserProfile
+                    showPal={(this.state.showPal)}
+                /> : null}
             </div >
         )
     }
@@ -58,7 +54,6 @@ class MyFriends extends React.Component {
             showPal: id
         })
     }
-
 }
 
 export default MyFriends;

@@ -1,17 +1,18 @@
 import React from 'react';
 
-class AddFriend extends React.Component {
+class DeleteFriend extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            myFriends: []
         }
     }
 
+
     componentDidMount() {
         console.log(this.props.friend_id)
-        console.log('^^ sending this friend id to add')
-        fetch('/addToUserFriends', {
+        console.log('^^ sending this friend id to BE DELETED')
+        fetch('/deleteFriend', {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
@@ -21,10 +22,11 @@ class AddFriend extends React.Component {
     }
 
     render() {
+
         return (
-            <p>Yay! You have a new MusicPal!</p>
+            <p> Sometimes it just doesn't work out.!</p>
         )
     }
 }
 
-export default AddFriend;
+export default DeleteFriend;
