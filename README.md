@@ -1,11 +1,11 @@
 
 
-<h1>MusicPal</h1>
+## MusicPal
 <h3>Capstone Project for DigitalCrafts</h3>
 <p>MusicPal is a site that allows users to connect with others that share their music tastes, strike up friendships, and find a pal to go to concerts with. Users can search for events based on the artist, genre of music, or location. Then, they can see other users who are also interested in that event, and choose to connect with them based on profile information.
 
 ![MusicPal Home](README-images/musicpal-home.png)
-<h4>MVP</h4>
+## MVP
 <ul>
 <li>Users log into their account. (User information kept in PostgreSQL database.)</li>
 
@@ -63,7 +63,7 @@
 
 
 
-<h4>Challenges</h4>
+## Challenges
 <p align='center'>
 <img src='README-images/whiteboarding-musicpal.png' width=600 height='400'></img>
   </p>
@@ -71,7 +71,7 @@
 - Amelia : Making React Components is easy but figuring out to link them and pass information to each other proved difficult. On top of that, providing the backend routing from Express to render to proper React components required a lot trial and error. 
 - Clare : Backend talking to frontend was my biggest puzzle. I feel comfortable navigating PostGreSQL and even Node.js and Express, so coming at them through React was an engaging challenge. 
 
-<h4>Future Innovations</h4>
+## Future Implementations
 <ul>
 <li>Users can upload profile pics</li>
 <li>Users can block or report another user (have a user agreement to agree to?)</li>
@@ -86,7 +86,7 @@
 
 [Youtube Walk-through](https://youtu.be/VyFSkcGR8kI)
 
-##Ackhowledgements
+## Acknowledgements
 We would like to thank our instructor [Chris Aquino](https://github.com/radishmouse) for providing us constant support, technical genius, and cat photos and our DIR [Aylin](https://github.com/adebruyne) for her valuable expertise and dad jokes. 
 
 We would also like to thank our unofficial team member,  [Anokhee Jandhyala] (https://github.com/anokhee) , for her creative energy and unparalleled wit.
