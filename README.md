@@ -85,3 +85,8 @@
 
 
 [Youtube Walk-through](https://youtu.be/VyFSkcGR8kI)
+
+##Ackhowledgements
+We would like to thank our instructor [Chris Aquino](https://github.com/radishmouse) for providing us constant support, technical genius, and cat photos and our DIR [Aylin](https://github.com/adebruyne) for her valuable expertise and dad jokes. 
+
+We would also like to thank our unofficial team member,  [Anokhee Jandhyala] (https://github.com/anokhee) , for her creative energy and unparalleled wit.
